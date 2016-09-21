@@ -1,0 +1,81 @@
+{
+    "key": "group_57e29bd3d62c9",
+    "title": "Graduate Show Exhibition Information",
+    "fields": [
+        {
+            "key": "field_57e29bff255b3",
+            "label": "Concept",
+            "name": "concept",
+            "type": "textarea",
+            "instructions": "Brief description of your exhibition piece.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_57e29c18255b4",
+            "label": "Medium",
+            "name": "medium",
+            "type": "text",
+            "instructions": "Eg. Digital, print, tangible, installation",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57e29c34255b5",
+            "label": "Ideal Requirements",
+            "name": "ideal_requirements",
+            "type": "textarea",
+            "instructions": "Eg. iMac, monitor, iPad, power, internet, plinth, wall space if more than 1 metre wide, floor space if more than 1 m square.\r\n\r\n(Some of these may need to be negotiated in October, due to limited equipment being available; but baseline is everyone can count on at least 1m wide wall space and floor space, an iMac, internet, and plinth\/table)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_role",
+                "operator": "!=",
+                "value": "subscriber"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1474468963
+}

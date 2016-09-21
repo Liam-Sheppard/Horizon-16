@@ -1,0 +1,159 @@
+{
+    "key": "group_57e298221eda7",
+    "title": "Graduate Profile",
+    "fields": [
+        {
+            "key": "field_57e29cbfade75",
+            "label": "Design Disciplines",
+            "name": "disciplines",
+            "type": "checkbox",
+            "instructions": "If you believe you fit into a discipline that is not listed, please send a request for an additional discipline to hello@horizon16.com.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "web-design": "Web Design",
+                "animation": "Animation",
+                "typography": "Typography",
+                "print-design": "Print Design",
+                "visual-art": "Visual Art",
+                "branding": "Branding",
+                "ui-ux": "UI\/UX",
+                "photography": "Photography",
+                "tangible-media": "Tangible Media",
+                "information-design": "Information Design"
+            },
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_57e29766a3e1e",
+            "label": "Contact Phone",
+            "name": "contact_phone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": 16
+        },
+        {
+            "key": "field_57e29978c682f",
+            "label": "Social Links",
+            "name": "social_links",
+            "type": "repeater",
+            "instructions": "If you would like to list a social link that is not listed here, please send a request to hello@horizon.com.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Social Network",
+            "sub_fields": [
+                {
+                    "key": "field_57e2998bc6830",
+                    "label": "Social Network",
+                    "name": "social_network",
+                    "type": "select",
+                    "instructions": "The social network that you are on.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "facebook": "Facebook",
+                        "twitter": "Twitter",
+                        "linkedin": "LinkedIn",
+                        "instagram": "Instagram",
+                        "behance": "Behance",
+                        "dribbble": "Dribbble"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_57e29a20c6831",
+                    "label": "Username\/Handle",
+                    "name": "username",
+                    "type": "text",
+                    "instructions": "Your account username or handle ie: @QUThorizon16",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_57e29a92c6832",
+                    "label": "Profile URL",
+                    "name": "profile_url",
+                    "type": "url",
+                    "instructions": "URL for your profile on the social network.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_role",
+                "operator": "!=",
+                "value": "subscriber"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1474469280
+}
