@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Horizon / QUT Interactive + Visual Design Graduate Exhibition 2016</title>
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() ?>/horizon16/css/styles.min.css" media="screen" title="no title">
+    <link rel="shortcut icon" href="<?= get_stylesheet_directory_uri() ?>/favicon.png">
   </head>
     <body>
         <nav id="primary-navigation">
