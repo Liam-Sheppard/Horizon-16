@@ -7,11 +7,17 @@
     <link rel="shortcut icon" href="<?= get_stylesheet_directory_uri() ?>/favicon.png">
   </head>
     <body>
-        <nav id="primary-navigation">
-            <ul>
+        <header id="site-header">
+            <a href="<?= get_bloginfo('url') ?>" class="horizon-glyph toast-is-ready">
+                <span class="horizon-glyph-glyph"></span>
+            </a>
+            <nav id="primary-navigation">
+                <ul>
 
-            </ul>
-        </nav>
+                </ul>
+            </nav>
+        </header>
+
         <main id="main-content">
 
             <section class="content-block">
