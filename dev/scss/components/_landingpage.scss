@@ -1,0 +1,48 @@
+/*=============================================================================
+# LANDING PAGE
+==============================================================================*/
+
+.landing-details {
+    display: flex;
+    margin-top: 5rem;
+    height: 70px;
+
+    .event-details {
+        &-lg {
+            font-weight: 500;
+            font-size: 1.125rem;
+            letter-spacing: 2px;
+            display: block;
+            margin: 13px 0 2px;
+        }
+
+        &-sm {
+            opacity: .7;
+            display: block;
+        }
+    }
+
+    .detailbox {
+        display: flex;
+        margin-right: 60px;
+
+        img {
+            width: 60px;
+            display: block;
+            margin-right: 20px;
+            opacity: .9;
+        }
+
+        &.fam {
+            img {
+                width: 68px;
+            }
+        }
+
+        &.time {
+            img {
+                margin-top: 7px;
+            }
+        }
+    }
+}

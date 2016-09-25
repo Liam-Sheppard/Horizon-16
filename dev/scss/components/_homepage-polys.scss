@@ -1,3 +1,7 @@
+/*=============================================================================
+# HOMEPAGE POLYS
+==============================================================================*/
+
 .poly-background {
   position: absolute;
   width: 100vw;
@@ -20,13 +24,13 @@
   }
 
   svg:nth-of-type(1) {
-    top: 20%;
+    top: 12%;
     left: -4%;
     width: 885px;
     animation-name: svg1ColorCycle;
 
     .b {
-      opacity: .3;
+      opacity: .25;
     }
   }
 
@@ -37,7 +41,7 @@
     animation-name: svg2ColorCycle;
 
     .b {
-      opacity: .3;
+      opacity: .25;
     }
   }
 
@@ -48,31 +52,31 @@
     animation-name: svg3ColorCycle;
 
     .b {
-      opacity: .3;
+      opacity: .25;
     }
   }
 }
 
 @keyframes svg1ColorCycle {
-  0% { stroke: adjust-hue(#ff0068, 0) }
-  25% { stroke: adjust-hue(#ff0068, 90) }
-  50% { stroke: adjust-hue(#ff0068, 180) }
-  75% { stroke: adjust-hue(#ff0068, 270) }
-  100% { stroke: adjust-hue(#ff0068, 0) }
+  0% { stroke: adjust-hue($colorCycle, 0) }
+  25% { stroke: adjust-hue($colorCycle, 90) }
+  50% { stroke: adjust-hue($colorCycle, 180) }
+  75% { stroke: adjust-hue($colorCycle, 270) }
+  100% { stroke: adjust-hue($colorCycle, 0) }
 }
 
 @keyframes svg2ColorCycle {
-  0% { stroke: adjust-hue(#5700ff, 0) }
-  25% { stroke: adjust-hue(#5700ff, 90) }
-  50% { stroke: adjust-hue(#5700ff, 180) }
-  75% { stroke: adjust-hue(#5700ff, 270) }
-  100% { stroke: adjust-hue(#5700ff, 0) }
+  0% { stroke: adjust-hue($colorCycle2, 0) }
+  25% { stroke: adjust-hue($colorCycle2, 90) }
+  50% { stroke: adjust-hue($colorCycle2, 180) }
+  75% { stroke: adjust-hue($colorCycle2, 270) }
+  100% { stroke: adjust-hue($colorCycle2, 0) }
 }
 
 @keyframes svg3ColorCycle {
-  0% { stroke: adjust-hue(#00ffa3, 0) }
-  25% { stroke: adjust-hue(#00ffa3, 90) }
-  50% { stroke: adjust-hue(#00ffa3, 180) }
-  75% { stroke: adjust-hue(#00ffa3, 270) }
-  100% { stroke: adjust-hue(#00ffa3, 0) }
+  0% { stroke: adjust-hue($colorCycle3, 0) }
+  25% { stroke: adjust-hue($colorCycle3, 90) }
+  50% { stroke: adjust-hue($colorCycle3, 180) }
+  75% { stroke: adjust-hue($colorCycle3, 270) }
+  100% { stroke: adjust-hue($colorCycle3, 0) }
 }
