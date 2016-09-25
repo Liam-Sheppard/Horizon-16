@@ -3,14 +3,14 @@ html, body {
     color: $white;
     @include Aileron;
 }
+
 body {
     padding: 3rem;
 }
+
 ::selection {
-    background: rgba(0,0,0,0);
-}
-::-moz-selection {
-    background: rgba(0,0,0,0);
+    background: rgba($white, .99);
+    color: $black;
 }
 
 *:last-child {

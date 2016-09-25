@@ -32,6 +32,8 @@ h1, .h1 {
 .primary-heading-text {
     display: block;
     margin-bottom: 1.25em;
+    overflow: hidden;
+    height: 26px;
 }
 .sub-heading {
     text-transform: none;

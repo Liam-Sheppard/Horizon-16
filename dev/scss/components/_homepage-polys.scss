@@ -1,0 +1,59 @@
+.poly-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  svg {
+    position: relative;
+    height: auto;
+    fill:none;
+    stroke-linecap:square;
+    stroke-miterlimit:10;
+    opacity: .8;
+  }
+
+  svg:nth-of-type(1) {
+    top: 20%;
+    left: -4%;
+    width: 885px;
+
+    .a, .b {
+      stroke:#ff0068;
+    }
+
+    .b {
+      opacity: .2;
+    }
+  }
+
+  svg:nth-of-type(2) {
+    top: 7%;
+    left: 29%;
+    width: 730px;
+
+    .a, .b {
+      stroke:#5700ff;
+    }
+
+    .b {
+      opacity: .2;
+    }
+  }
+
+  svg:nth-of-type(3) {
+    top: 53%;
+    left: -28%;
+    width: 401px;
+
+    .a, .b {
+      stroke:#00ffa3;
+    }
+
+    .b {
+      opacity: .2;
+    }
+  }
+}
