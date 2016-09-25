@@ -13,19 +13,20 @@
     stroke-linecap:square;
     stroke-miterlimit:10;
     opacity: .8;
+
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   svg:nth-of-type(1) {
     top: 20%;
     left: -4%;
     width: 885px;
-
-    .a, .b {
-      stroke:#ff0068;
-    }
+    animation-name: svg1ColorCycle;
 
     .b {
-      opacity: .2;
+      opacity: .3;
     }
   }
 
@@ -33,13 +34,10 @@
     top: 7%;
     left: 29%;
     width: 730px;
-
-    .a, .b {
-      stroke:#5700ff;
-    }
+    animation-name: svg2ColorCycle;
 
     .b {
-      opacity: .2;
+      opacity: .3;
     }
   }
 
@@ -47,13 +45,34 @@
     top: 53%;
     left: -28%;
     width: 401px;
-
-    .a, .b {
-      stroke:#00ffa3;
-    }
+    animation-name: svg3ColorCycle;
 
     .b {
-      opacity: .2;
+      opacity: .3;
     }
   }
+}
+
+@keyframes svg1ColorCycle {
+  0% { stroke: adjust-hue(#ff0068, 0) }
+  25% { stroke: adjust-hue(#ff0068, 90) }
+  50% { stroke: adjust-hue(#ff0068, 180) }
+  75% { stroke: adjust-hue(#ff0068, 270) }
+  100% { stroke: adjust-hue(#ff0068, 0) }
+}
+
+@keyframes svg2ColorCycle {
+  0% { stroke: adjust-hue(#5700ff, 0) }
+  25% { stroke: adjust-hue(#5700ff, 90) }
+  50% { stroke: adjust-hue(#5700ff, 180) }
+  75% { stroke: adjust-hue(#5700ff, 270) }
+  100% { stroke: adjust-hue(#5700ff, 0) }
+}
+
+@keyframes svg3ColorCycle {
+  0% { stroke: adjust-hue(#00ffa3, 0) }
+  25% { stroke: adjust-hue(#00ffa3, 90) }
+  50% { stroke: adjust-hue(#00ffa3, 180) }
+  75% { stroke: adjust-hue(#00ffa3, 270) }
+  100% { stroke: adjust-hue(#00ffa3, 0) }
 }
