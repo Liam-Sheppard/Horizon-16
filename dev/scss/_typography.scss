@@ -1,0 +1,81 @@
+h1, h2, h3, h4, h5, h6,
+p,
+ol,
+ul,
+li,
+span,
+{
+    font: {
+        family: inherit;
+    }
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+@mixin title(){
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2em;
+    margin-bottom: 1.5em;
+}
+h1, .h1 {
+    @include title;
+    font-size: 2.25rem;
+    span {
+        display: block;
+    }
+}
+
+.primary-heading-text {
+    display: block;
+    margin-bottom: 1.25em;
+}
+.sub-heading {
+    text-transform: none;
+    letter-spacing: 0.55em;
+    line-height: 1.5;
+    font: {
+        size: 0.55em;
+        weight: 500;
+    }
+}
+.site-title {
+    margin-bottom: 5rem;
+}
+
+
+h2, .h2 {
+    @include title;
+}
+h3, .h3 {
+    @include title;
+}
+h4, .h4 {
+    @include title;
+}
+h5, .h5 {
+    @include title;
+}
+h6, .h6 {
+    @include title;
+}
+
+
+
+.paragraph {
+    line-height: 2;
+    letter-spacing: 0.2em;
+    font-size: 1.125rem;
+    margin-bottom: 1.5em;
+}
+.paragraph-lg {
+    @extend .paragraph;
+    font-size: 1.125rem;
+}
+.paragraph-sm {
+    @extend .paragraph;
+    font-size: 0.8rem;
+}

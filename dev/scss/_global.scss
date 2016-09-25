@@ -1,0 +1,18 @@
+html, body {
+    background-color: $black;
+    color: $white;
+    @include Aileron;
+}
+body {
+    padding: 3rem;
+}
+::selection {
+    background: rgba(0,0,0,0);
+}
+::-moz-selection {
+    background: rgba(0,0,0,0);
+}
+
+*:last-child {
+    margin-bottom: 0;
+}
