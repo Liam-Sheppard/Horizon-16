@@ -1,3 +1,7 @@
+/*=============================================================================
+# HOMEPAGE POLYS
+==============================================================================*/
+
 .poly-background {
   position: absolute;
   width: 100vw;
@@ -7,53 +11,78 @@
   overflow: hidden;
 
   svg {
-    position: relative;
+    position: absolute;
     height: auto;
     fill:none;
     stroke-linecap:square;
     stroke-miterlimit:10;
     opacity: .8;
+    min-width: 400px;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    overflow: visible;
+
+
+    &:nth-of-type(1) {
+      top: 10%;
+      right: 0;
+      width: 700px;
+      width: 50vw;
+      animation-name: svg2ColorCycle;
+      transform: translate(40%, -50%);
+
+      .b {
+        opacity: .25;
+      }
+    }
+
+    &:nth-of-type(2) {
+        top: 30%;
+        left: -10%;
+        width: 700px;
+        width: 50vw;
+        animation-name: svg1ColorCycle;
+
+      .b {
+        opacity: .25;
+      }
+    }
+
+    &:nth-of-type(3) {
+        bottom: 0;
+        right: 15%;
+        width: 450px;
+        width: 25vw;
+        animation-name: svg3ColorCycle;
+        transform: translate(0, 20%);
+      .b {
+        opacity: .25;
+      }
+    }
   }
+}
 
-  svg:nth-of-type(1) {
-    top: 20%;
-    left: -4%;
-    width: 885px;
+@keyframes svg1ColorCycle {
+  0% { stroke: adjust-hue($colorCycle, 0) }
+  25% { stroke: adjust-hue($colorCycle, 90) }
+  50% { stroke: adjust-hue($colorCycle, 180) }
+  75% { stroke: adjust-hue($colorCycle, 270) }
+  100% { stroke: adjust-hue($colorCycle, 0) }
+}
 
-    .a, .b {
-      stroke:#ff0068;
-    }
+@keyframes svg2ColorCycle {
+  0% { stroke: adjust-hue($colorCycle2, 0) }
+  25% { stroke: adjust-hue($colorCycle2, 90) }
+  50% { stroke: adjust-hue($colorCycle2, 180) }
+  75% { stroke: adjust-hue($colorCycle2, 270) }
+  100% { stroke: adjust-hue($colorCycle2, 0) }
+}
 
-    .b {
-      opacity: .2;
-    }
-  }
-
-  svg:nth-of-type(2) {
-    top: 7%;
-    left: 29%;
-    width: 730px;
-
-    .a, .b {
-      stroke:#5700ff;
-    }
-
-    .b {
-      opacity: .2;
-    }
-  }
-
-  svg:nth-of-type(3) {
-    top: 53%;
-    left: -28%;
-    width: 401px;
-
-    .a, .b {
-      stroke:#00ffa3;
-    }
-
-    .b {
-      opacity: .2;
-    }
-  }
+@keyframes svg3ColorCycle {
+  0% { stroke: adjust-hue($colorCycle3, 0) }
+  25% { stroke: adjust-hue($colorCycle3, 90) }
+  50% { stroke: adjust-hue($colorCycle3, 180) }
+  75% { stroke: adjust-hue($colorCycle3, 270) }
+  100% { stroke: adjust-hue($colorCycle3, 0) }
 }

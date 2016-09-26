@@ -1,0 +1,107 @@
+/*=============================================================================
+# NAVIGATION
+==============================================================================*/
+
+
+#site-header {
+    position: relative;
+}
+
+@mixin primaryMenuItem(){
+    display: inline-block;
+    padding: 1em 1em 1em 0;
+    font-size: 0.75rem;
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5em;
+    font-weight: 700;
+    transition: all 0.6s;
+}
+
+#primary-navigation {
+    position: fixed;
+    left: 3rem;
+    top: 3rem;
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    ul {
+        display: none;
+        list-style: none;
+        margin: 1rem 0;
+        &:hover {
+            .menu-item {
+                opacity: 0.1;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    li {
+        float: left;
+        clear: left;
+    }
+    .menu-item {
+        @include primaryMenuItem();
+    }
+}
+
+
+#socialmedia {
+  position: fixed;
+  right: 3rem;
+  top: 3rem;
+  color: rgba($white, .3);
+  transition: color .3s;
+  display: flex;
+
+  span {
+    line-height: 24px;
+    display: block;
+    height: 24px;
+  }
+
+  a {
+    margin-left: 20px;
+    display: block;
+    font-size: 0;
+  }
+
+  svg {
+    fill: rgba($white, .3);
+    width: 24px;
+    height: auto;
+    transition: fill .3s;
+
+    &:hover {
+      fill: rgba($white, .8);
+    }
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+#sponsors {
+  position: fixed;
+  display: flex;
+  right: 3rem;
+  bottom: 3rem;
+  font-size: 0;
+
+  img {
+    transition: opacity .3s;
+    opacity: .3;
+    height: 32px;
+    width: auto;
+  }
+
+  &:hover img {
+    opacity: .8;
+  }
+}
