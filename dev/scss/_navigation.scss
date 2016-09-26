@@ -8,17 +8,20 @@
   top: 48px;
   color: rgba($white, .3);
   transition: color .3s;
-  display: flex;
 
   span {
     line-height: 24px;
     display: block;
+    float: left;
     height: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
   }
 
   a {
     margin-left: 20px;
     display: block;
+    float: left;
     font-size: 0;
   }
 
@@ -40,10 +43,12 @@
 
 #sponsors {
   position: fixed;
-  display: flex;
   right: 48px;
   bottom: 48px;
-  font-size: 0;
+
+  a {
+    font-size: 0;
+  }
 
   img {
     transition: opacity .3s;

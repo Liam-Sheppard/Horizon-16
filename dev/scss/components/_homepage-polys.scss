@@ -11,7 +11,7 @@
   overflow: hidden;
 
   svg {
-    position: relative;
+    position: absolute;
     height: auto;
     fill:none;
     stroke-linecap:square;
@@ -25,9 +25,9 @@
 
 
     &:nth-of-type(1) {
-      top: 12%;
+      top: 22%;
       left: -4%;
-      width: 885px;
+      width: 40%;
       animation-name: svg1ColorCycle;
 
       .b {
@@ -36,9 +36,9 @@
     }
 
     &:nth-of-type(2) {
-      top: 7%;
-      left: 29%;
-      width: 730px;
+      top: 18%;
+      right: 3%;
+      width: 33%;
       animation-name: svg2ColorCycle;
 
       .b {
@@ -47,9 +47,9 @@
     }
 
     &:nth-of-type(3) {
-      top: 43%;
-      left: -36%;
-      width: 450px;
+      bottom: 4%;
+      left: 38%;
+      width: 20%;
       animation-name: svg3ColorCycle;
 
       .b {
