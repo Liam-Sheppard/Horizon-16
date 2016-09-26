@@ -8,12 +8,12 @@ html, body {
 }
 
 body {
-    padding: 3rem;
+    position: relative;
+    min-height: 100vh;
 }
 
 ::selection {
-    background: rgba($white, .99);
-    color: $black;
+    background: rgba($white, .05);
 }
 
 *:last-child {
