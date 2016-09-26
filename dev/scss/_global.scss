@@ -2,6 +2,9 @@ html, body {
     background-color: $black;
     color: $white;
     @include Aileron;
+    @media screen and (max-width: $bp-tablet - 1px){
+      font-size: 80%;
+    }
 }
 
 body {
