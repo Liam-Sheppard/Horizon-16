@@ -13,3 +13,9 @@
     max-width: 1100px;
     position: relative;
 }
+
+@media (max-height: 950px) {
+  #main-content {
+    margin-top: 6rem;
+  }
+}
