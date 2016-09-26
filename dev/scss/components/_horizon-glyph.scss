@@ -34,10 +34,6 @@
 
 @media (max-width: 600px) {
   .horizon-glyph {
-    background: $black;
-    padding: 10px;
-    position: fixed;
-    bottom: 2rem;
-    left: 2rem;
+    display: none;
   }
 }
