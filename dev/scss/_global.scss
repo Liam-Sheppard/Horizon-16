@@ -1,6 +1,8 @@
 html, body {
     background-color: $black;
     color: $white;
+    width: 100%;
+    overflow-x: hidden;
     @include Aileron;
     @media screen and (max-width: $bp-tablet - 1px){
       font-size: 80%;

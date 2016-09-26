@@ -33,18 +33,15 @@ h1, .h1 {
     display: block;
     margin-bottom: 1.25em;
 
-    /* TEXT CUTOFF */
-    // overflow: hidden;
-    // height: 26px;
 }
 .sub-heading {
-    text-transform: none;
-    letter-spacing: 0.55em;
-    line-height: 1.5;
-    font: {
-        size: 0.55em;
-        weight: 500;
-    }
+  text-transform: none;
+  letter-spacing: 0.55em;
+  line-height: 1.5;
+  font: {
+      size: 0.55em;
+      weight: 500;
+  }
 }
 .site-title {
     margin-bottom: 5rem;
@@ -91,7 +88,8 @@ h6, .h6 {
   }
 
   .sub-heading {
-    font-size: 16px;
+    font-size: 14px;
+    letter-spacing: 0.2em;
   }
 
   .landing-details,

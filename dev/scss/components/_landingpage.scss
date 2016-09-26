@@ -4,7 +4,11 @@
 
 .landing-details {
     margin-top: 5rem;
-    height: 70px;
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
 
     .event-details {
         &-lg {
