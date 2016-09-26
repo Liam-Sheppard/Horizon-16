@@ -4,9 +4,8 @@
 
 #socialmedia {
   position: fixed;
-  padding: 10px;
-  right: 38px;
-  top: 38px;
+  right: 48px;
+  top: 48px;
   color: rgba($white, .3);
   transition: color .3s;
   display: flex;
@@ -20,6 +19,7 @@
   a {
     margin-left: 20px;
     display: block;
+    font-size: 0;
   }
 
   svg {
@@ -34,6 +34,25 @@
   }
 
   &:hover {
-    opacity: 1;
+    opacity: .8;
+  }
+}
+
+#sponsors {
+  position: fixed;
+  display: flex;
+  right: 48px;
+  bottom: 48px;
+  font-size: 0;
+
+  img {
+    transition: opacity .3s;
+    opacity: .3;
+    height: 32px;
+    width: auto;
+  }
+
+  &:hover img {
+    opacity: .8;
   }
 }
