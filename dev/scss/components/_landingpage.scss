@@ -9,62 +9,51 @@
       display: block;
       clear: both;
     }
-
     .event-details {
-        &-lg {
-            font-weight: 500;
-            font-size: 1.125rem;
-            letter-spacing: 2px;
-            display: block;
-            margin: 13px 0 2px;
-        }
-
-        &-sm {
-            opacity: .7;
-            display: block;
-        }
-    }
-
-    .detailbox {
-        float: left;
-        margin-right: 60px;
-
-        img {
-            width: 60px;
-            display: block;
-            float: left;
-            margin-right: 20px;
-            opacity: .9;
-        }
-
-        &.fam {
-            img {
-                width: 68px;
-            }
-        }
-
-        &.time {
-            img {
-                margin-top: 7px;
-            }
-        }
-    }
-
-    .detail-text {
-      float: left;
-    }
-}
-
-@media (max-width: 1000px) {
-  .landing-details {
-    .detailbox {
-      float: none;
       display: block;
-      clear: both;
+        &-lg {
+          font-weight: 500;
+          font-size: 1.125rem;
+          letter-spacing: 2px;
+          display: block;
+          margin-bottom: 2px;
+        }
+        &-sm {
+          opacity: .7;
+        }
     }
 
-    img {
-      margin: 0 0 2rem 3rem;
+    .detailbox {
+      float: left;
+      margin-right: 4rem;
+        img {
+          width: 4rem;
+
+          display: inline-block;
+          margin-right: 20px;
+          vertical-align: middle;
+          opacity: .9;
+        }
+        @media screen and (max-width: 1350px){
+          img {
+            width: 3rem;
+          }
+        }
+        @media (max-width: 1000px) {
+          float: none;
+          display: block;
+          clear: both;
+          margin-bottom: 1.5rem;
+          padding-left: 5rem;
+          position: relative;
+          img {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; margin: auto;
+          }
+        }
     }
-  }
+    .detail-text {
+      display: inline-block;
+      vertical-align: middle;
+    }
 }
