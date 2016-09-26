@@ -3,7 +3,6 @@
 ==============================================================================*/
 
 .landing-details {
-    display: flex;
     margin-top: 5rem;
     height: 70px;
 
@@ -23,12 +22,13 @@
     }
 
     .detailbox {
-        display: flex;
+        float: left;
         margin-right: 60px;
 
         img {
             width: 60px;
             display: block;
+            float: left;
             margin-right: 20px;
             opacity: .9;
         }
@@ -45,4 +45,22 @@
             }
         }
     }
+
+    .detail-text {
+      float: left;
+    }
+}
+
+@media (max-width: 1000px) {
+  .landing-details {
+    .detailbox {
+      float: none;
+      display: block;
+      clear: both;
+    }
+
+    img {
+      margin: 0 0 2rem 3rem;
+    }
+  }
 }

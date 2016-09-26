@@ -5,6 +5,7 @@
     <title>Horizon / QUT Interactive + Visual Design Graduate Exhibition 2016</title>
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() ?>/horizon16/css/styles.min.css" media="screen" title="no title">
     <?php include 'php-partials/favicon.php';?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
     <body>
