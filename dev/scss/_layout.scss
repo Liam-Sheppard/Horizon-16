@@ -7,15 +7,20 @@
 }
 
 #main-content {
-    margin: 0 auto;
-    margin-top: 10rem;
-    margin-top: 17vh;
+    max-width: 65vw;
     max-width: 1100px;
-    position: relative;
-}
-
-@media (max-height: 950px) {
-  #main-content {
-    margin-top: 10vh;
-  }
+    margin: 0 auto;
+    @media screen and (min-width: 1361px) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      min-width: 1000px;
+    }
+    @media screen and (max-width: 1360px){
+      max-width: 900px;
+    }
+    @media (max-width: 1100px) {
+      padding-right: 0;
+    }
 }

@@ -52,39 +52,42 @@
 
         </header>
 
-        <main id="main-content">
+        <div class="container">
+          <main id="main-content">
 
-            <section class="content-block">
-                <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">QUT Interactive + Visual Design</span><span class="sub-heading">Graduate Exhibition 2016</span></h1>
-                <p class="paragraph-lg">A celebration of QUT’s graduating Interactive and Visual Design students. These fresh graduates are prepared for their ever-changing roles as creatives within the design industry.</p>
-                <p class="paragraph-lg">Please join us as they draw on their learning, creations and achievements to showcase a real world perspective of applied creativity.</p>
-            </section>
+              <section class="content-block">
+                  <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">QUT Interactive + Visual Design</span><span class="sub-heading">Graduate Exhibition 2016</span></h1>
+                  <p class="paragraph-lg">A celebration of QUT’s graduating Interactive and Visual Design students. These fresh graduates are prepared for their ever-changing roles as creatives within the design industry.</p>
+                  <p class="paragraph-lg">Please join us as they draw on their learning, creations and achievements to showcase a real world perspective of applied creativity.</p>
+              </section>
 
-            <div class='landing-details'>
-                <div class='time detailbox'>
-                    <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/icon-event.svg'></img>
-                    <div class='detail-text'>
-                        <span class='event-details-lg'>9th Nov 2016</span>
-                        <span class='event-details-sm'>7:30pm</span>
-                    </div>
-                </div>
-                <div class='place detailbox'>
-                    <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/icon-place.svg'></img>
-                    <div class='detail-text'>
-                        <span class='event-details-lg'>QUT Kelvin Grove</span>
-                        <span class='event-details-sm'>19 Musk Avenue - The Block</span>
-                    </div>
-                </div>
-                <div class='fam detailbox'>
-                    <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/icon-graduates.svg'></img>
-                    <div class='detail-text'>
-                        <span class='event-details-lg'>48 Graduates</span>
-                        <span class='event-details-sm'>Showcasing</span>
-                    </div>
-                </div>
-            </div>
+              <div class='landing-details'>
+                  <div class='time detailbox'>
+                      <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/icon-event.svg'></img>
+                      <div class='detail-text'>
+                          <span class='event-details-lg'>9th Nov 2016</span>
+                          <span class='event-details-sm'>7:30pm</span>
+                      </div>
+                  </div>
+                  <div class='place detailbox'>
+                      <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/icon-place.svg'></img>
+                      <div class='detail-text'>
+                          <span class='event-details-lg'>QUT Kelvin Grove</span>
+                          <span class='event-details-sm'>19 Musk Avenue - The Block</span>
+                      </div>
+                  </div>
+                  <div class='fam detailbox'>
+                      <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/icon-graduates.svg'></img>
+                      <div class='detail-text'>
+                          <span class='event-details-lg'>48 Graduates</span>
+                          <span class='event-details-sm'>Showcasing</span>
+                      </div>
+                  </div>
+              </div>
 
-        </main>
+          </main>
+        </div>
+
 
     </body>
 </html>
