@@ -7,6 +7,12 @@
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: .2rem;
+    color: $black;
+    text-shadow: -1px -1px 0 #0080ff, 1px -1px 0 #0080ff, -1px 1px 0 #0080ff, 1px 1px 0 #0080ff;
+    animation-name: textColourGlowCycle;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   .countdown-letters {
@@ -14,5 +20,30 @@
     font-weight: 500;
     opacity: .5;
     margin: 0 1rem 0 .2rem;
+  }
+}
+
+
+
+@keyframes textColourGlowCycle {
+  0% {
+    $colour: adjust-hue($colorCycle, 0);
+    text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
+  }
+  25% {
+    $colour: adjust-hue($colorCycle, 90);
+    text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
+  }
+  50% {
+    $colour: adjust-hue($colorCycle, 180);
+    text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
+  }
+  75% {
+    $colour: adjust-hue($colorCycle, 270);
+    text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
+  }
+  100% {
+    $colour: adjust-hue($colorCycle, 360);
+    text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
   }
 }
