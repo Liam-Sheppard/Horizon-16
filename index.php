@@ -36,9 +36,6 @@
         <div class="container">
           <main id="main-content">
 
-
-
-              <section class="content-block">
                   <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">Graduate Exhibition 2016</span><span class="sub-heading">QUT Interactive + Visual Design</span></h1>
 
                   <div id='countdown'>
@@ -72,11 +69,9 @@
                       </div>
                   </div>
 
-
+                  
                   <p class="paragraph-lg">A celebration of QUT’s graduating Interactive and Visual Design students. These fresh graduates are prepared for their ever-changing roles as creatives within the design industry.</p>
                   <p class="paragraph-lg">Please join us as they draw on their learning, creations and achievements to showcase a real world perspective of applied creativity.</p>
-              </section>
-
 
           </main>
         </div>
