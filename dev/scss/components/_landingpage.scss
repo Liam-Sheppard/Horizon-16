@@ -3,7 +3,7 @@
 ==============================================================================*/
 
 .landing-details {
-    margin-top: 5rem;
+    margin: 3rem 0;
     &:after {
       content: '';
       display: block;
@@ -25,10 +25,9 @@
 
     .detailbox {
       float: left;
-      margin-right: 4rem;
+      margin-right: 3rem;
         img {
           width: 4rem;
-
           display: inline-block;
           margin-right: 20px;
           vertical-align: middle;
@@ -36,7 +35,7 @@
         }
         @media screen and (max-width: 1350px){
           img {
-            width: 3rem;
+            width: 2.5rem;
           }
         }
         @media (max-width: 1000px) {

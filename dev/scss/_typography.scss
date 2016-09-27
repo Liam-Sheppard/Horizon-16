@@ -18,12 +18,12 @@ span,
 @mixin title(){
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 3vw;
+    letter-spacing: 2.5vw;
     margin-bottom: 1.5em;
 }
 h1, .h1 {
     @include title;
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     span {
         display: block;
     }
@@ -31,20 +31,23 @@ h1, .h1 {
 
 .primary-heading-text {
     display: block;
-    margin-bottom: 1.25em;
-
+    margin-bottom: 0.3em;
 }
 .sub-heading {
   text-transform: none;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.425em;
   line-height: 1.5;
   font: {
       size: 0.55em;
       weight: 500;
   }
+  & + & {
+    font-size: 0.35em;
+    letter-spacing: 0.65em;
+  }
 }
 .site-title {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 
