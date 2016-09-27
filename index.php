@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() ?>/horizon16/css/styles.min.css" media="screen" title="no title">
     <?php include 'php-partials/favicon.php';?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type='text/javascript' src='<?= get_stylesheet_directory_uri() ?>/horizon16/js/jquery-3.1.0.min.js'></script>
+    <script type='text/javascript' src='<?= get_stylesheet_directory_uri() ?>/horizon16/js/main.js'></script>
   </head>
 
     <body>
@@ -34,6 +36,13 @@
         <div class="container">
           <main id="main-content">
 
+              <div id='countdown'>
+                  <span class='countdown-numbers' id="countdownDays"></span><span class='countdown-letters'>D</span>
+                  <span class='countdown-numbers' id="countdownHours"></span><span class='countdown-letters'>H</span>
+                  <span class='countdown-numbers' id="countdownMinutes"></span><span class='countdown-letters'>M</span>
+                  <span class='countdown-numbers' id="countdownSeconds"></span><span class='countdown-letters'>S</span>
+              </div>
+
               <section class="content-block">
                   <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">QUT Interactive + Visual Design</span><span class="sub-heading">Graduate Exhibition 2016</span></h1>
                   <p class="paragraph-lg">A celebration of QUT’s graduating Interactive and Visual Design students. These fresh graduates are prepared for their ever-changing roles as creatives within the design industry.</p>
@@ -45,7 +54,7 @@
                       <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/icon-event.svg'></img>
                       <div class='detail-text'>
                           <span class='event-details-lg'>9th Nov 2016</span>
-                          <span class='event-details-sm'>7:30pm</span>
+                          <span class='event-details-sm'>6:00pm</span>
                       </div>
                   </div>
                   <div class='place detailbox'>
