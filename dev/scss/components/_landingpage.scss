@@ -25,18 +25,13 @@
 
     .detailbox {
       float: left;
-      margin-right: 3rem;
+      margin-right: 4rem;
         img {
-          width: 4rem;
+          width: 2.5rem;
           display: inline-block;
           margin-right: 20px;
           vertical-align: middle;
           opacity: .9;
-        }
-        @media screen and (max-width: 1350px){
-          img {
-            width: 2.5rem;
-          }
         }
         @media (max-width: 1000px) {
           float: none;

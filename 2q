@@ -1,0 +1,12 @@
+Adjust colour cycle on countdown, as well as size on iphone 5ish
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   dev/scss/_navigation.scss
+#	modified:   dev/scss/components/_countdown.scss
+#	modified:   horizon16/css/styles.min.css
+#	modified:   horizon16/maps/styles.min.css.map
+#
