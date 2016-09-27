@@ -17,33 +17,41 @@
 
   .countdown-letters {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 300;
     opacity: .5;
     margin: 0 1rem 0 .2rem;
+  }
+  @media screen and (max-width: 500px){
+    .countdown-numbers {
+      font-size: 2rem;
+    }
+    .countdown-letters {
+      margin: 0 0.5rem 0 .1rem;
+    }
   }
 }
 
 
-
+$cycleStartColor: $colorCycle3;
 @keyframes textColourGlowCycle {
   0% {
-    $colour: adjust-hue($colorCycle, 0);
+    $colour: adjust-hue($cycleStartColor, 0);
     text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
   }
   25% {
-    $colour: adjust-hue($colorCycle, 90);
+    $colour: adjust-hue($cycleStartColor, 90);
     text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
   }
   50% {
-    $colour: adjust-hue($colorCycle, 180);
+    $colour: adjust-hue($cycleStartColor, 180);
     text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
   }
   75% {
-    $colour: adjust-hue($colorCycle, 270);
+    $colour: adjust-hue($cycleStartColor, 270);
     text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
   }
   100% {
-    $colour: adjust-hue($colorCycle, 360);
+    $colour: adjust-hue($cycleStartColor, 360);
     text-shadow: -1px -1px 0  $colour, 1px -1px 0  $colour, -1px 1px 0  $colour, 1px 1px 0  $colour;
   }
 }
