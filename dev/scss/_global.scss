@@ -4,11 +4,11 @@ html, body {
     width: 100%;
     overflow-x: hidden;
     @include Aileron;
+    @media screen and (max-height: 768px){
+      font-size: 95%;
+    }
     @media screen and (max-width: $bp-tablet - 1px){
       font-size: 80%;
-    }
-    @media screen and (max-height: 760px){
-      font-size: 95%;
     }
 }
 
