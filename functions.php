@@ -29,6 +29,7 @@ function enqueue_scripts_and_styles(){
   wp_deregister_script('jquery');
 
   wp_enqueue_style('styles', get_stylesheet_directory_uri(). '/horizon16/css/styles.min.css', [], 1.0, 'screen');
+  wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/horizon16/js/modernizr.min.js', [], 1.0, false  );
   wp_enqueue_script('bundled-js', get_stylesheet_directory_uri() . '/horizon16/js/bundle.min.js', [], 1.0, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts_and_styles');

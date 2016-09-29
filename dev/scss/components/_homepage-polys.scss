@@ -22,7 +22,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     overflow: visible;
-    transition: all 4s 1s;
+    transition: opacity 4s 1s;
     .js & {
       opacity: 0;
     }

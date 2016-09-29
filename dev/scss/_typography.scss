@@ -53,7 +53,7 @@ h1, .h1 {
 }
 .site-title {
     margin-bottom: 3rem;
-    transition: all 1s $siteAnimationDelay;
+    transition: opacity 1s $siteAnimationDelay, transform 1s $siteAnimationDelay;
     .js & {
       opacity: 0;
       transform: translate(0, 2rem);

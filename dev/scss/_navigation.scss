@@ -93,6 +93,7 @@
     right: 3rem;
     bottom: 3rem;
     transition: opacity .3s;
+    @include simpleAnimateIn(0.3s);
 
   a {
     font-size: 0;
