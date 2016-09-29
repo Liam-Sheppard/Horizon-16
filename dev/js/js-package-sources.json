@@ -1,0 +1,6 @@
+{
+  "sources": [
+    "dev/js/modernizr.js",
+    "dev/js/main.js"
+  ]
+}

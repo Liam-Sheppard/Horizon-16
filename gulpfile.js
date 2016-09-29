@@ -6,8 +6,12 @@ var gulp =          require('gulp'),
     notify =        require('gulp-notify'),
     sourcemaps =    require('gulp-sourcemaps'),
     gutil =         require( 'gulp-util' ),
+    concat =        require('gulp-concat'),
+    jsmin =         require('gulp-jsmin'),
     distDirectory = 'horizon16';
     devDirectory =  'dev';
+
+const bundlejs = require('./' + devDirectory + '/js/js-package-sources.json');
 
 gulp.task('default', function() {
     gulp.watch('./' + devDirectory + '/scss/**/*.scss',['sass']);
@@ -23,4 +27,16 @@ gulp.task('sass', function () {
         .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('./' + distDirectory + '/css'))
         .pipe(notify({ message: 'Styles Successfully Compiled' }));
+});
+
+gulp.task('scripts', function() {
+  gulp.src(bundlejs.sources)
+    .pipe(sourcemaps.init())
+      .pipe(concat('bundle.js'))
+      .pipe(jsmin())
+      .pipe(rename({
+        suffix: '.min'
+      }))
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest('./' + distDirectory + '/js'));
 });

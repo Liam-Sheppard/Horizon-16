@@ -1,0 +1,21 @@
+{
+  "name": "HORIZON",
+  "description": "HORIZON DEVELOPMENT PACKAGES",
+  "main": "index.php",
+  "authors": [
+    "Liam Sheppard & Co."
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Liam-Sheppard/Horizon-16",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "parallax": "^2.1.3"
+  }
+}

@@ -1,4 +1,6 @@
 $(document).ready( function() {
+
+  
   function timeLeft(endtime) {
     var t = Date.parse(eventDate) - Date.parse(new Date());
     var seconds = Math.floor((t / 1000) % 60);
@@ -43,4 +45,6 @@ $(document).ready( function() {
   var t = Date.parse(eventDate) - Date.parse(new Date());
 
   startCountdown('countdown', eventDate);
+
+
 });
