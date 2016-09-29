@@ -7,6 +7,9 @@ html, body {
     @media screen and (max-width: $bp-tablet - 1px){
       font-size: 80%;
     }
+    @media screen and (max-height: 760px){
+      font-size: 95%;
+    }
 }
 
 body {

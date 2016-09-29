@@ -4,6 +4,8 @@
 
 .landing-details {
     margin: 3rem 0;
+    @include simpleAnimateIn(0.3s);
+
     &:after {
       content: '';
       display: block;
@@ -50,4 +52,16 @@
       display: inline-block;
       vertical-align: middle;
     }
+}
+
+#main-content {
+  [class^="paragraph"]{
+    &:nth-of-type(1){
+      @include simpleAnimateIn(0.4);
+    }
+    &:nth-of-type(2){
+      @include simpleAnimateIn(0.5);
+    }
+  }
+
 }

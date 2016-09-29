@@ -1,3 +1,15 @@
 .container {
   padding: 0 3rem;
 }
+
+@mixin simpleAnimateIn($delay) {
+  transition: opacity 1s $siteAnimationDelay + $delay, transform 1s $siteAnimationDelay + $delay;
+  .js & {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  .js .loaded & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

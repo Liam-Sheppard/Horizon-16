@@ -14,7 +14,8 @@ var gulp =          require('gulp'),
 const bundlejs = require('./' + devDirectory + '/js/js-package-sources.json');
 
 gulp.task('default', function() {
-    gulp.watch('./' + devDirectory + '/scss/**/*.scss',['sass']);
+    gulp.watch('./' + devDirectory + '/scss/**/*.scss', ['sass']);
+    gulp.watch('./' + devDirectory + '/js/**/*.js', ['scripts']);
 });
 
 gulp.task('sass', function () {

@@ -53,6 +53,15 @@ h1, .h1 {
 }
 .site-title {
     margin-bottom: 3rem;
+    transition: all 1s $siteAnimationDelay;
+    .js & {
+      opacity: 0;
+      transform: translate(0, 2rem);
+    }
+    .js .loaded & {
+      opacity: 1;
+      transform: translate(0,0);
+    }
 }
 
 
@@ -87,25 +96,4 @@ h6, .h6 {
 .paragraph-sm {
     @extend .paragraph;
     font-size: 0.8rem;
-}
-
-@media (max-height: 950px) {
-  .primary-heading-text {
-    font-size: 32px;
-    margin-bottom: 1em;
-  }
-
-  .sub-heading {
-    font-size: 14px;
-    letter-spacing: 0.2em;
-  }
-
-  .landing-details,
-  .site-title {
-    margin-bottom:3rem;
-  }
-
-  .paragraph-lg {
-    font-size: 14px;
-  }
 }

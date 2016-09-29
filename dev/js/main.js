@@ -1,6 +1,6 @@
 $(document).ready( function() {
 
-  
+
   function timeLeft(endtime) {
     var t = Date.parse(eventDate) - Date.parse(new Date());
     var seconds = Math.floor((t / 1000) % 60);
@@ -45,6 +45,26 @@ $(document).ready( function() {
   var t = Date.parse(eventDate) - Date.parse(new Date());
 
   startCountdown('countdown', eventDate);
+
+
+  function Polygon(svg){
+
+    this.arm = {
+      node: svg.find('polyline.a'),
+
+      points: [],
+    };
+    this.reflection = {
+      node: svg.find('polyline.b'),
+      points: [],
+    };
+
+    this.a.points = svg.find('polyline.a').attr('points').split(' ');
+    this.b.points = svg.find('polyline.b').attr('points').split(' ');
+    console.log(this.a.points);
+  }
+
+  $('body').addClass('loaded');
 
 
 });
