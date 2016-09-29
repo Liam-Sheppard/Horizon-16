@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
   <head>
-    <!-- TEST DEPLOY SCRIPT -->
+    <!-- TEST DEPLOY SCRIPT 2 -->
     <meta charset="utf-8">
     <title>Horizon / QUT Interactive + Visual Design Graduate Exhibition 2016</title>
     <?php partial('favicon'); ?>
