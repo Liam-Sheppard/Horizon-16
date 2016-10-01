@@ -65,6 +65,33 @@ $(document).ready( function() {
 
 
   // Parallax
-  $('.scene').parallax();
+  var scene = $('.scene').parallax();
+  function updateDepths(){
+    var w = $(document).innerWidth();
+    var lastState;
+
+    if(w > 768){
+      if(lastState != 'desktop'){
+        lastState = 'desktop';
+        console.log(lastState);
+
+        $('.layer').each(function(){
+          $(this).attr('data-depth', $(this).data('desktop-depth'));
+          scene.parallax('updateLayers');
+        });
+      }
+    } else {
+      if(lastState != 'mobile'){
+        lastState = 'mobile';
+        console.log(lastState);
+        $('.layer').each(function(){
+          $(this).attr('data-depth', $(this).data('mobile-depth'));
+          scene.parallax('updateLayers');
+        });
+      }
+    }
+  }
+  updateDepths();
+  $(window).resize(updateDepths);
 
 });

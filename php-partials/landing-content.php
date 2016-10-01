@@ -1,4 +1,4 @@
-<main id="main-content" class="layer" data-depth="0.025">
+<main id="main-content" class="layer">
 
         <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">Graduate Exhibition 2016</span><span class="sub-heading">QUT Interactive + Visual Design</span></h1>
 
