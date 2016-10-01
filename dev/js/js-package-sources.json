@@ -1,5 +1,6 @@
 {
   "sources": [
+    "dev/bower/parallax/deploy/jquery.parallax.min.js",
     "dev/js/main.js"
   ]
 }

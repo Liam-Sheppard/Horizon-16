@@ -17,9 +17,10 @@
 }
 
 #primary-navigation {
-    position: fixed;
+    position: absolute;
     left: 3rem;
     top: 3rem;
+    z-index: 10;
     &:after {
         content: '';
         display: block;

@@ -2,68 +2,172 @@
 # HOMEPAGE POLYS
 ==============================================================================*/
 
-.poly-background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
 
-  svg {
-    position: absolute;
-    height: auto;
-    fill:none;
-    stroke-linecap:square;
-    stroke-miterlimit:10;
-    opacity: .8;
-    min-width: 400px;
-    animation-duration: 15s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    overflow: visible;
-    transition: opacity 4s 1s;
-    .js & {
-      opacity: 0;
+.polygon {
+  position: absolute !important;
+  height: auto;
+  fill:none;
+  stroke-linecap:square;
+  stroke-miterlimit:10;
+  opacity: .8;
+  min-width: 400px;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  overflow: visible;
+  transition: opacity 4s 1s;
+  .js & {
+    opacity: 0;
+  }
+  .js .loaded & {
+    transition: opacity 0.5s 0s;
+    opacity: .75;
+    &:hover {
+      transition: opacity 0.5s 0s;
+      opacity: 1;
     }
-    .js .loaded & {
-      opacity: .8;
-    }
-    &:nth-of-type(1) {
-      top: 10%;
-      right: 0;
-      width: 700px;
-      width: 50vw;
-      animation-name: svg2ColorCycle;
-      transform: translate(40%, -50%);
-      .b {
-        opacity: .25;
-      }
-    }
-
-    &:nth-of-type(2) {
-      top: 30%;
-      left: -10%;
-      width: 700px;
-      width: 50vw;
-      animation-name: svg1ColorCycle;
-      .b {
-        opacity: .25;
-      }
-    }
-
-    &:nth-of-type(3) {
-      bottom: 0;
-      right: 15%;
-      width: 450px;
-      width: 25vw;
-      animation-name: svg3ColorCycle;
-      transform: translate(0, 20%);
+  }
+  &:nth-of-type(1) {
+    top: -10% !important;
+    right: 0 !important;
+    transform: translate(35%, 0%);
+    width: 700px;
+    width: 50vw;
+    svg {
+      animation: svg2ColorCycle 5s infinite;
+      width: 100%;
+      height: auto;
       .b {
         opacity: .25;
       }
     }
   }
+
+  &:nth-of-type(2) {
+    top: 30% !important;
+    left: -10% !important;
+    width: 700px;
+    width: 50vw;
+    svg {
+      animation: svg1ColorCycle 5s infinite;
+      width: 100%;
+      height: auto;
+      .b {
+        opacity: .25;
+      }
+    }
+  }
+
+  &:nth-of-type(3) {
+    bottom: 25%;
+    right: 15%;
+    transform: translate(0, -100%);
+    width: 450px;
+    width: 25vw;
+    svg {
+      animation: svg3ColorCycle 5s infinite;
+      width: 100%;
+      height: auto;
+      .b {
+        opacity: .25;
+      }
+    }
+  }
+}
+
+
+
+@keyframes flicker {
+	from {
+		opacity: 0.5;
+	}
+	4% {
+		opacity: 0.5;
+	}
+	6% {
+		opacity: 0.45;
+	}
+	8% {
+		opacity: 0.55;
+	}
+	10% {
+		opacity: 0.45;
+	}
+	11% {
+		opacity: 0.5;
+	}
+	12% {
+		opacity: 0.65;
+	}
+	14% {
+		opacity: 0.55;
+	}
+	16% {
+		opacity: 0.70;
+	}
+	17% {
+		opacity: 0.55;
+	}
+	19% {
+		opacity: 0.5;
+	}
+	20% {
+		opacity: 0.5;
+	}
+	24% {
+		opacity: 0.5;
+	}
+	26% {
+		opacity: 0.69;
+	}
+	28% {
+		opacity: 0.5;
+	}
+	38% {
+		opacity: 0.45;
+	}
+	40% {
+		opacity: 0.5;
+	}
+	42% {
+		opacity: 0.6;
+	}
+	44% {
+		opacity: 0.5;
+	}
+	46% {
+		opacity: 0.5;
+	}
+	56% {
+		opacity: 0.5;
+	}
+	58% {
+		opacity: 0.75;
+	}
+	60% {
+		opacity: 0.5;
+	}
+	68% {
+		opacity: 0.5;
+	}
+	70% {
+		opacity: .6; /*peak*/
+	}
+	72% {
+		opacity: 0.5;
+	}
+	93% {
+		opacity: 0.5;
+	}
+	95% {
+		opacity: .6; /*peak*/
+	}
+	97% {
+		opacity: 0.5;
+	}
+	to {
+		opacity: 0.5;
+	}
 }
 
 @keyframes svg1ColorCycle {

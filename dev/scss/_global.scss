@@ -1,8 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 html, body {
     background-color: $black;
     color: $white;
     width: 100%;
-    overflow-x: hidden;
     @include Aileron;
     @media screen and (max-height: 768px){
       font-size: 95%;
@@ -12,15 +14,13 @@ html, body {
     }
 }
 
+html {
+  overflow: hidden;
+}
 body {
     position: relative;
-    min-height: 100vh;
-    @media screen and (max-width: 1360px){
-      padding: 14rem 0 0;
-    }
-    @media screen and (max-width: 1000px){
-      padding: 10rem 0 0;
-    }
+    overflow-x: hidden;
+
 }
 
 ::selection {

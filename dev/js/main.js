@@ -48,17 +48,14 @@ $(document).ready( function() {
 
 
   function Polygon(svg){
-
     this.arm = {
       node: svg.find('polyline.a'),
-
       points: [],
     };
     this.reflection = {
       node: svg.find('polyline.b'),
       points: [],
     };
-
     this.a.points = svg.find('polyline.a').attr('points').split(' ');
     this.b.points = svg.find('polyline.b').attr('points').split(' ');
     console.log(this.a.points);
@@ -66,5 +63,8 @@ $(document).ready( function() {
 
   $('body').addClass('loaded');
 
+
+  // Parallax
+  $('.scene').parallax();
 
 });
