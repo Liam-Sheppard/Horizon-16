@@ -1,12 +1,26 @@
-<main id="main-content" class="layer">
+<div class="panel scene">
 
-        <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">Graduate Exhibition 2016</span><span class="sub-heading">QUT Interactive + Visual Design</span></h1>
+  <div class="polygon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571.56 365.46" class="polygon layer" data-desktop-depth="0.1" data-mobile-depth="1" data-depth="0.1"><polyline class="a" points="0.7 339.98 285.8 0.84 387.88 161.37 570.9 232.29"/><polyline class="b" points="570.9 232.29 401.17 310.46 354.43 364.94 0.7 339.98"/></svg>
+  </div>
+  <div class="polygon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 594.4 383.72" class="polygon layer" data-desktop-depth="0.3" data-mobile-depth="1" data-depth="0.3"><polyline class="a" points="0.37 216.58 254.51 0.7 594.03 383.22"/><polyline class="b" points="594.03 383.22 200 349.7 0.37 216.58"/></svg>
+  </div>
+  <div class="polygon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 594.3 409.59" class="polygon layer" data-desktop-depth="0.03" data-mobile-depth="1" data-depth="0.3"><polyline class="a" points="290.47 226.32 153.24 1.15 0.47 424.32"/><polyline class="b" points="0.47 424.32 238.47 311.82 290.47 226.32"/></svg>
+  </div>
 
-        <?php partial('countdown'); ?>
+  <main id="main-content" class="layer">
 
-        <?php partial('landing-details'); ?>
+          <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">Graduate Exhibition 2016</span><span class="sub-heading">QUT Interactive + Visual Design</span></h1>
 
-        <p class="paragraph-lg">A celebration of QUT’s graduating Interactive and Visual Design students. These fresh graduates are prepared for their ever-changing roles as creatives within the design industry.</p>
-        <p class="paragraph-lg">Please join us as they draw on their learning, creations and achievements to showcase a real world perspective of applied creativity.</p>
+          <?php partial('countdown'); ?>
 
-</main>
+          <?php partial('landing-details'); ?>
+
+          <p class="paragraph-lg">A celebration of QUT’s graduating Interactive and Visual Design students. These fresh graduates are prepared for their ever-changing roles as creatives within the design industry.</p>
+          <p class="paragraph-lg">Please join us as they draw on their learning, creations and achievements to showcase a real world perspective of applied creativity.</p>
+
+  </main>
+
+</div>

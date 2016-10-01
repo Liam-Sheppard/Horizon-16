@@ -41,6 +41,9 @@ h1, .h1 {
       size: 0.55em;
       weight: 500;
   }
+  @media screen and (min-width: $bp-tablet){
+    letter-spacing: 0.435em;
+  }
   @media screen and (max-width: $bp-tablet - 1px){
     font-size: 0.50em;
   }

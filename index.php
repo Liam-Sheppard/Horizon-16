@@ -4,16 +4,7 @@ get_header();
 
 partial('primary-navigation');
 
-?>
-
-<div class="panel scene">
-  <?php
-  partial('poly-background');
-  partial('landing-content');
-  ?>
-</div>
-
-<?php
+partial('landing-content'); 
 
 partial('social-media');
 

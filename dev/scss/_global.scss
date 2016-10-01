@@ -15,12 +15,10 @@ html, body {
 }
 
 html {
-  overflow: hidden;
 }
 body {
-    position: relative;
-    overflow-x: hidden;
-
+  overflow-x: hidden;
+  position: relative;
 }
 
 ::selection {
