@@ -24,8 +24,7 @@ span,
 h1, .h1 {
     @include title;
     font-size: 2.5rem;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,0.075);
+    color: $whiteWhite;
     span {
         display: block;
     }
