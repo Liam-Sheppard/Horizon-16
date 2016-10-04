@@ -69,25 +69,21 @@ $(document).ready( function() {
   function updateDepths(){
     var w = $(document).innerWidth();
     var lastState;
-
     if(w > 768){
       if(lastState != 'desktop'){
         lastState = 'desktop';
-        console.log(lastState);
-
         $('.layer').each(function(){
           $(this).attr('data-depth', $(this).data('desktop-depth'));
-          scene.parallax('scalar', 8, 8);
+          scene.parallax('scalar', 1, 4);
           scene.parallax('updateLayers');
         });
       }
     } else {
       if(lastState != 'mobile'){
         lastState = 'mobile';
-        console.log(lastState);
         $('.layer').each(function(){
           $(this).attr('data-depth', $(this).data('mobile-depth'));
-          scene.parallax('scalar', 50, 50);
+          scene.parallax('scalar', 20, 20);
           scene.parallax('updateLayers');
         });
       }

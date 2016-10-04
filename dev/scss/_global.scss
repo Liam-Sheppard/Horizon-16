@@ -2,9 +2,10 @@
   box-sizing: border-box;
 }
 html, body {
-    background-color: $black;
-    color: $white;
+    background-color: $white;
+    color: $black;
     width: 100%;
+    overflow-x: hidden;
     @include Aileron;
     @media screen and (max-height: 768px){
       font-size: 95%;
@@ -14,10 +15,7 @@ html, body {
     }
 }
 
-html {
-}
 body {
-  overflow-x: hidden;
   position: relative;
 }
 
