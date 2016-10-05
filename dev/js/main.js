@@ -74,7 +74,7 @@ $(document).ready( function() {
         lastState = 'desktop';
         $('.layer').each(function(){
           $(this).attr('data-depth', $(this).data('desktop-depth'));
-          scene.parallax('scalar', 1, 4);
+          scene.parallax('scalar', 1, 0);
           scene.parallax('updateLayers');
         });
       }
@@ -83,7 +83,7 @@ $(document).ready( function() {
         lastState = 'mobile';
         $('.layer').each(function(){
           $(this).attr('data-depth', $(this).data('mobile-depth'));
-          scene.parallax('scalar', 20, 20);
+          scene.parallax('scalar', 20, 0);
           scene.parallax('updateLayers');
         });
       }

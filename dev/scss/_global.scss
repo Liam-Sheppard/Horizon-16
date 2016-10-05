@@ -5,9 +5,9 @@ html {
   overflow-x: hidden;
 }
 html, body {
-    background-color: $actualWhite;
-    color: $charcoal;
-    // text-shadow: 0 0 10px rgba(0,0,0,.15);
+    background-color: $black;
+    color: $whiteWhite;
+    text-shadow: 0 0 10px rgba(0,0,0,.15);
     width: 100%;
     @include Aileron;
     @media screen and (max-height: 768px){
