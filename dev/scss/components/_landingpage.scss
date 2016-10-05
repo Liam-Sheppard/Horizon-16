@@ -23,6 +23,15 @@
   z-index: 3;
 }
 
+#hero-logo {
+  max-width: 600px;
+  width: 33vw;
+  min-width: 250px;
+  display: block;
+  margin: 0 auto;
+  transform: translateX(-10%);
+}
+
 .landing-details {
     margin: 3rem 0;
     @include simpleAnimateIn(0.3s);

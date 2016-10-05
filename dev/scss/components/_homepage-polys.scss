@@ -16,6 +16,9 @@
   overflow: visible;
   transition: opacity 4s 1s;
   z-index: 8;
+  &:hover {
+    animation: flicker 5s infinite
+  }
   svg {
     display: inline-block !important;
   }
@@ -73,7 +76,7 @@
 
 
 @keyframes flicker {
-	from {
+	0% {
 		opacity: 0.5;
 	}
 	4% {
@@ -119,13 +122,13 @@
 		opacity: 0.5;
 	}
 	38% {
-		opacity: 0.45;
+		opacity: 0.465;
 	}
 	40% {
 		opacity: 0.5;
 	}
 	42% {
-		opacity: 0.6;
+		opacity: 0.67;
 	}
 	44% {
 		opacity: 0.5;
@@ -137,7 +140,7 @@
 		opacity: 0.5;
 	}
 	58% {
-		opacity: 0.75;
+		opacity: 1;
 	}
 	60% {
 		opacity: 0.5;
@@ -146,7 +149,7 @@
 		opacity: 0.5;
 	}
 	70% {
-		opacity: .6; /*peak*/
+		opacity: 1; /*peak*/
 	}
 	72% {
 		opacity: 0.5;
@@ -160,7 +163,7 @@
 	97% {
 		opacity: 0.5;
 	}
-	to {
+	100% {
 		opacity: 0.5;
 	}
 }

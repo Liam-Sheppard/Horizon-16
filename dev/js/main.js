@@ -74,7 +74,7 @@ $(document).ready( function() {
         lastState = 'desktop';
         $('.layer').each(function(){
           $(this).attr('data-depth', $(this).data('desktop-depth'));
-          scene.parallax('scalar', 1, 0);
+          scene.parallax('scalar', 2, 0);
           scene.parallax('updateLayers');
         });
       }
@@ -91,5 +91,14 @@ $(document).ready( function() {
   }
   updateDepths();
   $(window).resize(updateDepths);
+
+  // Hide vide on mobile
+  function hideVideoOnMobile(){
+    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if(iOS){
+      $('video').hide();
+    }
+  }
+  hideVideoOnMobile();
 
 });
