@@ -1,12 +1,14 @@
 * {
   box-sizing: border-box;
 }
+html {
+  overflow-x: hidden;
+}
 html, body {
-    background-color: $white;
-    color: $whiteWhite;
-    text-shadow: 0 0 10px rgba(0,0,0,.15);
+    background-color: $actualWhite;
+    color: $white;
+    // text-shadow: 0 0 10px rgba(0,0,0,.15);
     width: 100%;
-    overflow-x: hidden;
     @include Aileron;
     @media screen and (max-height: 768px){
       font-size: 95%;
