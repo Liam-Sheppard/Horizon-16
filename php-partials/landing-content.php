@@ -1,4 +1,5 @@
-<div class="panel scene">
+<div class="panel panel--landing scene">
+  <video src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video.mp4" autoplay loop></video>
 
   <div class="polygon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571.56 365.46" class="polygon layer" data-desktop-depth="0.1" data-mobile-depth="1" data-depth="0.1"><polyline class="a" points="0.7 339.98 285.8 0.84 387.88 161.37 570.9 232.29"/><polyline class="b" points="570.9 232.29 401.17 310.46 354.43 364.94 0.7 339.98"/></svg>
@@ -11,16 +12,8 @@
   </div>
 
   <main id="main-content" class="layer">
-
-          <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">Graduate Exhibition 2016</span><span class="sub-heading">QUT Interactive + Visual Design</span></h1>
-
-          <?php // partial('countdown'); ?>
-
-          <?php partial('landing-details'); ?>
-
-          <p class="paragraph-lg">A celebration of QUT’s graduating Interactive and Visual Design students. These fresh graduates are prepared for their ever-changing roles as creatives within the design industry.</p>
-          <p class="paragraph-lg">Please join us as they draw on their learning, creations and achievements to showcase a real world perspective of applied creativity.</p>
-
+    <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">Graduate Exhibition 2016</span><span class="sub-heading">QUT Interactive + Visual Design</span></h1>
+    <?php partial('landing-details'); ?>
   </main>
 
 </div>

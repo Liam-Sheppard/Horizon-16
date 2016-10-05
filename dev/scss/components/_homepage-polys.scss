@@ -10,12 +10,12 @@
   stroke-linecap:square;
   stroke-miterlimit:10;
   opacity: .8;
-  min-width: 400px;
   animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   overflow: visible;
   transition: opacity 4s 1s;
+  z-index: 8;
   svg {
     display: inline-block !important;
   }
@@ -34,8 +34,7 @@
     top: -10% !important;
     right: 0 !important;
     transform: translate(35%, 0%);
-    width: 700px;
-    width: 50vw;
+    width: 40vw;
     svg {
       animation: svg2ColorCycle 5s infinite;
       .b {
@@ -45,11 +44,10 @@
   }
 
   &:nth-of-type(2) {
-    top: 30% !important;
-    left: -10% !important;
+    top: 50% !important;
+    left: -5% !important;
     svg {
-      width: 700px;
-      width: 50vw;
+      width: 30vw;
       animation: svg1ColorCycle 5s infinite;
       .b {
         opacity: .25;
