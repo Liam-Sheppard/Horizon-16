@@ -8,11 +8,11 @@
     display: block;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: linear-gradient(transparentize(#000, 0.1), $black);
+    background: linear-gradient(transparentize($black, 0.15), $black);
     z-index: 5;
   }
 }
-.panel video {
+#heroVideo {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
@@ -20,7 +20,7 @@
   min-width: 100%;
   min-height: 100%;
   opacity: 1;
-  z-index: 3;
+  z-index: 1;
 }
 
 #hero-logo {

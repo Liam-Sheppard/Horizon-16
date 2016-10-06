@@ -9,8 +9,13 @@
 */ ?>
 
 
+
 <div class="panel panel--landing scene">
-  <video src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video.mp4" autoplay loop></video>
+  <video id="heroVideo" autoplay loop controls>
+    <source src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video_v2.webm" type="video/webm">
+    <source src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video_v2.mp4" type="video/mp4">
+  </video>
+
   <div class="polygon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571.56 365.46" class="polygon layer" data-desktop-depth="0.1" data-mobile-depth="1" data-depth="0.1"><polyline class="a" points="0.7 339.98 285.8 0.84 387.88 161.37 570.9 232.29"/><polyline class="b" points="570.9 232.29 401.17 310.46 354.43 364.94 0.7 339.98"/></svg>
   </div>
