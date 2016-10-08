@@ -10,7 +10,7 @@
 
 
 
-<div class="panel panel--landing scene">
+<div class="panel panel--landing">
   <video id="heroVideo" autoplay loop controls>
     <source src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video_v2.webm" type="video/webm">
     <source src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video_v2.mp4" type="video/mp4">
@@ -31,4 +31,18 @@
     <?php partial('landing-details'); ?>
   </div>
 
+</div>
+
+<div class="panel panel--fam-strips">
+  <div class='strip-container'>
+    <div class='strip'>
+
+    </div>
+    <div class='strip'>
+
+    </div>
+    <div class='strip'>
+
+    </div>
+  </div>
 </div>

@@ -3,7 +3,8 @@
 ==============================================================================*/
 .panel--landing {
   overflow: hidden;
-  &:after {
+
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -36,7 +37,7 @@
     margin: 3rem 0;
     @include simpleAnimateIn(0.3s);
 
-    &:after {
+    &::after {
       content: '';
       display: block;
       clear: both;
@@ -94,4 +95,21 @@
     }
   }
 
+}
+
+
+.strip-container {
+  margin-top: 5vh;
+  height: 75vh;
+  width: 99%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+
+  .strip {
+    width: 100%;
+    height: calc( 33.33% - 3rem );
+    background: $actualWhite;
+    margin: 3rem 0 0;
+  }
 }
