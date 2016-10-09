@@ -4,6 +4,14 @@
 .panel--landing {
   height: 100vh;
   padding: 5rem;
+
+    &:before {
+      content: '';
+      height: 100%;
+      display: inline-block;
+      width: 0;
+      vertical-align: middle;
+    }
   &:after {
     content: '';
     display: block;

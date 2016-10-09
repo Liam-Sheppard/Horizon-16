@@ -12,7 +12,3 @@
     <span class="horizon-rule horizon-rule--top-end"></span>
   </div>
 </div>
-
-<div class="panel-bridge">
-
-</div>

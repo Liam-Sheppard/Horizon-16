@@ -1,4 +1,13 @@
+<div class="panel-bridge">
+
+</div>
+
 <div class="panel panel--fam-strips">
+
+  <span class="horizon-rule horizon-rule--bottom-end"></span>
+
+  <h2>Meet the talent</h2>
+
   <ul class='strip-container'>
     <li class='single-grad'>
       <a href='#' class='grad-container'>
