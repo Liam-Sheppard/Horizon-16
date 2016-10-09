@@ -101,4 +101,24 @@ $(document).ready( function() {
   }
   hideVideoOnMobile();
 
+  function checkIfSeen($collection){
+    var scroll = $(document).scrollTop();
+    var wh = $(window).innerHeight();
+    $.each($collection, function(){
+      var $this = $(this);
+      var elTop = $this.offset().top;
+      var elBottom = elTop + $this.outerHeight();
+      if( (elTop >= scroll && elTop <= scroll + wh ) || (elBottom >= scroll && elBottom <= scroll + wh) ){
+        $this.addClass('seen');
+      }
+    });
+    return $collection;
+  }
+
+  var $scrollBasedAnimates = $('.panel-bridge, .horizon-rule, h2');
+  checkIfSeen($scrollBasedAnimates);
+  $(window).scroll(function(){
+    checkIfSeen($scrollBasedAnimates);
+  })
+
 });

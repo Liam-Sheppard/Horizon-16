@@ -3,6 +3,9 @@
 ==============================================================================*/
 .panel--landing {
   overflow: hidden;
+  height: 100vh;
+  padding: 5rem;
+
   &:after {
     content: '';
     display: block;

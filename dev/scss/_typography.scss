@@ -11,6 +11,7 @@ span,
     }
     margin: 0;
     padding: 0;
+    line-height: 1.5;
 }
 
 
@@ -19,25 +20,18 @@ span,
 @mixin title(){
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2.5vw;
+    letter-spacing: 0.3em;
     margin-bottom: 1.5em;
 }
-h1, .h1 {
-    @include title;
-    font-size: 2.5rem;
-    // color: $whiteWhite;
-    span {
-        display: block;
-    }
-}
+
 
 .primary-heading-text {
     display: block;
     margin-bottom: 0.3em;
+    letter-spacing: 2.5vw;
 }
 .sub-heading {
   letter-spacing: 0.175em;
-  line-height: 1.5;
   font: {
       size: 0.55em;
       weight: 500;
@@ -69,9 +63,25 @@ h1, .h1 {
     }
 }
 
-
+h1, .h1 {
+    @include title;
+    font-size: 2.5rem;
+    // color: $whiteWhite;
+    span {
+        display: block;
+    }
+}
 h2, .h2 {
     @include title;
+    margin: 3em 0;
+    transition: opacity 2s;
+    .js & {
+      opacity: 0;
+    }
+    .js &.seen {
+      opacity: 1;
+    }
+
 }
 h3, .h3 {
     @include title;
@@ -85,7 +95,6 @@ h5, .h5 {
 h6, .h6 {
     @include title;
 }
-
 
 
 .paragraph {

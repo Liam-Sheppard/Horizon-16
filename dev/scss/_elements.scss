@@ -1,0 +1,65 @@
+.horizon-rule {
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
+  height: 1px;
+  background: $actualWhite;
+  width: 66%;
+  opacity: 0.1;
+  transition: width 2s;
+  &--bottom-end {
+    margin-bottom: 5rem;
+    @media screen and (max-width: 600px){
+      margin-bottom: 3rem;
+    }
+  }
+  &--top-end {
+    margin-top: 5rem;
+    @media screen and (max-width: 600px){
+      margin-top: 3rem;
+    }
+  }
+  .js & {
+    width: 0;
+  }
+  .js .loaded &.seen {
+    width: 66%;
+  }
+}
+
+.panel-bridge {
+  height: 0;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  z-index: 10;
+  opacity: 0.1;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 10rem;
+    width: 1px;
+    margin: 0 auto;
+    background: $actualWhite;
+    transform: translateY(-5rem);
+    transition: height 2s;
+    @media screen and (max-width: 600px){
+      height: 4rem;
+      transform: translateY(-2rem);
+    }
+  }
+  .js &::before {
+    height: 0;
+  }
+  .js &.seen::before {
+    height: 10rem;
+    @media screen and (max-width: 600px){
+      height: 4rem;
+      transform: translateY(-2rem);
+    }
+  }
+
+}
