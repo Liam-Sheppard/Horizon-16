@@ -53,39 +53,33 @@
   position: fixed;
   right: 3rem;
   top: 3rem;
-  color: rgba($white, .3);
-  transition: color .3s;
-  display: none;
-  span {
+  color: $actualWhite;
+  z-index: 10;
+  a {
+    margin-left: 20px;
     line-height: 24px;
-    display: block;
-    float: left;
+    display: inline-block;
     height: 24px;
     font-weight: 500;
     letter-spacing: 1px;
-  }
-
-  a {
-    margin-left: 20px;
-    display: block;
-    float: left;
-    font-size: 0;
-  }
-
-  svg {
-    fill: rgba($white, .3);
-    width: 24px;
-    height: auto;
-    transition: fill .3s;
-
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.3;
+    transition: opacity .6s;
+    span {
+      text-indent: -9999px;
+      font-size: 0;
+    }
+    i {
+      font-size: 1.5em;
+    }
     &:hover {
-      fill: rgba($white, .8);
+      opacity: .8;
     }
   }
 
-  &:hover {
-    opacity: .8;
-  }
+
+
 }
 
 #sponsors {

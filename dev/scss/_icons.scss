@@ -1,0 +1,16 @@
+// Icon Font
+@font-face {
+  font-family: 'Icons';
+  src: url('../fonts/icon-font.eot'),
+       url('../fonts/icon-font.woff') format('woff'),
+       url('../fonts/icon-font.ttf')  format('truetype');
+}
+@mixin icon-font(){
+  font-family: 'Icons', sans-serif;
+}
+[class^="icon"]:after {
+  @include icon-font();
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}

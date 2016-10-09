@@ -33,5 +33,3 @@ function enqueue_scripts_and_styles(){
   wp_enqueue_script('bundled-js', get_stylesheet_directory_uri() . '/horizon16/js/bundle.min.js', [], 1.0, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts_and_styles');
-
-include_once(get_stylesheet_directory() . '/includes/Instagram.php');
