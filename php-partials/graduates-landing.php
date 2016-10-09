@@ -6,8 +6,8 @@
 
   <h2>Meet the talent</h2>
 
-  <ul class='strip-container'>
-    <li class='single-grad'>
+  <ul class='strip-container' id='homepageFamJS'>
+    <!-- <li class='single-grad'>
       <a href='javascript:void(0)' class='grad-container'>
         <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/temp-grad-1.png'></img>
         <span class='grad-name'>Mark Lappin</span>
@@ -32,6 +32,7 @@
         <img src='<?= get_stylesheet_directory_uri() ?>/horizon16/images/temp-grad-1.png'></img>
         <span class='grad-name'>Mark Lappin</span>
       </a>
-    </li>
+    </li> -->
   </ul>
+  <div id='fam-reshuffle'>Reshuffle<br><span>( There's 46 of us! )</span></div>
 </div>

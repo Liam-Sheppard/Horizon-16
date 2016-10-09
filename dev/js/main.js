@@ -128,7 +128,7 @@ $(document).ready( function() {
         gradUnique,
         newGrad,
         i = 0,
-        numberOfGrads = 25;
+        numberOfGrads = 24;
     $.ajax({
       type: 'GET',
       dataType: "json",
