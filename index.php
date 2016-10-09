@@ -10,8 +10,6 @@ partial('social-media');
 
 partial('instagram-feed');
 
-partial('graduates');
-
-partial('sponsors');
+partial('graduates-landing');
 
 get_footer();

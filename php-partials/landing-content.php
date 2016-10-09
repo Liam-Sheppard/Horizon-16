@@ -18,5 +18,4 @@
     <h1 class="site-title"><span class="primary-heading-text">Horizon</span><span class="sub-heading">Graduate Exhibition 2016</span><span class="sub-heading">QUT Interactive + Visual Design</span></h1>
     <?php partial('landing-details'); ?>
   </div>
-
 </div>
