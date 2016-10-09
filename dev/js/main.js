@@ -119,6 +119,84 @@ $(document).ready( function() {
   checkIfSeen($scrollBasedAnimates);
   $(window).scroll(function(){
     checkIfSeen($scrollBasedAnimates);
-  })
+  });
 
+    // Homepage Graduates
+    var $famID = $('#homepageFamJS'),
+        imagePath = '/wordpress/wp-content/themes/Horizon-16/horizon16/images/graduate-images-600x400/',
+        prevGrads,
+        gradUnique,
+        newGrad,
+        i = 0,
+        numberOfGrads = 25;
+    $.ajax({
+      type: 'GET',
+      dataType: "json",
+      url: '/wordpress/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+      success: function(objJSON) {
+        var currentGrads = [];
+        for (i; i < 6; i++) {
+          gradUnique = false;
+          while (!gradUnique) {
+            newGrad = gradRandom(0, numberOfGrads - 1);
+            gradUnique = checkDupes(newGrad, currentGrads);
+          }
+          currentGrads[i] = newGrad;
+          var grad = objJSON[currentGrads[i]];
+          $famID.append("<li class='single-grad'><a href='javascript:void(0)' class='grad-container'><img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span></a></li>");
+          prevGrads = currentGrads;
+        }
+      }
+    });
+
+    // Reshuffle Graduates
+    $('#fam-reshuffle').click(function() {
+      console.log('click');
+      $('.grad-container img').fadeTo(300, 0);
+      $('.grad-container .grad-name').fadeTo(300, 0).promise().done(function() {
+        $.ajax({
+          type: 'GET',
+          dataType: "json",
+          url: '/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+          success: function(objJSON) {
+            var currentGrads = [];
+            var gradNew;
+            i = 0;
+            for (i; i < 6; i++) {
+              gradUnique = false;
+              gradNew = false;
+              while (!gradUnique  && !gradNew) {
+                newGrad = gradRandom(0, numberOfGrads - 1);
+                gradUnique = checkDupes(newGrad, currentGrads);
+                gradNew = checkDupes(newGrad, prevGrads);
+              }
+              currentGrads[i] = newGrad;
+              var grad = objJSON[currentGrads[i]];
+              console.log('test2');
+              $('#homepageFamJS').children(".single-grad:nth-of-type(" + i +")").children().html("<img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span>");
+              prevGrads = currentGrads;
+            }
+          }
+        });
+      });
+    });
+
+    function gradRandom(min, max){
+      return Math.floor((Math.random() * max) + min);
+    }
+
+    /**
+    Ensures that no graduate gets displayed twice.
+    Returns false if grad is repeated.
+    Returns true if grad is unique.
+    */
+    function checkDupes(n, currentGrads){
+      var i = 0;
+      for ( i; i < currentGrads.length; i++ ) {
+        if ( currentGrads[i] == n ) {
+          return false;
+        }
+      }
+      return true;
+    }
 });

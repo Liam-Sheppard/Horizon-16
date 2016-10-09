@@ -112,18 +112,24 @@
 
 
 .strip-container {
-  margin-top: 5vh;
-  height: 75vh;
+  // margin-top: 5vh;
+  // height: 75vh;
   width: 99%;
   display: inline-block;
   position: relative;
   vertical-align: middle;
+  font-size: 0;
+  margin: 3rem 0 0;
+  background: $actualWhite;
 
   .single-grad {
     display: inline-block;
     width: 20%;
-    margin: 3rem 0 0;
     list-style: none;
+
+    &:nth-of-type(6){
+      display: none;
+    }
 
     .grad-container {
       display: block;
@@ -154,6 +160,14 @@
         opacity: .3;
       }
 
+      .grad-name,
+      img {
+        animation-name: gradFadeIn;
+        animation-duration: .3s;
+        animation-fill-mode: backwards;
+        animation-iteration-count: 1;
+      }
+
       &:hover {
         .grad-name {
           opacity: 1;
@@ -166,5 +180,36 @@
         height: auto;
       }
     }
+  }
+}
+
+#fam-reshuffle {
+  text-transform: uppercase;
+  padding: 15px 40px;
+  font-weight: 500;
+  width: 40rem;
+  margin: 0 auto;
+  opacity: .3;
+  color: $actualWhite;
+  letter-spacing: .3rem;
+  transition: opacity .2s;
+  cursor: pointer;
+
+  span {
+    font-size: 70%;
+    opacity: .4;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@keyframes gradFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
