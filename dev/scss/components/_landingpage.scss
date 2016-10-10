@@ -245,6 +245,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .strip-container .single-grad {
+    margin-bottom: 2rem;
+  }
+}
+
 @media (max-width: 360px) {
 
   #fam-reshuffle {
