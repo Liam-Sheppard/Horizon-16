@@ -4,6 +4,7 @@
 .panel--landing {
   height: 100vh;
   padding: 5rem;
+  overflow: hidden; // This causes bottom polygon (3) to be cut off.
 
     &:before {
       content: '';
@@ -225,6 +226,10 @@
       display: inline-block;
     }
   }
+
+  #fam-reshuffle {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 950px) {
@@ -237,5 +242,16 @@
     font-size: 1.7rem;
     border: 1px solid rgba($actualWhite, .7);
     width: auto;
+  }
+}
+
+@media (max-width: 360px) {
+
+  #fam-reshuffle {
+    font-size: 1.4rem;
+  }
+
+  .strip-container .single-grad .grad-container .grad-name {
+    font-size: .9rem;
   }
 }

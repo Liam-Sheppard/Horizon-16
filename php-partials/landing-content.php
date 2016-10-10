@@ -1,4 +1,4 @@
-<div class="panel panel--landing scene">
+<div class="panel panel--landing">
 
 
   <div class="polygon">
