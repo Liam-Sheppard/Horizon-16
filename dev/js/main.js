@@ -123,7 +123,7 @@ $(document).ready( function() {
 
     // Homepage Graduates
     var $famID = $('#homepageFamJS'),
-        imagePath = '/wordpress/wp-content/themes/Horizon-16/horizon16/images/graduate-images-600x400/',
+        imagePath = '/wp-content/themes/Horizon-16/horizon16/images/graduate-images-600x400/',
         prevGrads,
         gradUnique,
         newGrad,
@@ -132,7 +132,7 @@ $(document).ready( function() {
     $.ajax({
       type: 'GET',
       dataType: "json",
-      url: '/wordpress/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+      url: '/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
       success: function(objJSON) {
         var currentGrads = [];
         for (i; i < 6; i++) {
@@ -156,7 +156,7 @@ $(document).ready( function() {
         $.ajax({
           type: 'GET',
           dataType: "json",
-          url: '/wordpress/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+          url: '/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
           success: function(objJSON) {
             var currentGrads = [];
             var gradNew;
@@ -177,7 +177,7 @@ $(document).ready( function() {
               currentGrads[i] = newGrad;
 
               var grad = objJSON[currentGrads[i]];
-              $('#homepageFamJS').children(".single-grad:nth-of-type(" + i +")").children().html("<img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span>");
+              $('#homepageFamJS').children(".single-grad:nth-of-type(" + ( i + 1 ) + ")").children().html("<img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span>");
             }
             console.log(currentGrads);
             prevGrads = currentGrads;
