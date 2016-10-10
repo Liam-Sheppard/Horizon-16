@@ -123,7 +123,7 @@ $(document).ready( function() {
 
     // Homepage Graduates
     var $famID = $('#homepageFamJS'),
-        imagePath = '/wp-content/themes/Horizon-16/horizon16/images/graduate-images-600x400/',
+        imagePath = '/wordpress/wp-content/themes/Horizon-16/horizon16/images/graduate-images-600x400/',
         prevGrads,
         gradUnique,
         newGrad,
@@ -132,7 +132,7 @@ $(document).ready( function() {
     $.ajax({
       type: 'GET',
       dataType: "json",
-      url: '/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+      url: '/wordpress/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
       success: function(objJSON) {
         var currentGrads = [];
         for (i; i < 6; i++) {
@@ -151,31 +151,36 @@ $(document).ready( function() {
 
     // Reshuffle Graduates
     $('#fam-reshuffle').click(function() {
-      console.log('click');
       $('.grad-container img').fadeTo(300, 0);
       $('.grad-container .grad-name').fadeTo(300, 0).promise().done(function() {
         $.ajax({
           type: 'GET',
           dataType: "json",
-          url: '/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+          url: '/wordpress/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
           success: function(objJSON) {
             var currentGrads = [];
             var gradNew;
             i = 0;
             for (i; i < 6; i++) {
+              var loop = true;
               gradUnique = false;
               gradNew = false;
-              while (!gradUnique  && !gradNew) {
+
+              while ( loop ) {
                 newGrad = gradRandom(0, numberOfGrads - 1);
                 gradUnique = checkDupes(newGrad, currentGrads);
                 gradNew = checkDupes(newGrad, prevGrads);
+                if ( gradUnique && gradNew ) {
+                  loop = false;
+                }
               }
               currentGrads[i] = newGrad;
+
               var grad = objJSON[currentGrads[i]];
-              console.log('test2');
               $('#homepageFamJS').children(".single-grad:nth-of-type(" + i +")").children().html("<img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span>");
-              prevGrads = currentGrads;
             }
+            console.log(currentGrads);
+            prevGrads = currentGrads;
           }
         });
       });
@@ -194,6 +199,7 @@ $(document).ready( function() {
       var i = 0;
       for ( i; i < currentGrads.length; i++ ) {
         if ( currentGrads[i] == n ) {
+          console.log('conflict');
           return false;
         }
       }
