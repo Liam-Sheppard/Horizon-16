@@ -37,3 +37,38 @@ function enqueue_scripts_and_styles(){
   wp_enqueue_script('bundled-js');
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts_and_styles');
+
+function enable_thumbs(){
+  add_theme_support( 'post-thumbnails' );
+}
+add_action( 'init', 'enable_thumbs' );
+
+
+function register_works(){
+  $args = [
+    'label' => 'Works',
+    'description' => 'A piece of design work created by the author.',
+    'public' => true,
+    'has_archive' => false,
+    'menu_icon' => 'dashicons-format-gallery',
+    'supports' => [
+      'title', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes'
+    ],
+
+  ];
+  register_post_type('work', $args);
+}
+add_action( 'init', 'register_works' );
+
+function hide_posts_admin_menu(){
+  remove_menu_page('edit.php');
+}
+add_action('admin_menu', 'hide_posts_admin_menu');
+
+
+function hide_posts_admin_bar()
+{
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_node( 'new-post' );
+}
+add_action( 'admin_bar_menu', 'hide_posts_admin_bar' );
