@@ -51,14 +51,12 @@ body.home .j-overlay {
   padding-top: 0;
 
   .j-post-overlay.juicer-feed {
-    min-width: 1100px;
+    @include Aileron;
   }
 
   .j-poster h3 {
-    max-width: 100%;
     opacity: .8;
     transition: opacity .2s;
-    margin: 0 1rem;
 
     &:hover {
       opacity: 1;
@@ -74,12 +72,6 @@ body.home .j-overlay {
   .j-share,
   .j-navigate {
     display: none !important;
-  }
-
-  .j-post-overlay.juicer-feed .vine-wrapper, .j-post-overlay.juicer-feed .instagram-wrapper, .j-post-overlay.juicer-feed .twitter-wrapper, .j-post-overlay.juicer-feed .video-wrapper,
-  .j-post-overlay.juicer-feed .image {
-    min-width: 450px;
-    line-height: 0;
   }
 
   .juicer-feed .j-meta a:hover {
@@ -123,9 +115,9 @@ body.home .j-overlay {
     left: 50%;
     transform: translate(-50%,-50%);
     width: auto !important;
-    overflow: hidden;
+    // overflow: hidden;
     color: $black;
-    max-width: 80vw;
+    max-width: 95vw;
   }
 
   .j-overlay-text.image-post {
@@ -145,41 +137,21 @@ body.home .j-overlay {
   }
 }
 
-@media (max-width: 1500px) {
-  body.home .j-overlay {
-    .j-post-overlay.juicer-feed {
-      min-width: 0;
-    }
-
-    .j-post-overlay.juicer-feed .vine-wrapper, .j-post-overlay.juicer-feed .instagram-wrapper, .j-post-overlay.juicer-feed .twitter-wrapper, .j-post-overlay.juicer-feed .video-wrapper,
-    .j-post-overlay.juicer-feed .image {
-      min-width: 100%;
-      float: none;
-    }
+@media (max-width: 1200px) {
+  body.home .j-overlay .j-bottom {
+    position: inherit;
   }
 }
 
-@media (max-width: 1000px) {
-  body.home .j-overlay {
-    .j-post-overlay.juicer-feed .vine-wrapper, .j-post-overlay.juicer-feed .instagram-wrapper, .j-post-overlay.juicer-feed .twitter-wrapper, .j-post-overlay.juicer-feed .video-wrapper,
-    .j-post-overlay.juicer-feed .image {
-      min-width: 70vw;
-    }
+@media (max-width: 800px) {
+  body.home .j-post-overlay.juicer-feed.loaded {
+      min-width: 60vw;
+      max-width: 80vw;
   }
 }
 
-
-@media (max-width: 650px) {
-  body.home .j-overlay {
-    .j-post-overlay.juicer-feed .vine-wrapper, .j-post-overlay.juicer-feed .instagram-wrapper, .j-post-overlay.juicer-feed .twitter-wrapper, .j-post-overlay.juicer-feed .video-wrapper,
-    .j-post-overlay.juicer-feed .image {
+@media (max-width: 600px) {
+  body.home .j-post-overlay.juicer-feed.loaded {
       min-width: 80vw;
-      float: none;
-    }
-
-    .j-poster h3 {
-      max-width: 70%;
-      margin: 6px .5rem;
-    }
   }
 }
