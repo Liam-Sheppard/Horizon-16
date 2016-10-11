@@ -5,6 +5,11 @@
   .feed-item {
     transition: filter 0.6s;
     filter: grayscale(100%);
+    animation-name: gradFadeIn;
+    animation-duration: .5s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: 1;
+    animation-delay: .5s;
     &:hover {
       filter: none;
     }
@@ -19,7 +24,138 @@
     background: none !important;
   }
   .juicer-feed.living-wall .j-text:before {
-    text-shadow: 0 0 10px rgba(0,0,0,0.1);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1), inset 0 0 10px rgba(0,0,0,0.1);
+    text-shadow: 0 0 8px rgba($black, .4);
+    content: '+';
+    color: $actualWhite;
+    line-height: 50px;
+    display: block;
+    top: auto; left: auto; bottom: 0; right: 0;
+    transform: translate(0,0);
+    border: 0;
+  }
+
+  .j-loading {
+      border: 1px solid white !important;
+
+      &::before {
+        background: rgba($actualWhite, .05)
+      }
+  }
+}
+
+body.home .j-overlay {
+  animation-name: gradFadeIn;
+  animation-duration: .5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+  padding-top: 0;
+
+  .j-post-overlay.juicer-feed {
+    @include Aileron;
+  }
+
+  .image {
+    line-height: 0;
+  }
+
+  .j-poster h3 {
+    opacity: .8;
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .j-bottom {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .j-share,
+  .j-navigate {
+    display: none !important;
+  }
+
+  .juicer-feed .j-meta a:hover {
+    color: $black;
+  }
+  .juicer-feed a:hover {
+      color: $black;
+  }
+
+  .j-close {
+    right: 0;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: right;
+    background: $black;
+    opacity: .9;
+    transition: opacity .2s;
+
+    &::before {
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 50px;
+      color: $actualWhite;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .j-overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: auto !important;
+    // overflow: hidden;
+    color: $black;
+    max-width: 95vw;
+  }
+
+  .j-overlay-text.image-post {
+      max-width: 480px;
+  }
+
+  .j-post-overlay.juicer-feed a.juicer-button {
+    border: none;
+    color: $actualWhite;
+    background: $black;
+    opacity: .3;
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  body.home .j-overlay .j-bottom {
+    position: inherit;
+  }
+}
+
+@media (max-width: 800px) {
+  body.home .j-post-overlay.juicer-feed.loaded {
+      min-width: 60vw;
+      max-width: 80vw;
+  }
+}
+
+@media (max-width: 600px) {
+  body.home .j-post-overlay.juicer-feed.loaded {
+      min-width: 80vw;
   }
 }
