@@ -23,7 +23,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('./' + devDirectory + '/scss/styles.scss')
+    return gulp.src('./' + devDirectory + '/scss/*.scss')
         .pipe(sourcemaps.init())
             .pipe(sass().on('error', sass.logError))
             .pipe(autoprefixer('last 7 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
