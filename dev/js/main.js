@@ -97,6 +97,7 @@ $(document).ready( function() {
     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     if(iOS){
       $('video').hide();
+      $('body').addClass('iOs');
     }
   }
   hideVideoOnMobile();
