@@ -18,7 +18,7 @@
     width: 20%;
     list-style: none;
     position: relative;
-    padding-bottom: 14.35%;
+    padding-bottom: 13.35%;
 
     &:nth-of-type(6){
       display: none;
@@ -109,5 +109,14 @@
 @media (max-width: 360px) {
   .strip-container .single-grad .grad-container .grad-name {
     font-size: .9rem;
+  }
+}
+
+@keyframes gradFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
