@@ -133,12 +133,14 @@ $(document).ready( function() {
         gradUnique,
         newGrad,
         i = 0,
-        numberOfGrads = 24;
+        numberOfGrads = 24,
+        gradsJSON;
     $.ajax({
       type: 'GET',
       dataType: "json",
       url: siteData.themeUri + '/assets/data/temp-grads.json',
       success: function(objJSON) {
+        gradsJSON = objJSON;
         var currentGrads = [];
         for (i; i < 6; i++) {
           gradUnique = false;
@@ -147,7 +149,7 @@ $(document).ready( function() {
             gradUnique = checkDupes(newGrad, currentGrads);
           }
           currentGrads[i] = newGrad;
-          var grad = objJSON[currentGrads[i]];
+          var grad = gradsJSON[currentGrads[i]];
           $famID.append("<li class='single-grad'><a href='javascript:void(0)' class='grad-container'><img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span></a></li>");
           prevGrads = currentGrads;
         }
@@ -158,36 +160,29 @@ $(document).ready( function() {
     $('#fam-reshuffle').click(function() {
       $('.grad-container img').fadeTo(300, 0);
       $('.grad-container .grad-name').fadeTo(300, 0).promise().done(function() {
-        $.ajax({
-          type: 'GET',
-          dataType: "json",
-          url:  siteData.themeUri + '/assets/data/temp-grads.json',
-          success: function(objJSON) {
-            var currentGrads = [];
-            var gradNew;
-            i = 0;
-            for (i; i < 6; i++) {
-              var loop = true;
-              gradUnique = false;
-              gradNew = false;
+        var currentGrads = [];
+        var gradNew;
+        i = 0;
+        for (i; i < 6; i++) {
+          var loop = true;
+          gradUnique = false;
+          gradNew = false;
 
-              while ( loop ) {
-                newGrad = gradRandom(0, numberOfGrads - 1);
-                gradUnique = checkDupes(newGrad, currentGrads);
-                gradNew = checkDupes(newGrad, prevGrads);
-                if ( gradUnique && gradNew ) {
-                  loop = false;
-                }
-              }
-              currentGrads[i] = newGrad;
-
-              var grad = objJSON[currentGrads[i]];
-              $('#homepageFamJS').children(".single-grad:nth-of-type(" + ( i + 1 ) + ")").children().html("<img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span>");
+          while ( loop ) {
+            newGrad = gradRandom(0, numberOfGrads - 1);
+            gradUnique = checkDupes(newGrad, currentGrads);
+            gradNew = checkDupes(newGrad, prevGrads);
+            if ( gradUnique && gradNew ) {
+              loop = false;
             }
-            console.log(currentGrads);
-            prevGrads = currentGrads;
           }
-        });
+          currentGrads[i] = newGrad;
+
+          var grad = gradsJSON[currentGrads[i]];
+          $('#homepageFamJS').children(".single-grad:nth-of-type(" + ( i + 1 ) + ")").children().html("<img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span>");
+        }
+        console.log(currentGrads);
+        prevGrads = currentGrads;
       });
     });
 
