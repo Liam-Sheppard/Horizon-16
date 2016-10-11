@@ -135,6 +135,8 @@
     display: inline-block;
     width: 20%;
     list-style: none;
+    position: relative;
+    padding-bottom: 14.35%;
 
     &:nth-of-type(6){
       display: none;
@@ -149,6 +151,8 @@
       background: $actualWhite;
       padding-top: 20px;
       font-size: 0;
+      position: absolute;
+      top: 0; left: 0;
 
       .grad-name {
         padding: 10px 0;
@@ -229,6 +233,7 @@
   .strip-container .single-grad {
     width: 33.33%;
     margin-bottom: 3rem;
+    padding-bottom: 23%;
 
     &:nth-of-type(6){
       display: inline-block;
@@ -244,10 +249,12 @@
   .strip-container .single-grad {
     width: 50%;
     margin-bottom: 3rem;
+    padding-bottom: 36%;
   }
 
   #fam-reshuffle {
     font-size: 1.25rem;
+    padding: 15px 0;
     border: 1px solid rgba($actualWhite, .7);
     width: auto;
   }
