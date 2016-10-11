@@ -23,4 +23,6 @@
     <?php partial('landing-details'); ?>
     <?php //<div class="sprite"></div> ?>
   </div>
+
+  <div class='scroll-prompt'></div>
 </div>

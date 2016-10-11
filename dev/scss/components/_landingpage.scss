@@ -142,6 +142,51 @@
   }
 }
 
+.scroll-prompt {
+  position: absolute;
+  width: 1px;
+  height: 100px;
+  // background: $actualWhite;
+  left: 50%;
+  bottom: 20px;
+  z-index: 10;
+  opacity: .2;
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    top: 0;
+    background: $actualWhite;
+    border-radius: 50%;
+
+    animation-name: scrollPrompt;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes scrollPrompt {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+66% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
 @media (max-width: 1600px) {
   #fam-reshuffle {
     margin: 0 auto;
