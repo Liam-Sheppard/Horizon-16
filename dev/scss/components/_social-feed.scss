@@ -54,6 +54,10 @@ body.home .j-overlay {
     @include Aileron;
   }
 
+  .image {
+    line-height: 0;
+  }
+
   .j-poster h3 {
     opacity: .8;
     transition: opacity .2s;
