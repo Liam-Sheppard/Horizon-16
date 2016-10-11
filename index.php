@@ -2,12 +2,16 @@
 
 get_header();
 
-partial('primary-navigation');
+partial('header');
 
 partial('landing-content');
 
 partial('instagram-feed');
 
 partial('graduates-landing');
+
+partial('more-coming-soon');
+
+partial('footer');
 
 get_footer();

@@ -7,7 +7,7 @@ html {
     font-size: 95%;
   }
   @media screen and (max-width: $bp-tablet - 1px){
-    font-size: 75%;
+    font-size: 80%;
   }
 }
 html, body {
@@ -27,6 +27,6 @@ body {
     background: rgba($white, .05);
 }
 
-*:last-child {
-    margin-bottom: 0;
-}
+// *:last-child {
+//     margin-bottom: 0;
+// }

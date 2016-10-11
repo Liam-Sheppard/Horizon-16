@@ -11,7 +11,7 @@ var gulp =          require('gulp'),
     iconfont =      require('gulp-iconfont'),
     gulpFile =      require('gulp-file'),
     tap     =       require('gulp-tap'),
-    distDirectory = 'horizon16';
+    distDirectory = 'assets';
     devDirectory =  'dev';
 
 const bundlejs = require('./' + devDirectory + '/js/js-package-sources.json');
@@ -72,7 +72,7 @@ gulp.task('icons', function() {
             gulpFile('_icon-names.scss', iconsScss).pipe(gulp.dest('dev/scss'));
           }));
     })
-    .pipe(gulp.dest('horizon16/fonts'));
+    .pipe(gulp.dest(distDirectory + '/fonts'));
 
   return icons;
 });

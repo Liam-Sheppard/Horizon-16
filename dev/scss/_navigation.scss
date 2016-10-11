@@ -2,6 +2,21 @@
 # NAVIGATION
 ==============================================================================*/
 
+#site-header {
+  padding: 3rem;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  .socialmedia {
+    float: right;
+    @include simpleAnimateIn(0.4);
+  }
+  @media screen and (max-width: 600px){
+    .socialmedia {
+      display: none;
+    }
+  }
+}
 
 
 @mixin primaryMenuItem(){
@@ -17,10 +32,8 @@
 }
 
 #primary-navigation {
-    position: absolute;
-    left: 3rem;
-    top: 3rem;
     z-index: 10;
+    display: inline-block;
     &:after {
         content: '';
         display: block;
@@ -49,17 +62,14 @@
 }
 
 
-#socialmedia {
-  position: fixed;
-  right: 3rem;
-  top: 3rem;
+.socialmedia {
   color: $actualWhite;
   z-index: 10;
   &:hover a {
     opacity: 0.1;
   }
   a {
-    margin-left: 20px;
+    margin: 0 10px;
     line-height: 24px;
     display: inline-block;
     height: 24px;

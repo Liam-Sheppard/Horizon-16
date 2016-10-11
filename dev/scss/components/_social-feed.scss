@@ -9,6 +9,12 @@
       filter: none;
     }
   }
+  .juicer-feed  {
+    padding-bottom: 5rem;
+    @media screen and (max-width: 600px){
+      padding-bottom: 3rem;
+    }
+  }
   .juicer-feed.living-wall .j-text {
     background: none !important;
   }

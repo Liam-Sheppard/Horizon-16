@@ -101,7 +101,8 @@ $(document).ready( function() {
   }
   hideVideoOnMobile();
 
-  function checkIfSeen($collection){
+  // Checks if the elements in question are currently within the viewport
+  function watchSeen($collection){
     var scroll = $(document).scrollTop();
     var wh = $(window).innerHeight();
     $.each($collection, function(){
@@ -113,17 +114,20 @@ $(document).ready( function() {
       }
     });
     return $collection;
+
   }
 
+  // The elements we are going to check to see when they are seen
   var $scrollBasedAnimates = $('.panel-bridge, .horizon-rule, h2');
-  checkIfSeen($scrollBasedAnimates);
+  watchSeen($scrollBasedAnimates);
   $(window).scroll(function(){
-    checkIfSeen($scrollBasedAnimates);
+    watchSeen($scrollBasedAnimates);
   });
+
 
     // Homepage Graduates
     var $famID = $('#homepageFamJS'),
-        imagePath = '/wp-content/themes/Horizon-16/horizon16/images/graduate-images-600x400/',
+        imagePath = siteData.themeUri + '/assets/images/graduate-images-600x400/',
         prevGrads,
         gradUnique,
         newGrad,
@@ -132,7 +136,7 @@ $(document).ready( function() {
     $.ajax({
       type: 'GET',
       dataType: "json",
-      url: '/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+      url: siteData.themeUri + '/assets/data/temp-grads.json',
       success: function(objJSON) {
         var currentGrads = [];
         for (i; i < 6; i++) {
@@ -156,7 +160,7 @@ $(document).ready( function() {
         $.ajax({
           type: 'GET',
           dataType: "json",
-          url: '/wp-content/themes/Horizon-16/horizon16/data/temp-grads.json',
+          url:  siteData.themeUri + '/assets/data/temp-grads.json',
           success: function(objJSON) {
             var currentGrads = [];
             var gradNew;
@@ -199,7 +203,7 @@ $(document).ready( function() {
       var i = 0;
       for ( i; i < currentGrads.length; i++ ) {
         if ( currentGrads[i] == n ) {
-          console.log('conflict');
+          // console.log('conflict');
           return false;
         }
       }

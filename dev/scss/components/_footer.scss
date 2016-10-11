@@ -1,0 +1,32 @@
+#site-footer {
+  background-color: #111111;
+  padding: 5rem;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  @media screen and (max-width: 600px){
+    padding: 3rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  .polygon {
+    position: absolute;
+    &:nth-of-type(1) {
+      left: 0% !important;
+      right: 50% !important;
+      bottom: 0% !important;
+      margin: auto;
+      transform: translate(-50%, 0);
+      svg {
+        position: static !important;
+        left: 0; right: 0;
+        transform: none;
+      }
+    }
+  }
+  .socialmedia {
+    margin: 1.5rem 0;
+  }
+  a {
+    font-size: 1em;
+  }
+}

@@ -1,4 +1,4 @@
-<div class="panel panel--landing">
+<div class="panel panel--landing scene">
 
 
   <div class="polygon">
@@ -13,8 +13,8 @@
 
   <div class="hero-video-container">
     <video id="heroVideo" autoplay loop controls>
-      <source src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video_v2.webm" type="video/webm">
-      <source src="<?= get_stylesheet_directory_uri() ?>/horizon16/video/video_v2.mp4" type="video/mp4">
+      <source src="<?= get_stylesheet_directory_uri() ?>/assets/video/video_v2.webm" type="video/webm">
+      <source src="<?= get_stylesheet_directory_uri() ?>/assets/video/video_v2.mp4" type="video/mp4">
     </video>
   </div>
 

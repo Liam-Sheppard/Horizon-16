@@ -120,7 +120,7 @@
   position: relative;
   vertical-align: middle;
   font-size: 0;
-  margin: 3rem 0 0;
+  margin: 0 0 3rem;
   // background: $actualWhite;
 
   .single-grad {
@@ -191,7 +191,7 @@
   padding: 15px 40px;
   font-weight: 500;
   width: 40rem;
-  margin: 1rem auto;
+  margin: 1rem auto 3rem;
   opacity: .3;
   color: $actualWhite;
   letter-spacing: .3rem;
@@ -239,7 +239,7 @@
   }
 
   #fam-reshuffle {
-    font-size: 1.7rem;
+    font-size: 1.25rem;
     border: 1px solid rgba($actualWhite, .7);
     width: auto;
   }
