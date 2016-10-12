@@ -80,15 +80,32 @@
   }
 }
 
+.panel--fam-strips .single-grad:nth-of-type(6){
+  display: none;
+}
+
 @media (max-width: 1600px) {
+  .strip-container .single-grad {
+    width: 24.75%;
+    padding-bottom: 17.8%;
+  }
+
+  .panel--fam-strips .single-grad:nth-of-type(5),
+  .panel--fam-strips .single-grad:nth-of-type(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 1300px) {
   .strip-container .single-grad {
     width: 33.33%;
     margin-bottom: 3rem;
     padding-bottom: 23%;
+  }
 
-    &:nth-of-type(6){
-      display: inline-block;
-    }
+  .panel--fam-strips .single-grad:nth-of-type(5),
+  .panel--fam-strips .single-grad:nth-of-type(6) {
+    display: inline-block;
   }
 }
 

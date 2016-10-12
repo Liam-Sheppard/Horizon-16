@@ -16,7 +16,7 @@
     <div class='fam detailbox'>
         <img src='<?= get_stylesheet_directory_uri() ?>/assets/images/icon-graduates.svg'></img>
         <div class='detail-text'>
-            <span class='event-details-lg'>48 Graduates</span>
+            <span class='event-details-lg'>46 Graduates</span>
             <span class='event-details-sm'>Showcasing</span>
         </div>
     </div>
