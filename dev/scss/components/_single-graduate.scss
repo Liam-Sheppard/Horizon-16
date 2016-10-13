@@ -1,0 +1,33 @@
+/*==============================================================================
+# STYLES FOR SINGLE GRADUATE PAGE
+==============================================================================*/
+
+.panel--single-graduate {
+  .left-pane {
+    position: fixed;
+    width: 50vw;
+    height: 100vw;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    &.grad-1 .grad-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: url('../images/graduate-images-1800x1200/mckenna-olivia.jpg');
+      // background-size: contain;
+      background-position: center top;
+      background-repeat: no-repeat;
+      transition: filter .3s;
+      // will-change: filter;
+
+      &:hover {
+        filter: blur(10px);
+      }
+    }
+  }
+
+
+}

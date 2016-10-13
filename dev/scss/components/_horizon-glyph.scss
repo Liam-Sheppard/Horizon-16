@@ -4,6 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .horizon-glyph {
   width: 1.75rem;
   height: 1.5rem;
@@ -30,4 +31,8 @@
   .horizon-glyph {
     opacity: 1;
   }
+}
+
+.page-template-single-graduate .horizon-glyph-glyph {
+  background-image: url(../images/H-black.svg);
 }
