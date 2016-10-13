@@ -51,3 +51,68 @@
     transform: rotate(-23deg) translateY(0%);
   }
 }
+
+
+
+
+
+
+
+.holly {
+  position: fixed;
+  right: 100%;
+  bottom: 0; top: 0;
+  margin: auto;
+  height: 160px;
+  width: 211px;
+  animation: hollyNyan 8s 0.5s forwards linear;
+  z-index: 1000;
+  &:before {
+    content: '';
+    display: block;
+    height: 85px;
+    width: 72px;
+    position: absolute;
+    top: 16px;
+    right: 166px;
+    width: 200vw;
+    background: url(../images/eggs/nyan-rainbow.png);
+    background-position: 0 0;
+    animation: rainbowAnimate 0.25s infinite steps(2);
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url(../images/eggs/holly-nyan.png) center center no-repeat;
+    background-size: contain;
+  }
+}
+@keyframes hollyNyan {
+  0% {
+    right: 100%;
+    transform: translateY(0);
+  }
+  25% {
+    // transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    // transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    right: -100%;
+  }
+}
+@keyframes rainbowAnimate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 36 0;
+  }
+}
