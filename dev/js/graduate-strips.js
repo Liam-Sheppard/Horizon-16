@@ -4,7 +4,7 @@
 
     $(".strips-container").mCustomScrollbar({
         axis: 'x',
-        scrollInertia: 0,
+        scrollInertia: 80,
         autoHideScrollbar: false,
         // mouseWheel: {
         //   preventDefault: true

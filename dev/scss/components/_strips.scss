@@ -2,6 +2,11 @@
 # GRADUATE STRIPS
 ==============================================================================*/
 
+.mCSB_container:hover {
+  // Enable GPU Accelleration.
+  will-change: left;
+}
+
 .page-template-graduates {
 
   .panel--graduate-strips {
@@ -21,7 +26,7 @@
     vertical-align: middle;
   }
   .strips-container {
-    overflow-x: scroll;
+    // overflow-x: scroll;
   }
 
   .strip {
