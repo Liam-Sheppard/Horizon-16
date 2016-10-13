@@ -40,9 +40,18 @@
         clear: both;
     }
     ul {
-        display: none;
         list-style: none;
-        margin: 1rem 0;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 2rem;
+        transition: opacity 2s 0.4s;
+
+        .menu-item {
+          opacity: 0.1;
+        }
+        .menu-item.active {
+          opacity: 1;
+        }
         &:hover {
             .menu-item {
                 opacity: 0.1;
@@ -53,11 +62,23 @@
         }
     }
     li {
-        float: left;
-        clear: left;
+        display: inline-block;
+        &:nth-of-type(1) {
+          @include simpleAnimateIn(0.1);
+        }
+        &:nth-of-type(2) {
+          @include simpleAnimateIn(0.2);
+        }
+        &:nth-of-type(3) {
+          @include simpleAnimateIn(0.3);
+        }
+        &:nth-of-type(4) {
+          @include simpleAnimateIn(0.4);
+        }
     }
     .menu-item {
         @include primaryMenuItem();
+
     }
 }
 
