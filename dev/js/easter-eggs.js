@@ -4,20 +4,25 @@
 
     var egg = new Egg();
 
-    var nyanTrack = new Audio(siteData.themeUri + '/assets/sounds/eggs/nyan.mp3');
-
+    var thuglife = new Audio(siteData.themeUri + '/assets/sounds/eggs/thug-life.mp3');
 
     egg
       .addCode("v,o,v,o", function() {
         $('body').prepend('<div class="ryan"></div>');
+        thuglife.play();
         setTimeout(function(){
           $('.ryan').remove();
-        }, 5000);
+          thugLife.pause();
+          thugLife.currentTime = 0;
+        }, 10000);
       })
       .addHook(function(){
         // console.log("Hook called for: " + this.activeEgg.keys);
         // console.log(this.activeEgg.metadata);
       }).listen();
+
+      var nyanTrack = new Audio(siteData.themeUri + '/assets/sounds/eggs/nyan.mp3');
+
 
     egg
       .addCode("m,e,o,w", function() {
