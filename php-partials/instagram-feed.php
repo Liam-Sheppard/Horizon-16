@@ -1,4 +1,4 @@
-<div class="panel-bridge"></div>
+<?php // <div class="panel-bridge"></div> I hate this one Michael ?>
 
 <div class="panel panel--instagram">
     <span class="horizon-rule horizon-rule--bottom-end"></span>
