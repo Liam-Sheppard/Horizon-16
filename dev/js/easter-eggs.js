@@ -3,6 +3,10 @@
   $(document).ready(function(){
 
     var egg = new Egg();
+
+    var nyanTrack = new Audio(siteData.themeUri + '/assets/sounds/eggs/nyan.mp3');
+
+
     egg
       .addCode("v,o,v,o", function() {
         $('body').prepend('<div class="ryan"></div>');
@@ -18,11 +22,14 @@
     egg
       .addCode("m,e,o,w", function() {
         $('body').prepend('<div class="holly"></div>');
+        nyanTrack.play();
         setTimeout(function(){
-          $('.holly').fadeout();
+          $('.holly').fadeOut();
         }, 5500);
         setTimeout(function(){
           $('.holly').remove();
+          nyanTrack.pause();
+          nyanTrack.currentTime = 0;
         }, 7500);
       })
       .addHook(function(){

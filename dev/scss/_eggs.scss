@@ -78,7 +78,7 @@
     width: 200vw;
     background: url(../images/eggs/nyan-rainbow.png);
     background-position: 0 0;
-    animation: rainbowAnimate 0.25s infinite steps(2);
+    animation: rainbowAnimate 0.2s infinite steps(2);
   }
   &:after {
     content: '';
@@ -113,6 +113,6 @@
     background-position: 0 0;
   }
   to {
-    background-position: 36 0;
+    background-position: 36px 0;
   }
 }
