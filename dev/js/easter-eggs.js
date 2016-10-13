@@ -4,11 +4,11 @@
 
     var egg = new Egg();
 
-    var thuglife = new Audio(siteData.themeUri + '/assets/sounds/eggs/thug-life.mp3');
+    var thugLife = new Audio(siteData.themeUri + '/assets/sounds/eggs/thug-life.mp3');
     egg
       .addCode("v,o,v,o", function() {
         $('body').prepend('<div class="ryan"></div>');
-        thuglife.play();
+        thugLife.play();
         setTimeout(function(){
           $('.ryan').remove();
           thugLife.pause();
