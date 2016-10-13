@@ -1,14 +1,20 @@
 .sprite {
-  width: 600px;
-  height: 338px;
-  background: url(../images/sprites/spritesheet.jpg) 0 0;
+  width: 400px;
+  height: 225px;
+  background: url(../images/sprites/king-melissa-400x225.jpg) 0 0;
   animation: graduateSprite 2s steps(60) infinite alternate;
 }
+
+
 @keyframes graduateSprite{
   from {
     background-position: 0 0;
   }
   to {
-    background-position: -36000px 0px;
+    background-position: -24000px 0px;
   }
+}
+
+.panel--graduate-strips .strip-container .single-grad .grad-container {
+  padding-top: 3rem;
 }
