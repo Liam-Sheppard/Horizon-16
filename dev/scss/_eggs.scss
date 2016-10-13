@@ -1,0 +1,118 @@
+.ryan {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  margin: auto;
+  width: 50vw;
+  max-width: 500px;
+  z-index: 1000;
+  transform: translateY(100%);
+  animation: ryan 2s forwards;
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 75%;
+    background: url(../images/eggs/ryan.png) center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &:after {
+    content: '';
+    width: 20%;
+    padding-bottom: 10%;
+    position: absolute;
+    top: 6%; left: 0; right: 0;
+    transform: rotate(0) translateY(-200%);
+    margin: auto;
+    background: url(../images/eggs/glasses.png) center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: ryanGlasses 1s 1.5s forwards;
+  }
+}
+
+@keyframes ryan {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes ryanGlasses {
+  from {
+    opacity: 0;
+    transform: rotate(0) translateY(-200%);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-23deg) translateY(0%);
+  }
+}
+
+
+
+
+
+
+
+.holly {
+  position: fixed;
+  right: 100%;
+  bottom: 0; top: 0;
+  margin: auto;
+  height: 160px;
+  width: 211px;
+  animation: hollyNyan 8s 0.5s forwards linear;
+  z-index: 1000;
+  &:before {
+    content: '';
+    display: block;
+    height: 85px;
+    width: 72px;
+    position: absolute;
+    top: 16px;
+    right: 166px;
+    width: 200vw;
+    background: url(../images/eggs/nyan-rainbow.png);
+    background-position: 0 0;
+    animation: rainbowAnimate 0.2s infinite steps(2);
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url(../images/eggs/holly-nyan.png) center center no-repeat;
+    background-size: contain;
+  }
+}
+@keyframes hollyNyan {
+  0% {
+    right: 100%;
+    transform: translateY(0);
+  }
+  25% {
+    // transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    // transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    right: -100%;
+  }
+}
+@keyframes rainbowAnimate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 36px 0;
+  }
+}

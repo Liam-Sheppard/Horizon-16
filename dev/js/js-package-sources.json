@@ -1,8 +1,8 @@
 {
   "sources": [
-    "dev/bower/jquery-mousewheel/jquery.mousewheel.min.js",
-    "dev/bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
+    "dev/js/egg.min.js",
     "dev/bower/parallax/deploy/jquery.parallax.min.js",
+    "dev/js/easter-eggs.js",
     "dev/js/main.js"
   ]
 }
