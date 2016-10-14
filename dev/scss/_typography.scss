@@ -130,10 +130,11 @@ h6, .h6 {
 
 
 .paragraph {
-    line-height: 2;
+    line-height: 1.75;
     letter-spacing: 0.1em;
     font-size: 1.125rem;
     margin-bottom: 1.5em;
+    text-align: left;
 }
 .paragraph-lg {
     @extend .paragraph;

@@ -1,9 +1,13 @@
 /*==============================================================================
 # STYLES FOR SINGLE GRADUATE PAGE
 ==============================================================================*/
+ .page-template-single-graduate #site-header {
+   position: fixed;
+ }
+
 
 .panel--single-graduate {
-  .left-pane {
+  .left-panel {
     position: fixed;
     width: 50vw;
     height: 100vw;
@@ -12,22 +16,59 @@
     left: 0;
     overflow: hidden;
 
-    &.grad-1 .grad-image {
+    .grad-image {
       width: 100%;
       height: 100%;
       display: block;
-      background: url('../images/graduate-images-1800x1200/mckenna-olivia.jpg');
       // background-size: contain;
-      background-position: center top;
-      background-repeat: no-repeat;
       transition: filter .3s;
       // will-change: filter;
+      animation-name: gradFadeIn;
+      animation-duration: 1s;
+      animation-fill-mode: backwards;
+      animation-iteration-count: 1;
+      animation-delay: .3s;
+    }
 
-      &:hover {
-        filter: blur(10px);
-      }
+    &.grad-1 .grad-image {
+      background: url('../images/graduate-images-1800x1200/sheppard-liam.jpg');
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    &.work-show .grad-image {
+      filter: blur(20px);
     }
   }
 
+  .right-panel {
+    margin-left: 50%;
+    padding: 5rem 5rem 5rem 10rem;
 
+    h1, h2, h3 {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 3rem;
+      width: 0;
+      padding-right: 100%;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin: 2rem 0;
+      font-weight: 500;
+    }
+
+    .panel-bridge {
+      margin-top: 7rem;
+      height: 5rem;
+    }
+
+    .paragraph {
+      margin: 3rem 0;
+      font-size: 1.3rem;
+    }
+  }
 }

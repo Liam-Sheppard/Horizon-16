@@ -205,4 +205,33 @@ $(document).ready( function() {
       }
       return true;
     }
+
+    var position,
+	     direction,
+		 previous,
+		 scrollBottom;
+
+	$( window ).scroll( function( ) {
+
+		scrollBottom = $( this ).scrollTop() + $( this ).height( );
+
+		if ( position <= 30 ) {
+			$( '#leftPanelJS' ).removeClass( 'work-show' );
+		} else if ( $( this ).scrollTop( ) >= position ) {
+			direction = 'down';
+			if( direction !== previous ) {
+				$( '#leftPanelJS' ).addClass( 'work-show' );
+
+				previous = direction;
+			}
+		} else {
+			direction = 'up';
+			if ( direction !== previous ) {
+				$( '#leftPanelJS' ).removeClass( 'work-show' );
+
+				previous = direction;
+			}
+		}
+		position = $( this ).scrollTop( );
+	});
 });
