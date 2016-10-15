@@ -21,4 +21,7 @@
 
     ?>
   </ul>
+
+  <a class="homepage-grad-button" href='/graduates'>See all graduates<br><span>( There's 46 of us! )</span></a>
+
 </div>

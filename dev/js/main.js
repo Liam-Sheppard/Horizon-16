@@ -142,9 +142,9 @@ $(document).ready( function() {
         prevGrads = currentGrads;
       });
     }
-    if($('#homepageFamJS').length){
-      setInterval(shuffleFam, 5000);
-    }
+    // if($('#homepageFamJS').length){
+    //   setInterval(shuffleFam, 5000);
+    // }
 
 
     /**

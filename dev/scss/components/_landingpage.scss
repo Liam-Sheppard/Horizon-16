@@ -120,17 +120,15 @@
 
 }
 
-#fam-reshuffle {
+.homepage-grad-button {
   text-transform: uppercase;
   padding: 15px 40px;
   font-weight: 500;
   width: 40rem;
-  margin: 1rem auto 3rem;
   opacity: .3;
   color: $actualWhite;
   letter-spacing: .3rem;
   transition: opacity .2s;
-  cursor: pointer;
 
   span {
     font-size: 70%;
@@ -188,13 +186,13 @@
 }
 
 @media (max-width: 1600px) {
-  #fam-reshuffle {
-    margin: 0 auto;
+  .homepage-grad-button {
+    margin: 1rem auto 3rem;
   }
 }
 
 @media (max-width: 950px) {
-  #fam-reshuffle {
+  .homepage-grad-button {
     font-size: 1.25rem;
     padding: 15px 0;
     border: 1px solid rgba($actualWhite, .7);
@@ -203,7 +201,7 @@
 }
 
 @media (max-width: 360px) {
-  #fam-reshuffle {
+  .homepage-grad-button {
     font-size: 1.3rem;
   }
 }
