@@ -21,7 +21,7 @@
     function updateStrips(){
       var vw = $(window).innerWidth();
       if(vw < 700){
-        
+
         if(strips.hasClass('mCustomScrollbar')){
           strips.mCustomScrollbar('destroy');
         }
@@ -60,7 +60,7 @@
           return _this;
         }
         _this.graduates.removeClass('active');
-        _this.graduates.css('opacity', 0);
+        _this.graduates.addClass('hide');
         setTimeout(function(){
           _this.graduates.filter('.' + filterClass).each(function(){
             $(this).addClass('active');
@@ -68,7 +68,7 @@
           });
         },400);
         setTimeout(function(){
-          _this.graduates.css('opacity', 1);
+          _this.graduates.removeClass('hide');
         }, 600);
         return _this;
       }

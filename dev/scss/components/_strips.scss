@@ -51,9 +51,15 @@
   }
 
   .single-grad {
-    filter: blur(3px);
-    opacity: 0.2;
-    transition: filter 0.6s;
+    @media screen and (min-width: 700px){
+      filter: blur(3px);
+      opacity: 0.1;
+      transition: filter 0.6s;
+      display: inline-block !important; 
+    }
+    &.hide {
+      opacity: 0 !important;
+    }
     &.active {
       filter: none;
       opacity: 1;

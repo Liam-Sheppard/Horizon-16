@@ -42,12 +42,11 @@ partial('header');
 
         <div class="strip">
             <?php
-            for ($x = 0; $x <= $max_grads_per_row; $x++) {
+            for ($x = 0; $x <= $max_grads_per_row - 1; $x++) {
               $current_graduate = $graduates[$x + $strips * $max_grads_per_row];
               if($current_graduate){
                 partial('graduate', [
                   'name' => $current_graduate['full_name'],
-                  // 'image' => get_stylesheet_directory_uri() . '/assets/images/graduate-images-600x400/bae-haram.png',
                   'image' => get_stylesheet_directory_uri() . '/assets/images/graduate-images-600x400/graduate-' . $current_graduate['ID'] . '.png',
                   'disciplines' => $current_graduate['disciplines']
                 ]);
@@ -58,14 +57,7 @@ partial('header');
 
       <?php } ?>
     </div>
-
-
   </div>
-
-
-
-
-
 </div>
 
 <?php
