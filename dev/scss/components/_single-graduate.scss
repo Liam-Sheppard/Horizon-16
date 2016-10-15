@@ -46,9 +46,10 @@
       position: absolute;
       left: 50%;
       top: 50vh;
-      width: 80%;
+      width: 100%;
+      padding: 0 10%;
       max-height: 80vh;
-      // overflow-y: auto;
+      overflow-y: auto;
       opacity: 0;
       transform: translate(-50%,-45%);
       transition: opacity .5s, transform .5s;
@@ -138,6 +139,39 @@
     .paragraph {
       margin: 3rem 0;
       font-size: 1.3rem;
+    }
+
+    .fun-facts {
+      display: flex;
+    }
+
+    .fact {
+      flex-grow: 1;
+      text-align: left;
+
+      &:not(:first-of-type()) {
+        margin-left: 5rem;
+      }
+
+      .number {
+        display: block;
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .text {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        letter-spacing: .2rem;
+      }
+    }
+
+    .fancy-link {
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      font-size: 1.2rem;
+      margin: 2rem 0;
     }
   }
 }

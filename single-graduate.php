@@ -57,7 +57,24 @@ partial('header');
     </p>
 
     <div class="panel-bridge"></div>
-
+    <span class="horizon-rule horizon-rule--bottom-end"></span>
+    <div class='fun-facts'>
+      <div class='fact'>
+        <span class='number'>15+</span>
+        <span class='text'>Games of Dota 2 per week</span>
+      </div>
+      <div class='fact'>
+        <span class='number'>5</span>
+        <span class='text'>Hours of Reddit per day</span>
+      </div>
+      <div class='fact'>
+        <span class='number'>2</span>
+        <span class='text'>Pizzas per week</span>
+      </div>
+    </div>
+    <span class="horizon-rule horizon-rule--top-end"></span>
+    <div class="panel-bridge"></div>
+    <a href="#" class='fancy-link'>View my Portfolio</a>
   </div>
 
 </div>
