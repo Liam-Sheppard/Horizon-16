@@ -129,6 +129,7 @@
   color: $actualWhite;
   letter-spacing: .3rem;
   transition: opacity .2s;
+  margin: 1rem auto 3rem;
 
   span {
     font-size: 70%;
@@ -182,12 +183,6 @@
   100% {
     transform: translateY(30px);
     opacity: 0;
-  }
-}
-
-@media (max-width: 1600px) {
-  .homepage-grad-button {
-    margin: 1rem auto 3rem;
   }
 }
 

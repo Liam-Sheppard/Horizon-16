@@ -22,6 +22,6 @@
     ?>
   </ul>
 
-  <a class="homepage-grad-button" href='/graduates'>See all graduates<br><span>( There's 46 of us! )</span></a>
+  <a class="homepage-grad-button" href='<?= get_home_url() ?>/graduates'>See all graduates<br><span>( There's 46 of us! )</span></a>
 
 </div>
