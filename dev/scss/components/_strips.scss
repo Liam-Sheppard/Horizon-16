@@ -7,6 +7,7 @@
   will-change: left;
 }
 
+
 .page-template-graduates {
   .polygon {
     z-index: -5;
@@ -29,14 +30,14 @@
     display: inline-block;
     vertical-align: middle;
     text-align: left;
-
-
+    opacity: 0;
+    transition: opacity 0.6s 0.4s;
   }
-  .strips-container {
-    &:hover {
-
-    }
+  &.loaded .graduates-container {
+    opacity: 1;
   }
+
+
 
   .strip {
     white-space: nowrap;
@@ -49,6 +50,16 @@
     }
   }
 
+  .single-grad {
+    filter: blur(3px);
+    opacity: 0.2;
+    transition: filter 0.6s;
+    &.active {
+      filter: none;
+      opacity: 1;
+    }
+  }
+
 
 
 }
@@ -58,20 +69,19 @@
 
   .single-grad {
     display: inline-block;
-    width: 15vw;
-    // min-height: 150px;
-    // max-width: 250px;
+    width: 30vw;
+    transition: opacity 0.4s;
+    @media screen and (min-width: 800px){
+      width: 26vw;
+    }
+    @media screen and (min-width: 1400px){
+      width: 15vw;
+    }
     list-style: none;
     position: relative;
     white-space: nowrap;
     background: $actualWhite;
-    filter: blur(3px);
-    opacity: 0.2;
-    transition: all 0.6s;
-    &.active {
-      filter: none;
-      opacity: 1;
-    }
+
 
     &:nth-of-type(6){
       display: none;
@@ -79,11 +89,11 @@
 
     .grad-container {
       img {
-        animation-name: gradFadeIn;
-        animation-duration: .3s;
-        animation-fill-mode: backwards;
-        animation-iteration-count: 1;
-        animation-delay: .5s;
+        // animation-name: gradFadeIn;
+        // animation-duration: .3s;
+        // animation-fill-mode: backwards;
+        // animation-iteration-count: 1;
+        // animation-delay: .5s;
         transition: filter 0.4s, opacity 0.4s;
       }
 
@@ -108,7 +118,6 @@
           transition: opacity 0.2s;
           opacity: 0;
           display: inline-block;
-
         }
         .board {
           content: '';
@@ -129,7 +138,6 @@
         .grad-name {
           top: 75%;
         }
-
         .name {
           opacity: 1;
           transition: opacity 0.2s 0.4s;
@@ -142,10 +150,6 @@
           transition: transform 0.3s, width 0.4s 0.3s, height 0.4s 0.3s, opacity 0.1s;
         }
       }
-
-
-
-
       img {
         width: 100%;
         height: auto;
@@ -153,6 +157,23 @@
     }
   }
 }
+
+
+@media screen and (max-width: 699px){
+  .page-template-graduates {
+    .strip {
+      margin-bottom: 0;
+      white-space: normal;
+    }
+    .single-grad {
+      width: 50%;
+      float: left;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
 
 .panel--fam-strips .single-grad:nth-of-type(6){
   display: none;
@@ -174,7 +195,6 @@
     width: 33.33%;
     margin-bottom: 3rem;
   }
-
   .panel--fam-strips .single-grad:nth-of-type(5),
   .panel--fam-strips .single-grad:nth-of-type(6) {
     display: inline-block;

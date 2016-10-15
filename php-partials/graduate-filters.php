@@ -1,47 +1,73 @@
+<?php
+  $filters = [
+    [
+      'id'    => 'graphic-design',
+      'label' => 'Graphic Design',
+    ],
+    [
+      'id'    => 'web-design',
+      'label' => 'Web Design',
+    ],
+    [
+      'id'    => 'animation',
+      'label' => 'Animation',
+    ],
+    [
+      'id'    => 'ui-ux',
+      'label' => 'UI/UX',
+    ],
+    [
+      'id'    => 'typography',
+      'label' => 'Typography',
+    ],
+    [
+      'id'    => 'print-design',
+      'label' => 'Print',
+    ],
+    [
+      'id'    => 'visual-art',
+      'label' => 'Visual Art',
+    ],
+    [
+      'id'    => 'branding',
+      'label' => 'Branding',
+    ],
+    [
+      'id'    => 'photography',
+      'label' => 'Photography',
+    ],
+    [
+      'id'    => 'tangible-media',
+      'label' => 'Tangible Media',
+    ],
+    [
+      'id'    => 'ftv',
+      'label' => 'Film &amp; TV',
+    ],
+    [
+      'id'    => 'production-design',
+      'label' => 'Production',
+    ],
+    [
+      'id'    => 'sustainable',
+      'label' => 'Sustainable Design',
+    ],
+    [
+      'id'    => 'interior-design',
+      'label' => 'Interior Design',
+    ],
+  ];
+?>
+
 <ul class="graduate-filters">
-  <li class="menu-item filter-item graphic-design active">
+  <li class="menu-item filter-item active" data-filter-class="all">
     <a href="javascript:void(0)">All</a>
   </li>
-  <li class="menu-item filter-item" data-filter-class="graphic-design">
-    <a href="javascript:void(0)">Graphic Design</a>
-  </li>
-  <li class="menu-item filter-item" data-filter-class="web-design">
-    <a href="javascript:void(0)">Web Design</a>
-  </li>
-  <li class="menu-item filter-item animations" data-filter-class="animation">
-    <a href="javascript:void(0)">Animation</a>
-  </li>
-  <li class="menu-item filter-item" data-filter-class="typography">
-    <a href="javascript:void(0)">Typography</a>
-  </li>
-  <li class="menu-item filter-item" data-filter-class="print-design">
-    <a href="javascript:void(0)">Print</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Visual Art</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Branding</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">UI/UX</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Photography</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Tangible Media</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Film &amp; TV</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Production Design</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Sustainable Design</a>
-  </li>
-  <li class="menu-item filter-item graphic-design">
-    <a href="javascript:void(0)">Interior Design</a>
-  </li>
-</ul>
+  <?php
+  foreach($filters as $filter){ ?>
+    <li class="menu-item filter-item" data-filter-class="<?= $filter['id'] ?>">
+      <a href="javascript:void(0)"><?= $filter['label'] ?></a>
+    </li>
+  <?php
+  }
+echo '</ul>';

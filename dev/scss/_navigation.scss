@@ -11,7 +11,7 @@
     float: right;
     @include simpleAnimateIn(0.4);
   }
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1000px){
     .socialmedia {
       display: none;
     }

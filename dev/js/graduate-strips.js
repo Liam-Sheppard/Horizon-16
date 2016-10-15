@@ -1,30 +1,54 @@
 (function($){
-
   $(document).ready(function(){
 
-    var strips = $(".strips-container").mCustomScrollbar({
-        axis: 'x',
-        advanced: {
-          updateOnContentResize: true,
-        }
-    });
+    /*
+      Initializes scrollbar
+    */
+    var strips = $(".strips-container");
 
-    $(window).on('resize', function(){
-      var vw = this.innerWidth;
-      console.log(vw);
+    function initialiseStripsScroll(){
+      strips.mCustomScrollbar({
+          axis: 'x',
+          advanced: {
+            updateOnContentResize: true,
+          }
+      });
+    }
 
-      if(vw < 768){
-        if(strips.hasClass('mCSB_container')){
+    /*
+      Controls the responsiveness on the strips
+    */
+    function updateStrips(){
+      var vw = $(window).innerWidth();
+      if(vw < 700){
+        
+        if(strips.hasClass('mCustomScrollbar')){
           strips.mCustomScrollbar('destroy');
         }
+
       } else {
+
+        if(!strips.hasClass('mCustomScrollbar')){
+          initialiseStripsScroll();
+        }
+
         setTimeout(function(){
           strips.mCustomScrollbar('scrollTo', 0);
           strips.mCustomScrollbar('update');
-        }, 50);
+        }, 100);
+
       }
+    }
+    updateStrips();
+    $(window).on('resize', function(){
+      vw = $(window).innerWidth();
+      updateStrips();
     });
 
+
+    /*
+      Filter these cuties
+    */
     function GraduatesFilter(el){
       var _this = $(this);
       _this.filterButtons = $(el).find('.menu-item');
@@ -35,8 +59,17 @@
           _this.graduates.addClass('active')
           return _this;
         }
-        _this.graduates.removeClass('active')
-        _this.graduates.filter('.' + filterClass).addClass('active');
+        _this.graduates.removeClass('active');
+        _this.graduates.css('opacity', 0);
+        setTimeout(function(){
+          _this.graduates.filter('.' + filterClass).each(function(){
+            $(this).addClass('active');
+            $(this).prependTo( $(this).parents('.strip') );
+          });
+        },400);
+        setTimeout(function(){
+          _this.graduates.css('opacity', 1);
+        }, 600);
         return _this;
       }
 
@@ -48,7 +81,8 @@
 
       _this.filterButtons.click(function(e){
         if(!$(this).hasClass('active')){
-          _this.setActiveFilter(this).showGraduatesOfClass( $(this).data('filter-class') )
+          _this.setActiveFilter(this).showGraduatesOfClass( $(this).data('filter-class') );
+          strips.mCustomScrollbar('scrollTo', 0);
         }
       });
 
@@ -58,5 +92,4 @@
 
 
   });
-
 })(jQuery);
