@@ -46,9 +46,9 @@ partial('header');
               $current_graduate = $graduates[$x + $strips * $max_grads_per_row];
               if($current_graduate){
                 partial('graduate', [
-                  'name' => $current_graduate['full_name'],
+                  'name' => isset($current_graduate['full_name']) ? $current_graduate['full_name'] : '',
                   'image' => get_stylesheet_directory_uri() . '/assets/images/graduate-images-600x400/graduate-' . $current_graduate['ID'] . '.png',
-                  'disciplines' => $current_graduate['disciplines']
+                  'disciplines' => isset($current_graduate['disciplines']) ? $current_graduate['disciplines'] : ''
                 ]);
               }
             }

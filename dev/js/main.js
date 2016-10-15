@@ -1,50 +1,7 @@
 $(document).ready( function() {
+  $('body').addClass('loaded');
 
 
-  function timeLeft(endtime) {
-    var t = Date.parse(eventDate) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(t / (1000 * 60 * 60 * 24));
-    return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
-    };
-  }
-
-  function startCountdown(id, endtime) {
-    var clock = $('#countdown');
-    var daysSpan = $('#countdownDays');
-    var hoursSpan = $('#countdownHours');
-    var minutesSpan = $('#countdownMinutes');
-    var secondsSpan = $('#countdownSeconds');
-
-    function updateCountdown() {
-      var t = timeLeft(eventDate);
-
-      daysSpan.text(t.days);
-      hoursSpan.text(('0' + t.hours).slice(-2));
-      minutesSpan.text(('0' + t.minutes).slice(-2));
-      secondsSpan.text(('0' + t.seconds).slice(-2));
-
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-      }
-    }
-
-    updateCountdown();
-    var timeinterval = setInterval(updateCountdown, 1000);
-  }
-
-  var eventDate = 'November 09 2016 18:00:00 GMT+1000';
-
-  var t = Date.parse(eventDate) - Date.parse(new Date());
-
-  startCountdown('countdown', eventDate);
 
 
   function Polygon(svg){
@@ -61,7 +18,6 @@ $(document).ready( function() {
     console.log(this.a.points);
   }
 
-  $('body').addClass('loaded');
 
 
   // Parallax
@@ -125,6 +81,8 @@ $(document).ready( function() {
     watchSeen($scrollBasedAnimates);
   });
 
+  console.log(siteData.graduates.length);
+  console.log(siteData.graduates);
 
     // Homepage Graduates
     var $famID = $('#homepageFamJS'),
@@ -133,14 +91,14 @@ $(document).ready( function() {
         gradUnique,
         newGrad,
         i = 0,
-        numberOfGrads = 26,
-        gradsJSON;
-    $.ajax({
-      type: 'GET',
-      dataType: "json",
-      url: siteData.themeUri + '/assets/data/temp-grads.json',
-      success: function(objJSON) {
-        gradsJSON = objJSON;
+        numberOfGrads = siteData.graduates.length,
+        gradsJSON = siteData.graduates,
+        gradRandom = function (min, max){
+          return Math.floor((Math.random() * max) + min);
+        };
+
+
+
         var currentGrads = [];
         for (i; i < 6; i++) {
           gradUnique = false;
@@ -150,14 +108,14 @@ $(document).ready( function() {
           }
           currentGrads[i] = newGrad;
           var grad = gradsJSON[currentGrads[i]];
-          $famID.append("<li class='single-grad'><a href='javascript:void(0)' class='grad-container'><img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span></a></li>");
+          $famID.append('<li class="single-grad active"><a href="javascript:void(0)" class="grad-container"><img src="' + siteData.themeUri + '/assets/images/graduate-images-600x400/graduate-' + grad.ID + '.png"><span class="grad-name"><span class="board"></span><span class="name">' + grad.full_name + '</span></span></a></li>');
           prevGrads = currentGrads;
         }
-      }
-    });
+
+
 
     // Reshuffle Graduates
-    $('#fam-reshuffle').click(function() {
+    function shuffleFam(){
       $('.grad-container img').fadeTo(300, 0);
       $('.grad-container .grad-name').fadeTo(300, 0).promise().done(function() {
         var currentGrads = [];
@@ -178,17 +136,16 @@ $(document).ready( function() {
           }
           currentGrads[i] = newGrad;
 
-          var grad = gradsJSON[currentGrads[i]];
-          $('#homepageFamJS').children(".single-grad:nth-of-type(" + ( i + 1 ) + ")").children().html("<img src='" + imagePath + grad.photoLink + ".png'></img><span class='grad-name'>" + grad.name + "</span>");
+          var grad = siteData.graduates[currentGrads[i]];
+          $('#homepageFamJS').children(".single-grad:nth-of-type(" + ( i + 1 ) + ")").children().html("<img src='" + siteData.themeUri + "/assets/images/graduate-images-600x400/graduate-" + grad.ID + ".png'><span class='grad-name'><span class='board'></span><span class='name'>" + grad.full_name + "</span></span>");
         }
-        console.log(currentGrads);
         prevGrads = currentGrads;
       });
-    });
-
-    function gradRandom(min, max){
-      return Math.floor((Math.random() * max) + min);
     }
+    if($('#homepageFamJS').length){
+      setInterval(shuffleFam, 5000);
+    }
+
 
     /**
     Ensures that no graduate gets displayed twice.

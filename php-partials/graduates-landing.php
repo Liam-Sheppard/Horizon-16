@@ -1,38 +1,24 @@
-<div class="panel-bridge">
-
-</div>
+<div class="panel-bridge"></div>
 
 <div class="panel panel--fam-strips">
 
   <h2>Meet the talent</h2>
 
   <ul class='strip-container' id='homepageFamJS'>
-    <!-- <li class='single-grad'>
-      <a href='javascript:void(0)' class='grad-container'>
-        <img src='<?= get_stylesheet_directory_uri() ?>/assets/images/temp-grad-1.png'></img>
-        <span class='grad-name'>Mark Lappin</span>
-      </a>
-    </li><li class='single-grad'>
-      <a href='javascript:void(0)' class='grad-container'>
-        <img src='<?= get_stylesheet_directory_uri() ?>/assets/images/temp-grad-2.png'></img>
-        <span class='grad-name'>Michael Schmidt</span>
-      </a>
-    </li><li class='single-grad'>
-      <a href='javascript:void(0)' class='grad-container'>
-        <img src='<?= get_stylesheet_directory_uri() ?>/assets/images/temp-grad-3.png'></img>
-        <span class='grad-name'>Matt Keliher</span>
-      </a>
-    </li><li class='single-grad'>
-      <a href='javascript:void(0)' class='grad-container'>
-        <img src='<?= get_stylesheet_directory_uri() ?>/assets/images/temp-grad-4.png'></img>
-        <span class='grad-name'>Olivia McKenna</span>
-      </a>
-    </li><li class='single-grad'>
-      <a href='javascript:void(0)' class='grad-container'>
-        <img src='<?= get_stylesheet_directory_uri() ?>/assets/images/temp-grad-1.png'></img>
-        <span class='grad-name'>Mark Lappin</span>
-      </a>
-    </li> -->
+    <?
+
+    /*
+    $graduates = get_graduates(get_graduate_ids(true));
+
+    for($i = 0; $i < 6; $i++){
+      partial('graduate', [
+        'name' => isset($graduates[$i]['full_name']) ? $graduates[$i]['full_name'] : '',
+        'image' => get_stylesheet_directory_uri() . '/assets/images/graduate-images-600x400/graduate-' . $graduates[$i]['ID'] . '.png',
+        'disciplines' => isset($graduates[$i]['disciplines']) ? $graduates[$i]['disciplines'] : ''
+      ]);
+    }
+    */
+
+    ?>
   </ul>
-  <div id='fam-reshuffle'>Reshuffle<br><span>( There's 46 of us! )</span></div>
 </div>

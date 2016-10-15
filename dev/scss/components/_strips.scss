@@ -7,6 +7,18 @@
   will-change: left;
 }
 
+#homepageFamJS {
+  line-height: 0;
+  .grad-name, img {
+    animation-name: gradFadeIn;
+    animation-duration: .3s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: 1;
+    animation-delay: .5s;
+  }
+}
+
+
 
 .page-template-graduates {
   .polygon {
@@ -55,7 +67,7 @@
       filter: blur(3px);
       opacity: 0.1;
       transition: filter 0.6s;
-      display: inline-block !important; 
+      display: inline-block !important;
     }
     &.hide {
       opacity: 0 !important;
@@ -77,6 +89,7 @@
     display: inline-block;
     width: 30vw;
     transition: opacity 0.4s;
+    line-height: 0;
     @media screen and (min-width: 800px){
       width: 26vw;
     }
@@ -95,11 +108,7 @@
 
     .grad-container {
       img {
-        // animation-name: gradFadeIn;
-        // animation-duration: .3s;
-        // animation-fill-mode: backwards;
-        // animation-iteration-count: 1;
-        // animation-delay: .5s;
+        display: inline-block;
         transition: filter 0.4s, opacity 0.4s;
       }
 
@@ -226,7 +235,8 @@
   }
 }
 
-@keyframes gradFadeIn {
+
+@keyframes gradFadeIn(){
   from {
     opacity: 0;
   }

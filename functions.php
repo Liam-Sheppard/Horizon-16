@@ -1,5 +1,9 @@
 <?php
 
+require_once get_stylesheet_directory() . '/includes/functions-graduates.php';
+
+require_once get_stylesheet_directory() . '/includes/functions-login.php';
+
 
 if(!function_exists('partial')){
   /**
@@ -31,6 +35,7 @@ function enqueue_scripts_and_styles(){
   wp_localize_script('bundled-js', 'siteData', [
     'homeUrl' => get_home_url(),
     'themeUri' => get_stylesheet_directory_uri(),
+    'graduates' => get_graduates(get_graduate_ids(true)),
   ]);
   wp_enqueue_style('styles', get_stylesheet_directory_uri(). '/assets/css/styles.min.css', [], 1.2, 'screen');
   wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/assets/js/modernizr.min.js', [], 1.0, false  );
@@ -53,15 +58,8 @@ function register_works(){
     'menu_icon' => 'dashicons-format-gallery',
     'supports' => [
       'title', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes'
-    ],
-
+    ]
   ];
   register_post_type('work', $args);
 }
 add_action( 'init', 'register_works' );
-
-
-
-require_once get_stylesheet_directory() . '/includes/functions-graduates.php';
-
-require_once get_stylesheet_directory() . '/includes/functions-login.php';

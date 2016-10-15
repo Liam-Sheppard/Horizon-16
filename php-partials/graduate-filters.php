@@ -45,7 +45,7 @@
       'label' => 'Film &amp; TV',
     ],
     [
-      'id'    => 'production-design',
+      'id'    => 'production',
       'label' => 'Production',
     ],
     [
