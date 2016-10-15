@@ -21,13 +21,14 @@
       height: 100%;
       display: block;
       // background-size: contain;
-      transition: filter .3s;
+      transition: filter .3s, opacity .3s;
       // will-change: filter;
       animation-name: gradFadeIn;
       animation-duration: 1s;
       animation-fill-mode: backwards;
       animation-iteration-count: 1;
       animation-delay: .3s;
+      position: relative;
     }
 
     &.grad-1 .grad-image {
@@ -38,6 +39,78 @@
 
     &.work-show .grad-image {
       filter: blur(20px);
+      opacity: .8;
+    }
+
+    .grad-work-container {
+      opacity: 0;
+      transform: translate(-50%,-40%);
+      transition: opacity .3s, transform .3s;
+    }
+
+    &.work-show .grad-work-container {
+      opacity: 1;
+      transform: translate(-50%,-50%);
+    }
+
+    .grad-work-container {
+      position: absolute;
+      left: 50%;
+      top: 50vh;
+      width: 80%;
+      max-height: 80vh;
+      // overflow-y: auto;
+      transform: translate(-50%,-50%);
+    }
+
+    .work-strip {
+      display: flex;
+      width: 100%;
+      position: relative;
+      // background: $actualWhite;
+      box-shadow: 0 0 10px rgba($black, .3);
+
+      &:hover {
+        .work-image {
+          opacity: .6;
+        }
+
+        .work-title {
+          opacity: 1;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+
+    .work-strip:not(:first-of-type()) {
+      margin-top: 3rem;
+    }
+
+    .work-image {
+       width: 33.33%;
+       padding-bottom: 20%;
+       background-position: center;
+       background-size: cover;
+       transition: opacity .3s;
+       overflow: hidden;
+    }
+
+    .work-title {
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-40%);
+      box-shadow: 0 0 10px rgba($black, .3);
+      opacity: 0;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $black;
+      font-size: 1.2rem;
+      letter-spacing: .35rem;
+      padding: 1.5rem 4rem;
+      background: $actualWhite;
+      transition: opacity .3s, transform .3s;
     }
   }
 
