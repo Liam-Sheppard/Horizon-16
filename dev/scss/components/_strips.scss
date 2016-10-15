@@ -2,47 +2,60 @@
 # GRADUATE STRIPS
 ==============================================================================*/
 
-.panel--graduate-strips {
-  padding-top: 8rem;
+.page-template-graduates {
 
-  .strip-container .single-grad {
-    margin-bottom: 3rem;
+  .panel--graduate-strips {
+    text-align: left;
+    height: 100vh;
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      vertical-align: middle;
+    }
   }
+  .graduates-container {
+    width: 98%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .strips-container {
+    overflow-x: scroll;
+  }
+
+  .strip {
+    white-space: nowrap;
+    margin: 0 0 1.5rem;
+    font-size: 0;
+    background: $actualWhite;
+    &:nth-child(3){
+      margin-bottom: 0;
+    }
+  }
+
+
+
 }
 
-.strip-container {
-  // margin-top: 5vh;
-  // height: 75vh;
-  width: 99%;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  font-size: 0;
-  margin: 0 0 3rem;
-  // background: $actualWhite;
+
+.strip-container, .strip {
+
 
   .single-grad {
     display: inline-block;
-    width: 20%;
+    width: 15vw;
     list-style: none;
     position: relative;
-    padding-bottom: 13.35%;
+    white-space: nowrap;
+    background: $actualWhite;
 
     &:nth-of-type(6){
       display: none;
     }
 
     .grad-container {
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-      background: $actualWhite;
-      padding-top: 20px;
-      font-size: 0;
-      position: absolute;
-      top: 0; left: 0;
+
 
       .grad-name {
         padding: 10px 0;
@@ -60,7 +73,7 @@
         font-weight: 500;
         transform: translateY(-100%);
         transition: all .2s;
-        opacity: .3;
+        opacity: 0;
       }
 
       .grad-name,
@@ -95,7 +108,6 @@
 @media (max-width: 1600px) {
   .strip-container .single-grad {
     width: 24.75%;
-    padding-bottom: 17.8%;
   }
 
   .panel--fam-strips .single-grad:nth-of-type(5),
@@ -108,7 +120,6 @@
   .strip-container .single-grad {
     width: 33.33%;
     margin-bottom: 3rem;
-    padding-bottom: 23%;
   }
 
   .panel--fam-strips .single-grad:nth-of-type(5),
@@ -121,7 +132,6 @@
   .strip-container .single-grad {
     width: 50%;
     margin-bottom: 3rem;
-    padding-bottom: 36%;
   }
 }
 

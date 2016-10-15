@@ -2,7 +2,9 @@
   "sources": [
     "dev/js/egg.min.js",
     "dev/bower/parallax/deploy/jquery.parallax.min.js",
+    "dev/js/vendor/mCustomScrollbar.js",
     "dev/js/easter-eggs.js",
+    "dev/js/graduate-strips.js",
     "dev/js/main.js"
   ]
 }

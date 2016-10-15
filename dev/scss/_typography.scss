@@ -103,18 +103,27 @@ h1, .h1 {
         display: block;
     }
 }
-h2, .h2 {
-    @include title;
-    margin: 3em 0;
-    transition: opacity 2s;
-    .js & {
-      opacity: 0;
-    }
-    .js &.seen {
-      opacity: 1;
-    }
 
+h2, .h2 {
+  @include title;
+  font-size: 1.7rem;
 }
+
+.home {
+  h2, .h2 {
+      @include title;
+      margin: 3em 0;
+      transition: opacity 2s;
+      .js & {
+        opacity: 0;
+      }
+      .js &.seen {
+        opacity: 1;
+      }
+
+  }
+}
+
 h3, .h3 {
     @include title;
 }
