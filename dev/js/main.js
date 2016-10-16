@@ -108,40 +108,40 @@ $(document).ready( function() {
           }
           currentGrads[i] = newGrad;
           var grad = gradsJSON[currentGrads[i]];
-          $famID.append('<li class="single-grad active"><a href="javascript:void(0)" class="grad-container"><img src="' + siteData.themeUri + '/assets/images/graduate-images-600x400/graduate-' + grad.ID + '.png"><span class="grad-name"><span class="board"></span><span class="name">' + grad.full_name + '</span></span></a></li>');
+          $famID.append('<li class="single-grad active"><div class="grad-container"><img src="' + siteData.themeUri + '/assets/images/graduate-images-600x400/graduate-' + grad.ID + '.png"><span class="grad-name"><span class="board"></span><span class="name">' + grad.full_name + '</span></span></div></li>');
           prevGrads = currentGrads;
         }
 
 
 
     // Reshuffle Graduates
-    function shuffleFam(){
-      $('.grad-container img').fadeTo(300, 0);
-      $('.grad-container .grad-name').fadeTo(300, 0).promise().done(function() {
-        var currentGrads = [];
-        var gradNew;
-        i = 0;
-        for (i; i < 6; i++) {
-          var loop = true;
-          gradUnique = false;
-          gradNew = false;
-
-          while ( loop ) {
-            newGrad = gradRandom(0, numberOfGrads - 1);
-            gradUnique = checkDupes(newGrad, currentGrads);
-            gradNew = checkDupes(newGrad, prevGrads);
-            if ( gradUnique && gradNew ) {
-              loop = false;
-            }
-          }
-          currentGrads[i] = newGrad;
-
-          var grad = siteData.graduates[currentGrads[i]];
-          $('#homepageFamJS').children(".single-grad:nth-of-type(" + ( i + 1 ) + ")").children().html("<img src='" + siteData.themeUri + "/assets/images/graduate-images-600x400/graduate-" + grad.ID + ".png'><span class='grad-name'><span class='board'></span><span class='name'>" + grad.full_name + "</span></span>");
-        }
-        prevGrads = currentGrads;
-      });
-    }
+    // function shuffleFam(){
+    //   $('.grad-container img').fadeTo(300, 0);
+    //   $('.grad-container .grad-name').fadeTo(300, 0).promise().done(function() {
+    //     var currentGrads = [];
+    //     var gradNew;
+    //     i = 0;
+    //     for (i; i < 6; i++) {
+    //       var loop = true;
+    //       gradUnique = false;
+    //       gradNew = false;
+    //
+    //       while ( loop ) {
+    //         newGrad = gradRandom(0, numberOfGrads - 1);
+    //         gradUnique = checkDupes(newGrad, currentGrads);
+    //         gradNew = checkDupes(newGrad, prevGrads);
+    //         if ( gradUnique && gradNew ) {
+    //           loop = false;
+    //         }
+    //       }
+    //       currentGrads[i] = newGrad;
+    //
+    //       var grad = siteData.graduates[currentGrads[i]];
+    //       $('#homepageFamJS').children(".single-grad:nth-of-type(" + ( i + 1 ) + ")").children().html("<img src='" + siteData.themeUri + "/assets/images/graduate-images-600x400/graduate-" + grad.ID + ".png'><span class='grad-name'><span class='board'></span><span class='name'>" + grad.full_name + "</span></span>");
+    //     }
+    //     prevGrads = currentGrads;
+    //   });
+    // }
     // if($('#homepageFamJS').length){
     //   setInterval(shuffleFam, 5000);
     // }

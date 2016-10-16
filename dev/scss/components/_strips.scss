@@ -7,14 +7,47 @@
   will-change: left;
 }
 
-#homepageFamJS {
-  line-height: 0;
-  .grad-name, img {
-    animation-name: gradFadeIn;
-    animation-duration: .3s;
-    animation-fill-mode: backwards;
-    animation-iteration-count: 1;
-    animation-delay: .5s;
+body.home {
+  .strip-wrapper {
+    display: block;
+    position: relative;
+    margin-bottom: 5rem;
+    .grad-name {
+      display: none;
+    }
+    .single-grad {
+      overflow: hidden;
+    }
+    &:hover {
+      .strip-container .single-grad.active img {
+        filter: blur(10px);
+      }
+      .strip-homepage-text {
+        opacity: 1;
+        transform: translate(-50%,-50%);
+      }
+    }
+    .strip-homepage-text {
+      background: $black;
+      box-shadow: 0 0 .6rem rgba($black, .3);
+      font-size: 1.2rem;
+      letter-spacing: .4rem;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-30%);
+      color: $white;
+      font-weight: 500;
+      padding: 1.5rem 3rem;
+      opacity: 0;
+      transition: opacity .4s, transform .4s;
+      span {
+        font-size: 70%;
+        opacity: .4;
+        margin-top: .6rem;
+      }
+    }
   }
 }
 
@@ -107,6 +140,7 @@
     }
 
     .grad-container {
+
       img {
         display: inline-block;
         transition: filter 0.4s, opacity 0.4s;
