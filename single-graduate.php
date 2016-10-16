@@ -22,7 +22,7 @@ partial('header');
   <div class='right-panel'>
     <div class='name-and-discipline'>
       <h1>
-        Liam Sheppard
+        Charlotte Vandersande
       </h1>
 
       <h2>
