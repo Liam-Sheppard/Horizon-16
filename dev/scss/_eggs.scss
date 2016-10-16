@@ -116,3 +116,26 @@
     background-position: 36px 0;
   }
 }
+
+
+
+body {
+  transition: margin .5s;
+}
+
+body.break-everything {
+  margin-top: 29.8vw;
+  * {
+    display: -webkit-box;
+  }
+}
+
+.internetexplorer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 29.8vw;
+  background-image: url(../images/eggs/ie.png);
+  background-size: cover;
+}
