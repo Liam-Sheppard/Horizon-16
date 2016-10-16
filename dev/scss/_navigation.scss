@@ -1,55 +1,95 @@
 /*=============================================================================
 # NAVIGATION
 ==============================================================================*/
+@mixin primaryMenuItem(){
+    display: inline-block;
+    font-size: .75rem;
+    color: $actualWhite;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .5em;
+    font-weight: 700;
+    transition: all .4s;
+}
+
 
 #site-header {
   padding: 3rem;
   position: absolute;
   top: 0; left: 0; right: 0;
   z-index: 20;
+  .hide-header & {
+    @media screen and (max-width: 1000px){
+      display: none;
+    }
+  }
   .socialmedia {
     float: right;
     @include simpleAnimateIn(0.4);
+    a:first-child {
+      @include primaryMenuItem;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1000px){
     .socialmedia {
+      display: none;
+
+    }
+  }
+  .hamburger {
+    position: absolute;
+    right: 3rem;
+    top: 3.25rem;
+    @media screen and (min-width: 700px){
       display: none;
     }
   }
 }
 
-
-@mixin primaryMenuItem(){
-    display: inline-block;
-    padding: 1em 1em 1em 0;
-    font-size: 0.75rem;
-    color: $white;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.5em;
-    font-weight: 700;
-    transition: all 0.6s;
+#menu-primary {
+  @media screen and (max-width: 699px){
+    display: none;
+  }
 }
+
+.menu-primary-container {
+  display: inline-block;
+}
+
+
 
 #primary-navigation {
     z-index: 10;
     display: inline-block;
+
     &:after {
         content: '';
         display: block;
         clear: both;
     }
+    li {
+        display: inline-block;
+    }
     ul {
+        @include simpleAnimateIn(0.1);
+
         list-style: none;
         display: inline-block;
         vertical-align: middle;
         margin: 0 2rem;
-        transition: opacity 2s 0.4s;
+        transition: opacity 2s .3s;
 
         .menu-item {
-          opacity: 0.1;
+          opacity: .25;
+          a {
+            color: $actualWhite;
+            padding: 1em 1em 1em 0;
+          }
         }
-        .menu-item.active {
+        .menu-item.active,
+        .current-menu-item {
           opacity: 1;
         }
         &:hover {
@@ -61,25 +101,15 @@
             }
         }
     }
-    li {
-        display: inline-block;
-        &:nth-of-type(1) {
-          @include simpleAnimateIn(0.1);
-        }
-        &:nth-of-type(2) {
-          @include simpleAnimateIn(0.2);
-        }
-        &:nth-of-type(3) {
-          @include simpleAnimateIn(0.3);
-        }
-        &:nth-of-type(4) {
-          @include simpleAnimateIn(0.4);
-        }
-    }
+
     .menu-item {
         @include primaryMenuItem();
 
     }
+}
+
+.page-template-single-graduate .menu-primary-container #menu-primary .menu-item a {
+  color: $black;
 }
 
 
@@ -98,7 +128,12 @@
     text-decoration: none;
     color: inherit;
     opacity: 0.3;
-    transition: opacity .6s;
+    transition: opacity .4s;
+    text-transform: uppercase;
+    &:first-child {
+      font-weight: 700;
+      letter-spacing: .5em;
+    }
     span {
       text-indent: -9999px;
       font-size: 0;

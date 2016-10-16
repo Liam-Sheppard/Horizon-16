@@ -25,7 +25,12 @@
                 "ui-ux": "UI\/UX",
                 "photography": "Photography",
                 "tangible-media": "Tangible Media",
-                "information-design": "Information Design"
+                "information-design": "Information Design",
+                "graphic-design": "Graphic Design",
+                "ftv": "Film & Television",
+                "production": "Production Design",
+                "sustainable": "Sustainable Design",
+                "interior-design": "Interior Design"
             },
             "default_value": [],
             "layout": "horizontal",
@@ -90,7 +95,11 @@
                         "linkedin": "LinkedIn",
                         "instagram": "Instagram",
                         "behance": "Behance",
-                        "dribbble": "Dribbble"
+                        "dribbble": "Dribbble",
+                        "imdb": "IMDB",
+                        "youtube": "YouTube",
+                        "flickr": "Flickr",
+                        "vimeo": "Vimeo"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -155,5 +164,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1474469280
+    "modified": 1476607882
 }

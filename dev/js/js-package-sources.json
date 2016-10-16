@@ -5,6 +5,7 @@
     "dev/js/vendor/mCustomScrollbar.js",
     "dev/js/easter-eggs.js",
     "dev/js/graduate-strips.js",
+    "dev/js/graduates-shuffle.js",
     "dev/js/main.js"
   ]
 }

@@ -1,5 +1,9 @@
 <?php
 
+require_once get_stylesheet_directory() . '/includes/functions-graduates.php';
+
+require_once get_stylesheet_directory() . '/includes/functions-login.php';
+
 
 if(!function_exists('partial')){
   /**
@@ -31,6 +35,7 @@ function enqueue_scripts_and_styles(){
   wp_localize_script('bundled-js', 'siteData', [
     'homeUrl' => get_home_url(),
     'themeUri' => get_stylesheet_directory_uri(),
+    'graduates' => get_graduates(get_graduate_ids(true)),
   ]);
   wp_enqueue_style('styles', get_stylesheet_directory_uri(). '/assets/css/styles.min.css', [], 1.2, 'screen');
   wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/assets/js/modernizr.min.js', [], 1.0, false  );
@@ -44,6 +49,11 @@ function enable_thumbs(){
 add_action( 'init', 'enable_thumbs' );
 
 
+function register_menus(){
+  register_nav_menu( 'primary-navigation', 'Primary navigation (site header)' );
+}
+add_action( 'after_setup_theme', 'register_menus' );
+
 function register_works(){
   $args = [
     'label' => 'Works',
@@ -53,37 +63,8 @@ function register_works(){
     'menu_icon' => 'dashicons-format-gallery',
     'supports' => [
       'title', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes'
-    ],
-
+    ]
   ];
   register_post_type('work', $args);
 }
 add_action( 'init', 'register_works' );
-
-function hide_posts_admin_menu(){
-  remove_menu_page('edit.php');
-}
-add_action('admin_menu', 'hide_posts_admin_menu');
-
-
-function hide_posts_admin_bar()
-{
-    global $wp_admin_bar;
-    $wp_admin_bar->remove_node( 'new-post' );
-}
-add_action( 'admin_bar_menu', 'hide_posts_admin_bar' );
-
-function my_login_logo_url() {
-    return home_url();
-}
-add_filter( 'login_headerurl', 'my_login_logo_url' );
-
-function my_login_logo_url_title() {
-    return 'Horizon16';
-}
-add_filter( 'login_headertitle', 'my_login_logo_url_title' );
-
-function my_login_stylesheet() {
-    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/style-login.min.css' );
-}
-add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );

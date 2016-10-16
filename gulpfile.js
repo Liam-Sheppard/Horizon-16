@@ -31,7 +31,7 @@ gulp.task('sass', function () {
             .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('./' + distDirectory + '/css'))
-        .pipe(notify({ message: 'Styles Successfully Compiled', onLast: true}));
+        .pipe(notify({ message: 'Styles Successfully Compiled', onLast: true }));
 });
 
 gulp.task('scripts', function() {

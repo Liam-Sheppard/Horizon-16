@@ -15,3 +15,5 @@ partial('more-coming-soon');
 partial('footer');
 
 get_footer();
+
+?>

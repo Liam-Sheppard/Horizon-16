@@ -2,11 +2,71 @@
 # GRADUATE STRIPS
 ==============================================================================*/
 
-.page-template-graduates {
+.mCSB_container:hover {
+  // Enable GPU Accelleration.
+  will-change: left;
+}
 
+body.home {
+  .strip-wrapper {
+    display: block;
+    position: relative;
+    margin-bottom: 5rem;
+    .grad-name {
+      display: none;
+    }
+    .single-grad {
+      overflow: hidden;
+    }
+    &:hover {
+      .strip-container .single-grad.active img {
+        filter: blur(10px);
+      }
+      .strip-homepage-text {
+        opacity: 1;
+        transform: translate(-50%,-50%);
+      }
+    }
+    .strip-homepage-text {
+      background: $black;
+      box-shadow: 0 0 .6rem rgba($black, .3);
+      font-size: 1.2rem;
+      letter-spacing: .4rem;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-30%);
+      color: $white;
+      font-weight: 500;
+      padding: 1.5rem 3rem;
+      opacity: 0;
+      transition: opacity .4s, transform .4s;
+      span {
+        font-size: 70%;
+        opacity: .4;
+        margin-top: .6rem;
+      }
+    }
+  }
+  @media screen and (min-width: 1301px){
+    .single-grad {
+      width: 20%;
+    }
+  }
+}
+
+
+
+.page-template-graduates {
+  .polygon {
+    z-index: -5;
+  }
   .panel--graduate-strips {
     text-align: left;
     height: 100vh;
+    padding: 8rem 3rem 3rem;
+    text-align: center;
     &::before {
       content: '';
       display: inline-block;
@@ -19,10 +79,15 @@
     width: 98%;
     display: inline-block;
     vertical-align: middle;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.6s 0.4s;
   }
-  .strips-container {
-    overflow-x: scroll;
+  &.loaded .graduates-container {
+    opacity: 1;
   }
+
+
 
   .strip {
     white-space: nowrap;
@@ -34,6 +99,22 @@
     }
   }
 
+  .single-grad {
+    @media screen and (min-width: 700px){
+      filter: blur(3px);
+      opacity: 0.1;
+      transition: filter 0.6s;
+      display: inline-block !important;
+    }
+    &.hide {
+      opacity: 0 !important;
+    }
+    &.active {
+      filter: none;
+      opacity: 1;
+    }
+  }
+
 
 
 }
@@ -41,14 +122,24 @@
 
 .strip-container, .strip {
 
-
   .single-grad {
     display: inline-block;
-    width: 15vw;
+    width: 30vw;
+    transition: opacity 0.4s;
+    line-height: 0;
+    @media screen and (min-width: 800px){
+      width: 26vw;
+    }
+    @media screen and (min-width: 1400px){
+      width: 15vw;
+    }
     list-style: none;
     position: relative;
     white-space: nowrap;
     background: $actualWhite;
+    img, a {
+      display: block;
+    }
 
     &:nth-of-type(6){
       display: none;
@@ -56,50 +147,89 @@
 
     .grad-container {
 
+      img {
+        transition: filter 0.4s, opacity 0.4s;
+      }
+
+
 
       .grad-name {
-        padding: 10px 0;
-        display: block;
-        width: 100%;
+        padding: .6rem 1.4rem;
         text-align: center;
         position: absolute;
-        top: 0;
-        left: 0;
-        color: $black;
+        top: 100%;
+        left: 50%;
+        color: $actualWhite;
         text-decoration: none;
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: .2rem;
         font-weight: 500;
-        transform: translateY(-100%);
-        transition: all .2s;
-        opacity: 0;
-      }
-
-      .grad-name,
-      img {
-        animation-name: gradFadeIn;
-        animation-duration: .3s;
-        animation-fill-mode: backwards;
-        animation-iteration-count: 1;
-        animation-delay: .5s;
-      }
-
-      &:hover,
-      &:active {
-        .grad-name {
-          opacity: 1;
-          transform: translateY(0);
+        transform: translate(-50%, 0);
+        transition: all .4s;
+        .name {
+          position: relative;
+          z-index: 5;
+          transition: opacity 0.2s;
+          opacity: 0;
+          display: inline-block;
+        }
+        .board {
+          content: '';
+          display: block;
+          height: 1rem;
+          width: 1rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%) rotate(45deg);
+          background-color: $black;
+          box-shadow: 0 0 0.25em rgba(0,0,0,0.1);
+          opacity: 0;
+          transition: transform 0.3s 0.2s, width 0.2s, height 0.2s, opacity 0.2s;
         }
       }
-
+      &:hover {
+        .grad-name {
+          transform: translate(-50%, -3rem);
+        }
+        .name {
+          opacity: 1;
+          transition: opacity 0.2s 0.4s;
+        }
+        .board {
+          height: 100%;
+          width: 100%;
+          opacity: 1;
+          transform: translate(-50%,-50%) rotate(540deg);
+          transition: transform 0.3s, width 0.4s 0.3s, height 0.4s 0.3s, opacity 0.1s;
+        }
+      }
       img {
         width: 100%;
         height: auto;
+        display: block;
       }
     }
   }
 }
+
+
+@media screen and (max-width: 699px){
+  .page-template-graduates {
+    .strip {
+      margin-bottom: 0;
+      white-space: normal;
+    }
+    .single-grad {
+      width: 50%;
+      float: left;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
 
 .panel--fam-strips .single-grad:nth-of-type(6){
   display: none;
@@ -121,7 +251,6 @@
     width: 33.33%;
     margin-bottom: 3rem;
   }
-
   .panel--fam-strips .single-grad:nth-of-type(5),
   .panel--fam-strips .single-grad:nth-of-type(6) {
     display: inline-block;
@@ -132,6 +261,15 @@
   .strip-container .single-grad {
     width: 50%;
     margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 699px){
+  .js .single-grad {
+    display: none;
+  }
+  .js .single-grad.active {
+    display: inline-block;
   }
 }
 
@@ -147,7 +285,9 @@
   }
 }
 
-@keyframes gradFadeIn {
+
+
+@keyframes gradFadeIn(){
   from {
     opacity: 0;
   }
