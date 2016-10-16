@@ -55,6 +55,21 @@
       }).listen();
       console.log('Easter Egg Code: r i p');
 
+    egg
+      .addCode("h,e,l,l", function() {
+        $('body').addClass('break-everything');
+        $('body').append('<div class="internetexplorer"></div>');
+        setTimeout(function(){
+          $('.internetexplorer').fadeOut();
+        }, 5500);
+        setTimeout(function(){
+          $('body').removeClass('break-everything');
+          $('.internetexplorer').remove();
+        }, 7500);
+      })
+      .addHook(function(){
+      }).listen();
+      console.log('Easter Egg Code: m e o w');
   });
 
 })(jQuery);
