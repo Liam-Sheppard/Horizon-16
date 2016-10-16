@@ -3,14 +3,13 @@
 ==============================================================================*/
 @mixin primaryMenuItem(){
     display: inline-block;
-    padding: 1em 1em 1em 0;
-    font-size: 0.75rem;
-    color: $white;
+    font-size: .75rem;
+    color: $actualWhite;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 0.5em;
+    letter-spacing: .5em;
     font-weight: 700;
-    transition: all 0.6s;
+    transition: all .4s;
 }
 
 
@@ -86,6 +85,7 @@
           opacity: .25;
           a {
             color: $actualWhite;
+            padding: 1em 1em 1em 0;
           }
         }
         .menu-item.active,
@@ -108,7 +108,7 @@
     }
 }
 
-.page-template-single-graduate #primary-navigation .menu-item {
+.page-template-single-graduate .menu-primary-container #menu-primary .menu-item a {
   color: $black;
 }
 
@@ -128,7 +128,12 @@
     text-decoration: none;
     color: inherit;
     opacity: 0.3;
-    transition: opacity .6s;
+    transition: opacity .4s;
+    text-transform: uppercase;
+    &:first-child {
+      font-weight: 700;
+      letter-spacing: .5em;
+    }
     span {
       text-indent: -9999px;
       font-size: 0;
