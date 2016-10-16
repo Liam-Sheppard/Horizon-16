@@ -130,10 +130,7 @@
     opacity: 0.3;
     transition: opacity .4s;
     text-transform: uppercase;
-    &:first-child {
-      font-weight: 700;
-      letter-spacing: .5em;
-    }
+
     span {
       text-indent: -9999px;
       font-size: 0;

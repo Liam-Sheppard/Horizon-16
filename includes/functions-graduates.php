@@ -30,12 +30,34 @@ function get_graduates($ids = []){
   $graduates = [];
 
   foreach($ids as $id){
+
+    /*
+     Get Disciplines
+     */
+    $disciplines = get_field('disciplines', 'user_'.$id);
+    if($disciplines){
+      $disciplines_labels = [];
+      foreach($disciplines as $discipline){
+        array_push($disciplines_labels, $discipline['label']);
+      }
+      $disciplines_values = [];
+      foreach($disciplines as $discipline){
+        array_push($disciplines_values, $discipline['value']);
+      }
+    }
+
+
     array_push($graduates, [
       'ID'          => $id,
       'first_name'  => get_user_meta($id, 'first_name', true),
       'last_name'   => get_user_meta($id, 'last_name', true),
       'full_name'   => get_user_meta($id, 'first_name', true) . ' ' . get_user_meta($id, 'last_name', true),
-      'disciplines' => get_field('disciplines', 'user_'.$id),
+      'disciplines' => isset($disciplines) ? $disciplines : null,
+      'disciplines_values' => isset($disciplines_values) ? $disciplines_values : null,
+      'disciplines_labels' => isset($disciplines_labels) ? $disciplines_labels : null,
+      'social_links'  => get_field('social_links', 'user_' . $id) ? get_field('social_links', 'user_' . $id) : null,
+      'portfolio'     => get_userdata($id)->user_url,
+      'bio'           => get_userdata($id)->description
       // 'permalink'   => get_author_posts_url($id)
     ]);
   }
