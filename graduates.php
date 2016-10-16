@@ -48,7 +48,8 @@ partial('header');
                 partial('graduate', [
                   'name' => isset($current_graduate['full_name']) ? $current_graduate['full_name'] : '',
                   'image' => get_stylesheet_directory_uri() . '/assets/images/graduate-images-600x400/graduate-' . $current_graduate['ID'] . '.png',
-                  'disciplines' => isset($current_graduate['disciplines']) ? $current_graduate['disciplines'] : ''
+                  'disciplines' => isset($current_graduate['disciplines_values']) ? $current_graduate['disciplines_values'] : '',
+                  'permalink' => get_author_posts_url($current_graduate['ID'])
                 ]);
               }
             }

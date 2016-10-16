@@ -35,7 +35,7 @@
             "default_value": [],
             "layout": "horizontal",
             "toggle": 0,
-            "return_format": "value"
+            "return_format": "array"
         },
         {
             "key": "field_57e29766a3e1e",
@@ -145,6 +145,65 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_5803a2bb50480",
+            "label": "Facts",
+            "name": "facts",
+            "type": "repeater",
+            "instructions": "Cheesy facts about yourself. Give yourself some personality!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 3,
+            "layout": "table",
+            "button_label": "Add Fact",
+            "sub_fields": [
+                {
+                    "key": "field_5803a2c650481",
+                    "label": "Number",
+                    "name": "number",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "5+",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5803a2ce50482",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Pizzas weekly",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -164,5 +223,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1476607882
+    "modified": 1476633359
 }
