@@ -41,3 +41,11 @@ function get_graduates($ids = []){
   }
   return $graduates;
 }
+
+
+add_action('init', 'graduate_base');
+function graduate_base() {
+    global $wp_rewrite;
+    $author_slug = 'graduate'; // change slug name
+    $wp_rewrite->author_base = $author_slug;
+}

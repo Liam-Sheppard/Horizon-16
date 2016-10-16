@@ -1,5 +1,4 @@
 .graduate-filters {
-  margin: 0 0 2em;
   display: inline-block;
   line-height: 1;
   list-style: none;
@@ -40,6 +39,73 @@
       background: $actualWhite;
       color: $black;
       opacity: 1;
+    }
+  }
+}
+
+.graduate-filters-container {
+  position: relative;
+  .button {
+    margin-bottom: 3em;
+  }
+}
+
+@media screen and (min-width: 1001px){
+  .graduate-filters-container {
+    .button {
+      display: none;
+    }
+  }
+  .graduate-filters {
+    margin: 0 0 2em;
+  }
+}
+
+@media screen and (min-width: 1001px){
+  .filter-title {
+    display: none;
+  }
+  .graduate-filters-wrapper {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 1000px){
+  .graduate-filters-wrapper {
+    position: fixed;
+    display: none;
+    z-index: 1000;
+    left: 0; top: 0; bottom: 0; right: 0;
+    height: 100%;
+    background: $actualWhite;
+    padding: 7rem 3rem;
+    text-align: center;
+    overflow: scroll;
+    color: $black;
+    opacity: 0;
+    transition: all 0.4s;
+    &.visible {
+      opacity: 1;
+    }
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .graduate-filters {
+      width: 98%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .filter-item {
+      display: block;
+      margin-right: 0;
+      a {
+        font-size: 1.4rem;
+        display: block;
+        color: $black;
+      }
     }
   }
 }

@@ -9,16 +9,8 @@
       'label' => 'Web Design',
     ],
     [
-      'id'    => 'animation',
-      'label' => 'Animation',
-    ],
-    [
       'id'    => 'ui-ux',
       'label' => 'UI/UX',
-    ],
-    [
-      'id'    => 'typography',
-      'label' => 'Typography',
     ],
     [
       'id'    => 'print-design',
@@ -37,12 +29,20 @@
       'label' => 'Photography',
     ],
     [
-      'id'    => 'tangible-media',
-      'label' => 'Tangible Media',
+      'id'    => 'typography',
+      'label' => 'Typography',
     ],
     [
       'id'    => 'ftv',
       'label' => 'Film &amp; TV',
+    ],
+    [
+      'id'    => 'animation',
+      'label' => 'Animation',
+    ],
+    [
+      'id'    => 'tangible-media',
+      'label' => 'Tangible Media',
     ],
     [
       'id'    => 'production',
@@ -58,16 +58,31 @@
     ],
   ];
 ?>
+<div class="graduate-filters-container">
 
-<ul class="graduate-filters">
-  <li class="menu-item filter-item active" data-filter-class="all">
-    <a href="javascript:void(0)">All</a>
-  </li>
-  <?php
-  foreach($filters as $filter){ ?>
-    <li class="menu-item filter-item" data-filter-class="<?= $filter['id'] ?>">
-      <a href="javascript:void(0)"><?= $filter['label'] ?></a>
-    </li>
-  <?php
-  }
-echo '</ul>';
+  <a href="javacsript:void(0)" class="button button--small toggle-graduate-filters">Filter: All</a>
+
+  <div class="graduate-filters-wrapper">
+    <div class="inline-v-align">
+
+          <h3 class="filter-title">Filter by Discipline</h3>
+
+          <ul class="graduate-filters">
+            <li class="menu-item filter-item active" data-filter-class="all">
+              <a href="javascript:void(0)">All</a>
+            </li>
+            <?php
+            foreach($filters as $filter){ ?>
+              <li class="menu-item filter-item" data-filter-class="<?= $filter['id'] ?>">
+                <a href="javascript:void(0)"><?= $filter['label'] ?></a>
+              </li>
+            <?php
+            } ?>
+          </ul>
+
+          <a href="javascript:void(0)"><i class="icon-close toggle-graduate-filters"></i></a>
+
+    </div>
+  </div>
+
+</div>
