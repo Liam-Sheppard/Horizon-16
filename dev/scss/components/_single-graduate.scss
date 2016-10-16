@@ -232,6 +232,9 @@
   .left-panel {
     height: 100vh;
   }
+  #workJS:not(.work-show) {
+    pointer-events: none;
+  }
   .grad-work-container {
     width: 100%;
     padding: 0 10rem;
