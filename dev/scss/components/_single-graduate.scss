@@ -126,6 +126,8 @@
     p {
       margin: 3rem 0 8rem;
       font-size: 1.3rem;
+      text-align: left;
+      line-height: 1.7;
     }
 
     .fun-facts {
@@ -312,6 +314,7 @@
         }
         h2 {
           font-size: 1.4rem;
+          width: 50%;
         }
       }
       p {
@@ -346,6 +349,9 @@
     .name-and-discipline {
       min-height: calc(80vh - 10rem);
       padding-top: 2rem;
+      h2 {
+        width: 100%;
+      }
     }
     .profile-socialmedia li a {
       padding: .5rem;
