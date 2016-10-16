@@ -58,23 +58,50 @@ partial('header');
 
     <div class="panel-bridge"></div>
     <span class="horizon-rule horizon-rule--bottom-end"></span>
-    <div class='fun-facts'>
-      <div class='fact'>
+    <ul class='fun-facts'>
+      <li class='fact'>
         <span class='number'>15+</span>
         <span class='text'>Games of Dota 2 per week</span>
-      </div>
-      <div class='fact'>
+      </li>
+      <li class='fact'>
         <span class='number'>5</span>
         <span class='text'>Hours of Reddit per day</span>
-      </div>
-      <div class='fact'>
+      </li>
+      <li class='fact'>
         <span class='number'>2</span>
         <span class='text'>Pizzas per week</span>
-      </div>
-    </div>
+      </li>
+    </ul>
     <span class="horizon-rule horizon-rule--top-end"></span>
     <div class="panel-bridge"></div>
+
     <a href="#" class='fancy-link'>View my Portfolio</a>
+    <ul class='profile-socialmedia'>
+      <li>
+        <a href='#'><i class="icon-instagram"></i></a>
+      </li>
+      <li>
+        <a href='#'><i class="icon-facebook"></i></a>
+      </li>
+      <li>
+        <a href='#'><i class="icon-linkedin"></i></a>
+      </li>
+      <li>
+        <a href='#'><i class="icon-behance"></i></a>
+      </li>
+      <li>
+        <a href='#'><i class="icon-dribbble"></i></a>
+      </li>
+      <li>
+        <a href='#'><i class="icon-youtube"></i></a>
+      </li>
+      <li>
+        <a href='#'><i class="icon-imdb"></i></a>
+      </li>
+      <li>
+        <a href='#'><i class="icon-flickr"></i></a>
+      </li>
+    </ul>
   </div>
 
 </div>

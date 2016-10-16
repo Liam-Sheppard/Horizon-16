@@ -29,12 +29,12 @@
       animation-iteration-count: 1;
       animation-delay: .3s;
       position: relative;
+      background-position: center top;
+      background-repeat: no-repeat;
     }
 
     &.grad-1 .grad-image {
-      background: url('../images/graduate-images-1800x1200/sheppard-liam.jpg');
-      background-position: center top;
-      background-repeat: no-repeat;
+      background-image: url('../images/graduate-images-1800x1200/sheppard-liam.jpg');
     }
 
     &.work-show .grad-image {
@@ -132,12 +132,12 @@
     }
 
     .panel-bridge {
-      margin-top: 7rem;
+      margin-top: 5rem;
       height: 5rem;
     }
 
     .paragraph {
-      margin: 3rem 0;
+      margin: 3rem 0 8rem;
       font-size: 1.3rem;
     }
 
@@ -148,6 +148,7 @@
     .fact {
       flex-grow: 1;
       text-align: left;
+      display: block;
 
       &:not(:first-of-type()) {
         margin-left: 5rem;
@@ -157,7 +158,8 @@
         display: block;
         font-size: 5rem;
         font-weight: 700;
-        line-height: 1.5;
+        line-height: 1;
+        margin-bottom: .6rem;
       }
 
       .text {
@@ -169,9 +171,36 @@
 
     .fancy-link {
       text-transform: uppercase;
-      letter-spacing: .2rem;
-      font-size: 1.2rem;
+      letter-spacing: .4rem;
+      font-size: 1.1rem;
       margin: 2rem 0;
+    }
+
+    .profile-socialmedia {
+      cursor: default;
+      li {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+          cursor: pointer;
+        a {
+          color: $white;
+          opacity: .3;
+          transition: opacity .3s;
+        }
+
+        &:not(:first-of-type()) {
+          margin-left: 3rem;
+        }
+      }
+      &:hover {
+        li a {
+          opacity: .1;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }
