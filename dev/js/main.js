@@ -216,8 +216,10 @@ $(document).ready( function() {
 		scrollBottom = $( this ).scrollTop() + $( this ).height( );
 
 		if ( position <= 50 ) {
+			$( '#workJS' ).removeClass( 'work-show' );
 			$( '#leftPanelJS' ).removeClass( 'work-show' );
 		} else {
+			$( '#workJS' ).addClass( 'work-show' );
 			$( '#leftPanelJS' ).addClass( 'work-show' );
 		}
 		position = $( this ).scrollTop( );

@@ -17,36 +17,47 @@ partial('header');
 
   <div class='left-panel grad-1' id='leftPanelJS'>
     <div class='grad-image'></div>
-    <div class='grad-work-container'>
-      <a href='javascript:void(0)' class='work-strip'>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1a.png")'></div>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1b.png")'></div>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1c.png")'></div>
-        <div class='work-title'>Motion Graphics</div>
-      </a>
-      <a href='javascript:void(0)' class='work-strip'>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2a.jpg")'></div>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2b.jpg")'></div>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2c.jpg")'></div>
-        <div class='work-title'>ZYMK Apparel</div>
-      </a>
-      <a href='javascript:void(0)' class='work-strip'>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3a.jpg")'></div>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3b.png")'></div>
-        <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3c.jpg")'></div>
-        <div class='work-title'>Half of a Yellow Sun</div>
-      </a>
-    </div>
   </div>
 
   <div class='right-panel'>
-    <h1>
-      Liam Sheppard
-    </h1>
+    <div class='name-and-discipline'>
+      <h1>
+        Liam Sheppard
+      </h1>
 
-    <h2>
-      UX/UI / Web
-    </h2>
+      <h2>
+        UX/UI / Web
+      </h2>
+    </div>
+
+    <div class='left-panel' id='workJS'>
+      <div class='grad-work-container'>
+        <a href='javascript:void(0)' class='work-strip'>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1a.png")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1b.png")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1c.png")'></div>
+          <div class='work-title'>Motion Graphics</div>
+        </a>
+        <a href='javascript:void(0)' class='work-strip'>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2a.jpg")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2b.jpg")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2c.jpg")'></div>
+          <div class='work-title'>ZYMK Apparel</div>
+        </a>
+        <a href='javascript:void(0)' class='work-strip'>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3a.jpg")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3b.png")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3c.jpg")'></div>
+          <div class='work-title'>Half of a Yellow Sun</div>
+        </a>
+        <a href='javascript:void(0)' class='work-strip'>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3a.jpg")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3b.png")'></div>
+          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3c.jpg")'></div>
+          <div class='work-title'>Half of a Yellow Sun</div>
+        </a>
+      </div>
+    </div>
 
     <!-- <span class="horizon-rule horizon-rule--top-end"></span> -->
     <div class="panel-bridge"></div>
@@ -86,7 +97,7 @@ partial('header');
       <li>
         <a href='#'><i class="icon-linkedin"></i></a>
       </li>
-      <li>
+      <!-- <li>
         <a href='#'><i class="icon-behance"></i></a>
       </li>
       <li>
@@ -100,7 +111,7 @@ partial('header');
       </li>
       <li>
         <a href='#'><i class="icon-flickr"></i></a>
-      </li>
+      </li> -->
     </ul>
   </div>
 

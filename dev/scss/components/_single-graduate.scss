@@ -3,14 +3,21 @@
 ==============================================================================*/
  .page-template-single-graduate #site-header {
    position: fixed;
+
+   .socialmedia {
+     display: none;
+   }
  }
 
 
 .panel--single-graduate {
+  padding: 0;
+  #workJS {
+    background: none;
+  }
   .left-panel {
     position: fixed;
     width: 50vw;
-    height: 100vw;
     background-color: $actualWhite;
     top: 0;
     left: 0;
@@ -37,27 +44,10 @@
       background-image: url('../images/graduate-images-1800x1200/sheppard-liam.jpg');
     }
 
-    &.work-show .grad-image {
-      filter: blur(20px);
-      opacity: .8;
-    }
-
     .grad-work-container {
       position: absolute;
       left: 50%;
-      top: 50vh;
-      width: 100%;
-      padding: 0 10%;
-      max-height: 80vh;
-      overflow-y: auto;
-      opacity: 0;
-      transform: translate(-50%,-45%);
       transition: opacity .5s, transform .5s;
-    }
-
-    &.work-show .grad-work-container {
-      opacity: 1;
-      transform: translate(-50%,-50%);
     }
 
     .work-strip {
@@ -113,7 +103,7 @@
 
   .right-panel {
     margin-left: 50%;
-    padding: 5rem 5rem 5rem 10rem;
+    padding: 10rem;
 
     h1, h2, h3 {
       text-align: left;
@@ -202,5 +192,266 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1750px) {
+  .panel--single-graduate .right-panel {
+    padding: 5rem;
+  }
+
+  .panel--single-graduate .left-panel .grad-work-container {
+    padding: 0 5rem;
+  }
+}
+
+@media (max-width: 1550px) {
+  .panel--single-graduate .left-panel {
+    .work-image {
+      width: 50%;
+      padding-bottom: 33%;
+      &:nth-of-type(3) {
+        display: none;
+      }
+    }
+    .work-title {
+      min-width: 70%;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .panel--single-graduate .right-panel .paragraph,
+  .panel--single-graduate .right-panel .fact .text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .left-panel {
+    height: 100vh;
+  }
+  .grad-work-container {
+    width: 100%;
+    padding: 0 10rem;
+    top: 55vh;
+    max-height: 75vh;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translate(-50%,-45%);
+  }
+
+  &.work-show .grad-image {
+    filter: blur(20px);
+    opacity: .8;
+  }
+
+  &.work-show .grad-work-container {
+    opacity: 1;
+    transform: translate(-50%,-50%);
+  }
+}
+
+@media (max-width: 1300px) {
+  .page-template-single-graduate #site-header {
+    position: absolute;
+  }
+  .panel--single-graduate {
+    .left-panel {
+      position: absolute;
+      width: 100vw;
+      // margin-bottom: 15rem;
+      overflow: visible;
+      &:not(#workJS) {
+        height: 50vh;
+      }
+      .work-image {
+        width: 33.33%;
+        padding-bottom: 20%;
+        &:nth-of-type(3) {
+          display: block;
+        }
+      }
+      .grad-image {
+        background-size: contain;
+        background-position: 35vw bottom;
+      }
+    }
+    #workJS {
+      position: relative;
+      width: 100%;
+      padding: 7rem 0 2rem;
+      .grad-work-container {
+        position: initial;
+        display: block;
+        width: 100%;
+        left: 0;
+        padding: 0;
+      }
+    }
+    .right-panel {
+      margin-left: 0;
+      padding: 10rem;
+      position: relative;
+
+      .name-and-discipline {
+        min-height: calc(50vh - 10rem);
+        padding-top: 3rem;
+
+        h1,
+        h2 {
+          color: $black;
+        }
+
+        h1 {
+          font-size: 2.3rem;
+        }
+        h2 {
+          font-size: 1.4rem;
+        }
+      }
+      .paragraph {
+        width: 80%;
+        margin: 3rem 10% 8rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .panel--single-graduate .right-panel {
+    padding: 10rem 5rem;
+  }
+  .panel--single-graduate .left-panel .grad-image {
+    background-position: 25vw bottom;
+  }
+}
+
+@media (max-width: 800px) {
+  .panel--single-graduate .left-panel:not(#workJS) {
+    height: 80vh;
+  }
+  .panel--single-graduate .right-panel .name-and-discipline {
+    min-height: calc(80vh - 10rem);
+    padding-top: 2rem;
+  }
+  .panel--single-graduate .left-panel .grad-image {
+    background-position: center bottom;
+  }
+  .panel--single-graduate .right-panel .profile-socialmedia li a {
+    padding: .5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .panel--single-graduate .left-panel .grad-image {
+    background-size: 130vw auto;
+    background-position: center bottom;
+  }
+  .panel--single-graduate .left-panel .work-image {
+    width: 50%;
+    padding-bottom: 30%;
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+  #workJS {
+    padding: 3rem 0 2rem;
+    .work-strip {
+      padding-bottom: 3rem;
+
+      .work-title {
+        top: calc(100% - 3rem);
+        font-size: 1rem;
+        left: 0;
+        transform: translate(0,0);
+        opacity: 1;
+        height: 3rem;
+        width: 100%;
+        line-height: 3rem;
+        padding: 0;
+      }
+    }
+  }
+  .panel--single-graduate .right-panel .fact .text {
+    font-size: .9rem;
+  }
+  .panel--single-graduate .right-panel .fact .number {
+    font-size: 4rem
+  }
+  .panel--single-graduate .right-panel .paragraph {
+    margin: 3rem 0 8rem;
+    width: 100%;
+  }
+  .panel--single-graduate .right-panel .fancy-link {
+    margin: 3rem 0;
+  }
+  .panel--single-graduate .right-panel .profile-socialmedia {
+    li {
+      width: 100%;
+      display: block;
+      text-align: center;
+      &:not(:first-of-type) {
+        margin-left: 0;
+      }
+      a {
+        width: 100%;
+        display: block;
+        padding: 1rem 0;
+        margin: 0 0 2rem;
+        border: 1px solid $actualWhite;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .panel--single-graduate .left-panel:not(#workJS) {
+    height: 85vh;
+  }
+  .panel--single-graduate .right-panel .name-and-discipline {
+    min-height: calc(85vh - 5rem);
+    padding-top: 6.5rem;
+  }
+  .panel--single-graduate #workJS {
+    padding: 3rem 0 2rem;
+  }
+  .panel--single-graduate .right-panel .paragraph,
+  .panel--single-graduate .right-panel .fact .text {
+    font-size: 1.2rem;
+  }
+  .panel--single-graduate .right-panel .fact .number {
+    font-size: 4rem
+  }
+  .panel--single-graduate .right-panel .fun-facts {
+    display: block;
+    margin: 0 3rem;
+  }
+  .panel--single-graduate .right-panel .fact:not(:first-of-type) {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+  .panel--single-graduate .right-panel .panel-bridge {
+    margin-top: 2rem;
+    height: 2rem;
+  }
+  .panel--single-graduate .right-panel .paragraph {
+    margin: 3rem 0 5rem;
+  }
+  .panel--single-graduate .right-panel .fancy-link {
+    margin: 3rem 0 6rem;
+  }
+}
+@media (max-width: 550px) {
+  .panel--single-graduate .right-panel {
+    padding: 5rem 7.5%;
+  }
+  .panel--single-graduate .right-panel .name-and-discipline h2 {
+    margin: 1.2rem 0
+  }
+}
+@media (max-width: 400px) {
+  .panel--single-graduate .right-panel .paragraph {
+    font-size: 1.1rem;
   }
 }
