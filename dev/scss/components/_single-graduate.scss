@@ -123,7 +123,7 @@
       height: 5rem;
     }
 
-    .paragraph {
+    p {
       margin: 3rem 0 8rem;
       font-size: 1.3rem;
     }
@@ -222,7 +222,7 @@
 }
 
 @media (max-width: 1400px) {
-  .panel--single-graduate .right-panel .paragraph,
+  .panel--single-graduate .right-panel p,
   .panel--single-graduate .right-panel .fact .text {
     font-size: 1.1rem;
   }
@@ -314,7 +314,7 @@
           font-size: 1.4rem;
         }
       }
-      .paragraph {
+      p {
         width: 80%;
         margin: 3rem 10% 8rem;
       }
@@ -394,7 +394,7 @@
         font-size: 4rem
       }
     }
-    .paragraph {
+    p {
       margin: 3rem 0 8rem;
       width: 100%;
     }
@@ -432,12 +432,12 @@
     .right-panel {
       .name-and-discipline {
         min-height: calc(85vh - 5rem);
-        padding-top: 4.5rem;
+        padding-top: 3rem;
       }
-      .paragraph {
+      p {
         margin: 3rem 0 5rem;
       }
-      .paragraph,
+      p,
       .fact .text {
         font-size: 1.2rem;
       }
@@ -474,7 +474,7 @@
 }
 @media (max-width: 400px) {
   .panel--single-graduate .right-panel {
-    .paragraph {
+    p {
       font-size: 1.1rem;
     }
     .name-and-discipline h1 {
