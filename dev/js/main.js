@@ -1,25 +1,46 @@
 $(document).ready( function() {
   $('body').addClass('loaded');
 
+
+  /*
+  Mobile Menu Toggle
+  */
   var navInTransition = false;
-  $('.toggle-mobile-menu').click(function(e){
+  function openMobileMenu(){
     if(!navInTransition){
       navInTransition = !navInTransition;
+      $('#primary-navigation-menu').show();
+      setTimeout(function(){
+        $('body').addClass('show-mobile-menu');
+        navInTransition = !navInTransition;
+      },50);
+    }
+  }
+  function closeMobileMenu(){
+    if(!navInTransition){
+      navInTransition = !navInTransition;
+      $('body').removeClass('show-mobile-menu');
+      setTimeout(function(){
+        $('#primary-navigation-menu').hide();
+        navInTransition = !navInTransition;
+      },400);
+    }
+  }
+  $('.toggle-mobile-menu').click(function(e){
       if(!$('body').hasClass('show-mobile-menu')){
-        $('#primary-navigation-menu').show();
-        setTimeout(function(){
-          $('body').addClass('show-mobile-menu');
-          navInTransition = !navInTransition;
-        },50);
+        openMobileMenu();
       } else {
-        $('body').removeClass('show-mobile-menu');
-        setTimeout(function(){
-          $('#primary-navigation-menu').hide();
-          navInTransition = !navInTransition;
-        },400);
+        closeMobileMenu();
       }
+  });
+  $('#primary-navigation-menu').click(function(e){
+    if($(window).innerWidth() < 700 && e.target == this){
+      console.log('yeh');
+      closeMobileMenu();
     }
   });
+
+
 
 
   function Polygon(svg){
