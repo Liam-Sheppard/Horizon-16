@@ -24,6 +24,11 @@ body {
       overflow: hidden;
     }
   }
+  &.show-mobile-menu {
+    @media screen and (max-width: 699px){
+      overflow: hidden;
+    }
+  }
 }
 
 ::selection {

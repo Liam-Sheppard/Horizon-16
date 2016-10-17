@@ -1,8 +1,15 @@
 .horizon-glyph-glyph {
-  background-image: url(../images/H.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  width: 1.75rem;
+  height: 1.5rem;
+
+
+}
+
+.author #H {
+  fill: $black;
+}
+#H {
+  fill: $actualWhite;
 }
 
 .horizon-glyph {
@@ -25,9 +32,7 @@
       transform: translateY(0);
     }
   }
-  .black & polygon {
-    fill: #1d1d1d;
-  }
+
 
 }
 

@@ -1,6 +1,26 @@
 $(document).ready( function() {
   $('body').addClass('loaded');
 
+  var navInTransition = false;
+  $('.toggle-mobile-menu').click(function(e){
+    if(!navInTransition){
+      navInTransition = !navInTransition;
+      if(!$('body').hasClass('show-mobile-menu')){
+        $('#primary-navigation-menu').show();
+        setTimeout(function(){
+          $('body').addClass('show-mobile-menu');
+          navInTransition = !navInTransition;
+        },50);
+      } else {
+        $('body').removeClass('show-mobile-menu');
+        setTimeout(function(){
+          $('#primary-navigation-menu').hide();
+          navInTransition = !navInTransition;
+        },400);
+      }
+    }
+  });
+
 
   function Polygon(svg){
     this.arm = {
