@@ -54,6 +54,11 @@ function register_menus(){
 }
 add_action( 'after_setup_theme', 'register_menus' );
 
+
+/** Image Sizes **/
+add_image_size('work-thumbnail', '540', '300', true);
+
+
 function register_works(){
   $args = [
     'label' => 'Works',

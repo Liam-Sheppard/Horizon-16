@@ -17,50 +17,46 @@ partial('header');
   <div class='right-panel'>
     <div class='name-and-discipline'>
       <h1><?= $current_graduate['full_name'] ?></h1>
-      <h2><?= implode($current_graduate['disciplines_labels'], ' / ') ?></h2>
+      <?= $current_graduate['disciplines_labels'] ? '<h2>' . implode(array_slice($current_graduate['disciplines_labels'], 0, 3), ' / ') . '</h2>' : false ?>
     </div>
 
     <div class='left-panel' id='workJS'>
       <div class='grad-work-container'>
-        <a href='javascript:void(0)' class='work-strip'>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1a.png")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1b.png")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work1c.png")'></div>
-          <div class='work-title'>Motion Graphics</div>
-        </a>
-        <a href='javascript:void(0)' class='work-strip'>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2a.jpg")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2b.jpg")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work2c.jpg")'></div>
-          <div class='work-title'>ZYMK Apparel</div>
-        </a>
-        <a href='javascript:void(0)' class='work-strip'>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3a.jpg")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3b.png")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3c.jpg")'></div>
-          <div class='work-title'>Half of a Yellow Sun</div>
-        </a>
-        <a href='javascript:void(0)' class='work-strip'>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3a.jpg")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3b.png")'></div>
-          <div class='work-image' style='background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/images/temp/work3c.jpg")'></div>
-          <div class='work-title'>Half of a Yellow Sun</div>
-        </a>
+        <?php
+
+        $works = new WP_Query([
+          'post_type' => 'work',
+          'posts_per_page' => 5,
+          'author' => $current_graduate['ID'],
+        ]);
+
+        foreach($works->posts as $work){
+          $gallery = get_field('work_gallery', $work->ID);
+          partial('work-strip', [
+            'title'  => $work->post_title,
+            'images' => (count($gallery)) ? array_slice($gallery, 0, 3) : false
+          ]);
+        }
+
+        ?>
+
       </div>
     </div>
 
     <!-- <span class="horizon-rule horizon-rule--top-end"></span> -->
-    <div class="panel-bridge"></div>
     <!-- <span class="horizon-rule horizon-rule--bottom-end"></span> -->
 
-    <?= ($bio = $current_graduate['bio']) ? apply_filters('the_content', $bio)  : false; ?>
-
-    <div class="panel-bridge"></div>
-    <span class="horizon-rule horizon-rule--bottom-end"></span>
-
     <?php
+
+    if ($bio = $current_graduate['bio']) {
+        echo '<div class="panel-bridge"></div>';
+        echo apply_filters('the_content', $bio);
+        echo '<div class="panel-bridge"></div>';
+    }
+
     $facts = get_field('facts', 'user_'.$current_graduate['ID']);
     if($facts){ ?>
+      <span class="horizon-rule horizon-rule--bottom-end"></span>
       <ul class='fun-facts'>
         <?php foreach($facts as $fact) { ?>
           <li class='fact'>
@@ -68,6 +64,7 @@ partial('header');
             <span class='text'><?= $fact['text'] ?></span>
           </li>
         <?php } ?>
+      </ul>
     <?php } ?>
 
     <span class="horizon-rule horizon-rule--top-end"></span>

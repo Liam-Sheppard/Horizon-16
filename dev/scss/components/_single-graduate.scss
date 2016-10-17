@@ -35,12 +35,9 @@
       animation-iteration-count: 1;
       animation-delay: .3s;
       position: relative;
-      background-position: center top;
+      background-position: center bottom;
       background-repeat: no-repeat;
-    }
-
-    &.grad-1 .grad-image {
-      background-image: url('../images/graduate-images-1800x1200/sheppard-liam.jpg');
+      background-size: cover;
     }
 
     .grad-work-container {
@@ -50,12 +47,12 @@
     }
 
     .work-strip {
-      display: flex;
+      display: block;
       width: 100%;
+      padding-bottom: 20%;
       position: relative;
       background: $black;
       box-shadow: 0 0 10px rgba($black, .3);
-
       &:hover {
         .work-image {
           opacity: .1;
@@ -68,11 +65,63 @@
       &:not(:first-of-type()) {
         margin-top: 3rem;
       }
+      .work-image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        overflow: hidden;
+        background-repeat: no-repeat;
+      }
+
+      &.gallery-count-1 {
+        .work-image {
+          width: 100%;
+          left: 0; right: 0;
+        }
+      }
+      &.gallery-count-2 {
+        .work-image {
+          width: 50%;
+          &:nth-child(1){
+            left: 0%;
+          }
+          &:nth-child(2){
+            right: 0%;
+          }
+        }
+      }
+      &.gallery-count-3 {
+        .work-image {
+          width: 33.33%;
+          &:nth-child(1){
+            left: 0%;
+          }
+          &:nth-child(2){
+            left: 33.33%;
+          }
+          &:nth-child(3){
+            right: 0%;
+          }
+          @media (min-width: 1301px) and (max-width: 1550px) {
+            width: 50%;
+            &:nth-child(2){
+              left: 50%;
+            }
+          }
+          @media (max-width: 699px) {
+            width: 50%;
+            &:nth-child(2){
+              left: 50%;
+            }
+          }
+        }
+
+      }
     }
 
     .work-image {
        width: 33.33%;
-       padding-bottom: 20%;
        background-position: center;
        background-size: cover;
        transition: opacity .3s;
@@ -111,10 +160,12 @@
       width: 0;
       padding-right: 100%;
       margin-bottom: 1rem;
+      line-height: 1.2;
     }
 
     h2 {
-      margin: 2rem 0;
+      font-size: 1.1rem;
+      margin: 2rem 0 8rem;
       font-weight: 500;
     }
 
@@ -124,7 +175,7 @@
     }
 
     p {
-      margin: 3rem 0 8rem;
+      margin: 3rem 0;
       font-size: 1.3rem;
       text-align: left;
       line-height: 1.7;
@@ -145,7 +196,7 @@
 
       .number {
         display: block;
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: 700;
         line-height: 1;
         margin-bottom: .6rem;
@@ -153,7 +204,7 @@
 
       .text {
         text-transform: uppercase;
-        font-size: 1.3rem;
+        font-size: 1rem;
         letter-spacing: .2rem;
       }
     }
@@ -167,6 +218,7 @@
 
     .profile-socialmedia {
       cursor: default;
+      margin: 3rem auto;
       li {
         display: inline-block;
         text-decoration: none;
@@ -200,7 +252,7 @@
 
 @media (max-width: 1750px) {
   .panel--single-graduate .right-panel {
-    padding: 5rem;
+    padding: 10rem 5rem;
   }
 
   .panel--single-graduate .left-panel .grad-work-container {
@@ -212,7 +264,6 @@
   .panel--single-graduate .left-panel {
     .work-image {
       width: 50%;
-      padding-bottom: 33%;
       &:nth-of-type(3) {
         display: none;
       }
@@ -230,7 +281,7 @@
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1301px) {
   .left-panel {
     height: 100vh;
   }
@@ -239,7 +290,7 @@
   }
   .grad-work-container {
     width: 100%;
-    padding: 0 10rem;
+    padding: 3rem 10rem;
     top: 55vh;
     max-height: 75vh;
     overflow-y: auto;
@@ -286,7 +337,7 @@
     #workJS {
       position: relative;
       width: 100%;
-      padding: 7rem 0 2rem;
+      padding: 0rem 0 2rem;
       .grad-work-container {
         position: initial;
         display: block;
@@ -302,7 +353,7 @@
 
       .name-and-discipline {
         min-height: calc(50vh - 10rem);
-        padding-top: 3rem;
+        // padding-top: 3rem;
 
         h1,
         h2 {
@@ -313,7 +364,7 @@
           font-size: 2.3rem;
         }
         h2 {
-          font-size: 1.4rem;
+          // font-size: 1.4rem;
           width: 50%;
         }
       }
@@ -331,7 +382,7 @@
       padding: 10rem 5rem;
     }
     .left-panel .grad-image {
-      background-position: 25vw bottom;
+      background-position: 35vw bottom;
     }
   }
 }
@@ -359,7 +410,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 699px) {
   .panel--single-graduate .left-panel {
     .grad-image {
       background-size: 130vw auto;
@@ -367,7 +418,6 @@
     }
     .work-image {
       width: 50%;
-      padding-bottom: 30%;
       &:nth-of-type(3) {
         display: none;
       }
@@ -379,15 +429,14 @@
       padding-bottom: 3rem;
 
       .work-title {
-        top: calc(100% - 3rem);
         font-size: 1rem;
         left: 0;
         transform: translate(0,0);
         opacity: 1;
-        height: 3rem;
         width: 100%;
-        line-height: 3rem;
         padding: 0;
+        padding: 1rem;
+        position: relative;
       }
     }
   }
