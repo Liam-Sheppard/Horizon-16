@@ -396,7 +396,7 @@
 @media (max-width: 800px) {
   .panel--single-graduate .left-panel {
     &:not(#workJS) {
-      height: 80vh;
+      height: 90vh;
     }
     .grad-image {
       background-position: center bottom;
@@ -487,6 +487,9 @@
   .panel--single-graduate {
     .left-panel:not(#workJS) {
       height: 85vh;
+      @media screen and (max-width: 450px){
+        height: 100vh;
+      }
     }
     @media screen and (max-width: 550px){
       #workJS {
@@ -529,7 +532,7 @@
 }
 @media (max-width: 550px) {
   .panel--single-graduate .right-panel {
-    padding: 5rem 7.5%;
+    padding: 5rem 3rem;
 
     .name-and-discipline h2 {
       margin: 1.2rem 0;
