@@ -69,7 +69,42 @@
       })
       .addHook(function(){
       }).listen();
-      console.log('Easter Egg Code: m e o w');
+      console.log('Easter Egg Code: h e l l');
+
+
+
+    egg
+      .addCode("n,o,d", function() {
+        var heroVideo = $('#heroVideo');
+        if(heroVideo.length){
+          console.log(heroVideo.find('source[type="video/webm"]'));
+          heroVideo.find('source[type="video/webm"]').attr('src', siteData.themeUri + '/assets/video/nod.webm');
+          heroVideo.find('source[type="video/mp4"]').attr('src', siteData.themeUri + '/assets/video/nod.mp4');
+        }
+      })
+      .addHook(function(){
+      }).listen();
+      console.log('Easter Egg Code: n o d');
+
+
+    var rolling = new Audio(siteData.themeUri + '/assets/sounds/eggs/rolling.mp3');
+
+    egg
+      .addCode("r,o,l,l", function() {
+
+        $('body').prepend('<div class="datboi"></div>');
+        rolling.play();
+        setTimeout(function(){
+          $('.datboi').remove();
+          rolling.pause();
+          rolling.currentTime = 0;
+        }, 14000);
+      })
+      .addHook(function(){
+      }).listen();
+      console.log('Easter Egg Code: r o l l');
+
+
   });
 
 })(jQuery);
