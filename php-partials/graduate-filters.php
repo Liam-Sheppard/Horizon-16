@@ -21,6 +21,10 @@
       'label' => 'Visual Art',
     ],
     [
+      'id'    => 'illustration',
+      'label' => 'Illustration',
+    ],
+    [
       'id'    => 'branding',
       'label' => 'Branding',
     ],
