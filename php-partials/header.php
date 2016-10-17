@@ -17,6 +17,5 @@
       </a>
   </nav>
 
-
-  <?php partial('social-media'); ?>
+  <?php if(!isset($hide_social) || !$hide_social){ partial('social-media'); } ?>
 </header>

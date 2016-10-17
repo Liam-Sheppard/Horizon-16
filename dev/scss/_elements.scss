@@ -130,3 +130,49 @@
     font-size: 0.85em;
   }
 }
+
+
+.next-graduate {
+  position: absolute;
+  right: 0; bottom: -5rem;
+  display: block;
+  color: $actualWhite;
+  text-align: right;
+  padding: 5rem 5rem 5rem 0;
+  &__label {
+    opacity: 0.5;
+    text-transform: uppercase;
+    @include primaryMenuItem();
+  }
+  &__name {
+    @include primaryMenuItem();
+    display: block;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 4.5rem;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: $actualWhite;
+    transition: width 3s;
+  }
+
+  .js & {
+    &::after {
+      width: 0;
+    }
+  }
+  .js &.seen {
+    &::after {
+      width: 100%;
+    }
+  }
+  .js &:hover {
+    &::after {
+      width: 120%;
+    }
+  }
+}

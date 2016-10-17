@@ -4,7 +4,9 @@ $current_graduate = get_graduates([get_queried_object()->data->ID])[0];
 
 get_header();
 
-partial('header');
+partial('header', [
+  'hide_social' => true
+]);
 
 ?>
 
@@ -51,7 +53,7 @@ partial('header');
     if ($bio = $current_graduate['bio']) {
         echo '<div class="panel-bridge"></div>';
         echo apply_filters('the_content', $bio);
-        echo '<div class="panel-bridge"></div>';
+        // echo '<div class="panel-bridge"></div>';
     }
 
     $facts = get_field('facts', 'user_'.$current_graduate['ID']);
@@ -81,6 +83,9 @@ partial('header');
         }
       echo  "</ul>";
     } ?>
+
+    <?php $next_grad = get_next_graduate($current_graduate['ID']) ?>
+    <a href="<?= $next_grad['permalink'] ?>" class="next-graduate"><span class="next-graduate__label">Next Graduate</span><span class="next-graduate__name"><?= $next_grad['full_name'] ?></span></a>
 
 
   </div>

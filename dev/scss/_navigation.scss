@@ -4,7 +4,7 @@
 @mixin primaryMenuItem(){
     display: inline-block;
     font-size: .75rem;
-    color: $actualWhite;
+    color: inherit;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: .5em;
@@ -62,8 +62,8 @@
 
 #primary-navigation {
     z-index: 10;
+    color: $actualWhite;
     display: inline-block;
-
     &:after {
         content: '';
         display: block;
@@ -74,7 +74,6 @@
     }
     ul {
         @include simpleAnimateIn(0.1);
-
         list-style: none;
         display: inline-block;
         vertical-align: middle;
@@ -84,7 +83,7 @@
         .menu-item {
           opacity: .25;
           a {
-            color: $actualWhite;
+            color: inherit;
             padding: 1em 1em 1em 0;
           }
         }

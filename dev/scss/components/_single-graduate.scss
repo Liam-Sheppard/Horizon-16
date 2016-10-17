@@ -9,6 +9,12 @@
    }
  }
 
+ .author {
+   #primary-navigation {
+     color: $black;
+   }
+ }
+
 .panel--single-graduate {
   padding: 0;
   #workJS {
@@ -179,6 +185,7 @@
       font-size: 1.3rem;
       text-align: left;
       line-height: 1.7;
+      letter-spacing: 0.1em;
     }
 
     .fun-facts {
@@ -337,7 +344,7 @@
     #workJS {
       position: relative;
       width: 100%;
-      padding: 0rem 0 2rem;
+      padding: 0rem 0 3rem;
       .grad-work-container {
         position: initial;
         display: block;
@@ -370,7 +377,7 @@
       }
       p {
         width: 80%;
-        margin: 3rem 10% 8rem;
+        margin: 3rem 10% 4rem;
       }
     }
   }
@@ -426,17 +433,20 @@
   #workJS {
     padding: 3rem 0 2rem;
     .work-strip {
-      padding-bottom: 3rem;
+      padding-bottom: 30%;
 
       .work-title {
         font-size: 1rem;
         left: 0;
+        bottom: 100%;
         transform: translate(0,0);
         opacity: 1;
         width: 100%;
+        top: auto;
+        height: 3rem;
         padding: 0;
         padding: 1rem;
-        position: relative;
+        position: absolute;
       }
     }
   }
@@ -458,8 +468,6 @@
     }
     .profile-socialmedia {
       li {
-        width: 100%;
-        display: block;
         text-align: center;
         &:not(:first-of-type) {
           margin-left: 0;
@@ -467,9 +475,8 @@
         a {
           width: 100%;
           display: block;
-          padding: 1rem 0;
+          padding: 1.5rem;
           margin: 0 0 2rem;
-          border: 1px solid $actualWhite;
         }
       }
     }
@@ -481,9 +488,12 @@
     .left-panel:not(#workJS) {
       height: 85vh;
     }
-    #workJS {
-      padding: 3rem 0 2rem;
+    @media screen and (max-width: 550px){
+      #workJS {
+        padding: 5rem 0 3rem;
+      }
     }
+
     .right-panel {
       .name-and-discipline {
         min-height: calc(85vh - 5rem);

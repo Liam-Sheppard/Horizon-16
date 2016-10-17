@@ -70,14 +70,13 @@ $(document).ready( function() {
   }
 
   // The elements we are going to check to see when they are seen
-  var $scrollBasedAnimates = $('.panel-bridge, .horizon-rule, h2');
+  var $scrollBasedAnimates = $('.panel-bridge, .horizon-rule, h2, .next-graduate');
   watchSeen($scrollBasedAnimates);
   $(window).scroll(function(){
     watchSeen($scrollBasedAnimates);
   });
 
-  console.log(siteData.graduates.length);
-  console.log(siteData.graduates);
+
 
     // Homepage Graduates
     // var $famID = $('#homepageFamJS'),
