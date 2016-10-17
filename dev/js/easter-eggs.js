@@ -59,13 +59,13 @@
       .addCode("h,e,l,l", function() {
         $('body').addClass('break-everything');
         $('body').append('<div class="internetexplorer"></div>');
-        setTimeout(function(){
-          $('.internetexplorer').fadeOut();
-        }, 5500);
-        setTimeout(function(){
-          $('body').removeClass('break-everything');
-          $('.internetexplorer').remove();
-        }, 7500);
+        // setTimeout(function(){
+        //   $('.internetexplorer').fadeOut();
+        // }, 5500);
+        // setTimeout(function(){
+        //   $('body').removeClass('break-everything');
+        //   $('.internetexplorer').remove();
+        // }, 7500);
       })
       .addHook(function(){
       }).listen();
@@ -77,9 +77,9 @@
       .addCode("n,o,d", function() {
         var heroVideo = $('#heroVideo');
         if(heroVideo.length){
-          console.log(heroVideo.find('source[type="video/webm"]'));
           heroVideo.find('source[type="video/webm"]').attr('src', siteData.themeUri + '/assets/video/nod.webm');
           heroVideo.find('source[type="video/mp4"]').attr('src', siteData.themeUri + '/assets/video/nod.mp4');
+          heroVideo.load();
         }
       })
       .addHook(function(){
