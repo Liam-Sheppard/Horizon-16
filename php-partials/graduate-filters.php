@@ -64,7 +64,7 @@
 ?>
 <div class="graduate-filters-container">
 
-  <a href="javacsript:void(0)" class="button button--small toggle-graduate-filters">Filter: All</a>
+  <a href="javascript:void(0)" class="button button--small toggle-graduate-filters">Filter: All</a>
 
   <div class="graduate-filters-wrapper">
     <div class="inline-v-align">
