@@ -9,6 +9,7 @@
     function initialiseStripsScroll(){
       strips.mCustomScrollbar({
           axis: 'x',
+          scrollInertia: 80,
           advanced: {
             updateOnContentResize: true,
           }
