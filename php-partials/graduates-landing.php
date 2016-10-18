@@ -9,7 +9,7 @@
 
     </ul>
     <div class='strip-homepage-text'>
-      See all Graduates<br><span>( There's 46 of us! )</span>
+      See all Graduates<br><span>( There are 46 of us! )</span>
     </div>
   </a>
 
