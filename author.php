@@ -74,12 +74,12 @@ partial('header', [
 
     <?php
 
-    echo ($portfolio = $current_graduate['portfolio']) ? '<a href="' . $portfolio . '" class="fancy-link">View my Portfolio</a>' : '';
+    echo ($portfolio = $current_graduate['portfolio']) ? '<a target="_blank" href="' . $portfolio . '" class="fancy-link">View my Portfolio</a>' : '<a href="mailto:' . $current_graduate['email'] . '" class="fancy-link">' . $current_graduate['email'] . '</a>';
 
     if($social_links = $current_graduate['social_links']){
       echo "<ul class='profile-socialmedia'>";
         foreach($social_links as $social_link) {
-          echo '<li><a href="'. $social_link['profile_url'] .'"><i class="icon-'. $social_link['social_network'] .'"></i></a></li>';
+          echo '<li><a href="'. $social_link['profile_url'] .'" target="_blank"><i class="icon-'. $social_link['social_network'] .'"></i></a></li>';
         }
       echo  "</ul>";
     } ?>
