@@ -2,7 +2,7 @@
 # STYLES FOR SINGLE GRADUATE PAGE
 ==============================================================================*/
  .author #site-header {
-   position: fixed;
+  //  position: fixed;
 
    .socialmedia {
      display: none;
@@ -27,6 +27,7 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    transition: all 1s;
 
     .grad-image {
       width: 100%;
@@ -568,6 +569,9 @@
     .left-panel {
       width: 100%;
       transition: width 0.6s;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      height: 100vh;
     }
     .grad-image {
       opacity: 0.15;

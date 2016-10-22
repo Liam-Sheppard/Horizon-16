@@ -9,6 +9,8 @@
   @media screen and (max-width: 1000px){
     padding: 10rem 3rem;
   }
+  background: white;
+  color: $black;
 }
 .author {
   #primary-navigation {
@@ -26,7 +28,8 @@
   .js & {
     opacity: 0;
   }
-  .js &.loaded {
+  .js &.loaded,
+  .js .loaded.single-work & {
     opacity: 1;
   }
   @media screen and (min-width: 601px){
@@ -53,8 +56,10 @@
       display: block;
       max-width: 100%;
       max-height: 100%;
+      max-height: 60vh;
       height: auto;
       width: auto;
+      margin: 0 auto;
       box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
     }
     &-item {
@@ -63,6 +68,8 @@
       background-repeat: none;
       transition: transform 0.6s;
       outline: none;
+      width: 100%;
+      cursor: pointer;
       @media screen and (min-width: 601px){
         padding: 0 2rem;
         transform: scale(0.9);
@@ -73,6 +80,7 @@
           transform: scale(1);
         }
       }
+
     }
   }
 

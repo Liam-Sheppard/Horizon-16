@@ -3,12 +3,21 @@
 
     // Initialises js for individual works pages, takes jquery object that is the container for the work content
     function initialiseWorkPage(workContentContainer){
+      var _this = this;
+      if(!workContentContainer){
+        var workContentContainer = $('body');
+      }
       this.workContent = $(workContentContainer).find('.work-content');
-      workContentContainer.find('.work-carousel').slick({
+      this.carousel = workContentContainer.find('.work-carousel').slick({
         infinite: false,
         autoplay: true,
-        arrows: false,
+        arrows: false
       });
+
+      this.carousel.find('.work-carousel-item').click(function(e){
+        _this.carousel.slick('slickGoTo', $(this).index() );
+      });
+
       this.workContent.addClass('loaded');
     }
 
@@ -107,6 +116,10 @@
       $('#graduate-profile').each(function(){
         new graduateProfile(this);
       });
+    }
+
+    if($('.single-work').length){
+      initialiseWorkPage();
     }
 
 

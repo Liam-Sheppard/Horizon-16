@@ -18,6 +18,9 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   z-index: 20;
+  .show-mobile-menu & {
+    position: fixed;
+  }
   .hide-header & {
     @media screen and (max-width: 1000px){
       display: none;

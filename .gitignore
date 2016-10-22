@@ -3,6 +3,7 @@
 
 # Logs
 logs
+php_errorlog
 *.log
 npm-debug.log*
 

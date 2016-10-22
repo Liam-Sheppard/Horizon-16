@@ -30,6 +30,13 @@ $gallery = get_field('work_gallery');
       <article class="work-description">
         <?= apply_filters('the_content', get_the_excerpt()) ?>
       </article>
+
+      <?php if($project_url = get_field('project_url')) : ?>
+        <div class="project-url-link">
+          <a href="<?= $project_url ?>" class="button">Visit the project</a>
+        </div>
+      <?php endif; ?>
+
   </div>
 </div>
 
