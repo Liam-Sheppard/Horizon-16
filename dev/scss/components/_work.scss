@@ -1,0 +1,103 @@
+.single-work {
+  #primary-navigation {
+    color: $black;
+  }
+  padding: 12rem 10rem 10rem;
+  @media screen and (max-width: 1300px){
+    padding: 10rem 3rem;
+  }
+  @media screen and (max-width: 1000px){
+    padding: 10rem 3rem;
+  }
+}
+.author {
+  #primary-navigation {
+    color: $black;
+  }
+}
+.work-content {
+  max-width: 50rem;
+  margin: 0 auto;
+  color: $black;
+  transition: opacity 0.6s 0.2s;
+  .author {
+    color: white;
+  }
+  .js & {
+    opacity: 0;
+  }
+  .js &.loaded {
+    opacity: 1;
+  }
+  @media screen and (min-width: 601px){
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 0.25em;
+    line-height: 1.25;
+    color: inherit;
+  }
+  .graduate-label {
+    @include primaryMenuItem;
+  }
+
+
+
+  .work-carousel {
+    margin: 3rem -2rem;
+    @media screen and (max-width: 600px){
+      margin: 3rem 0;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
+    }
+    &-item {
+      height: 100%;
+      background-size: contain;
+      background-repeat: none;
+      transition: transform 0.6s;
+      outline: none;
+      @media screen and (min-width: 601px){
+        padding: 0 2rem;
+        transform: scale(0.9);
+        &:hover {
+          transform: scale(0.95);
+        }
+        &.slick-current {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+
+
+
+
+  .work-description {
+    max-width: 40rem;
+    margin: 5rem auto;
+    text-align: left;
+    @media screen and (max-width: 800px){
+      margin: 3rem auto;
+    }
+    @media screen and (max-width: 600px){
+      margin: 2rem auto;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
+  }
+
+
+
+
+
+}

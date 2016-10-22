@@ -10,10 +10,13 @@ partial('header', [
 
 ?>
 
-<div class="panel panel--single-graduate">
+<div id="graduate-profile" class="panel panel--single-graduate">
 
   <div class='left-panel grad-1' id='leftPanelJS'>
     <div class='grad-image' style="background-image: url(<?= get_stylesheet_directory_uri() ?>/assets/images/graduate-images-1800x1200/graduate-<?= $current_graduate['ID'] ?>.jpg);"></div>
+    <div class="detailed-works">
+
+    </div>
   </div>
 
   <div class='right-panel'>
@@ -35,8 +38,10 @@ partial('header', [
         foreach($works->posts as $work){
           $gallery = get_field('work_gallery', $work->ID);
           partial('work-strip', [
+            'ID' => $work->ID,
             'title'  => $work->post_title,
-            'images' => (count($gallery)) ? array_slice($gallery, 0, 3) : false
+            'images' => (count($gallery)) ? array_slice($gallery, 0, 3) : false,
+            'link' => get_permalink($work->ID)
           ]);
         }
 
@@ -74,12 +79,12 @@ partial('header', [
 
     <?php
 
-    echo ($portfolio = $current_graduate['portfolio']) ? '<a href="' . $portfolio . '" class="fancy-link">View my Portfolio</a>' : '';
+    echo ($portfolio = $current_graduate['portfolio']) ? '<a target="_blank" href="' . $portfolio . '" class="fancy-link">View my Portfolio</a>' : '<a href="mailto:' . $current_graduate['email'] . '" class="fancy-link">' . $current_graduate['email'] . '</a>';
 
     if($social_links = $current_graduate['social_links']){
       echo "<ul class='profile-socialmedia'>";
         foreach($social_links as $social_link) {
-          echo '<li><a href="'. $social_link['profile_url'] .'"><i class="icon-'. $social_link['social_network'] .'"></i></a></li>';
+          echo '<li><a href="'. $social_link['profile_url'] .'" target="_blank"><i class="icon-'. $social_link['social_network'] .'"></i></a></li>';
         }
       echo  "</ul>";
     } ?>
@@ -93,7 +98,11 @@ partial('header', [
 </div>
 
 
+
+
 <?php
+
+
 
 get_footer();
 
