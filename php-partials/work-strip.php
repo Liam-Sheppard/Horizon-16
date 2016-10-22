@@ -6,7 +6,7 @@ if ($image_count > 0){
 
 ?>
 
-  <a href="javascript:void(0)" class="work-strip gallery-count-<?= $image_count ?>">
+  <a href="<?= $link ?>" data-work-id="<?= $ID ?>" class="work-strip gallery-count-<?= $image_count ?>">
     <?php
     if($image_count && $images){
         foreach($images as $image){

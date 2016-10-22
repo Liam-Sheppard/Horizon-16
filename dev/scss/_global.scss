@@ -19,6 +19,8 @@ html, body {
 
 body {
   position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
   &.hide-overflow {
     @media screen and (max-width: 1000px){
       overflow: hidden;

@@ -164,17 +164,5 @@ $(document).ready( function() {
     //   return true;
     // }
 
-    var position;
-
-    $( window ).scroll( function( ) {
-      position = $( this ).scrollTop( );
-
-  		if ( position <= 50 ) {
-  			$( '#workJS' ).removeClass( 'work-show' );
-  			$( '#leftPanelJS' ).removeClass( 'work-show' );
-  		} else {
-  			$( '#workJS' ).addClass( 'work-show' );
-  			$( '#leftPanelJS' ).addClass( 'work-show' );
-  		}
-	});
+    
 });

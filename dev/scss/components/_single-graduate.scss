@@ -1,7 +1,7 @@
 /*==============================================================================
 # STYLES FOR SINGLE GRADUATE PAGE
 ==============================================================================*/
- .page-template-single-graduate #site-header {
+ .author #site-header {
    position: fixed;
 
    .socialmedia {
@@ -32,15 +32,17 @@
       width: 100%;
       height: 100%;
       display: block;
+      margin: auto;
+      position: absolute;
+      left: 0; bottom: 0; right: 0;
       // background-size: contain;
-      transition: filter .3s, opacity .3s;
+      transition: filter .3s, opacity .5s;
       // will-change: filter;
       animation-name: gradFadeIn;
       animation-duration: 1s;
       animation-fill-mode: backwards;
       animation-iteration-count: 1;
       animation-delay: .3s;
-      position: relative;
       background-position: center bottom;
       background-repeat: no-repeat;
       background-size: cover;
@@ -152,10 +154,13 @@
       transition: opacity .3s, transform .3s;
     }
   }
-
+  .left-panel {
+    padding: 10rem;
+  }
   .right-panel {
     margin-left: 50%;
     padding: 10rem;
+    transition: opacity 0.4s, transform 0.4s;
 
     h1, h2, h3 {
       text-align: left;
@@ -257,7 +262,8 @@
 ==============================================================================*/
 
 @media (max-width: 1750px) {
-  .panel--single-graduate .right-panel {
+  .panel--single-graduate .right-panel,
+  .panel--single-graduate .left-panel, {
     padding: 10rem 5rem;
   }
 
@@ -305,7 +311,7 @@
   }
 
   &.work-show .grad-image {
-    filter: blur(20px);
+    filter: blur(5px);
     opacity: .8;
   }
 
@@ -549,4 +555,34 @@
       font-size: 1.9rem;
     }
   }
+}
+
+
+
+// WORKS
+
+
+
+#graduate-profile{
+  &.show-work {
+    .left-panel {
+      width: 100%;
+      transition: width 0.6s;
+    }
+    .grad-image {
+      opacity: 0.15;
+      filter: blur(20px);
+    }
+    .grad-work-container {
+      opacity: 0;
+      display: none;
+    }
+  }
+  &.hide-profile-content {
+    .right-panel {
+      opacity: 0;
+      transform: translateX(5rem);
+    }
+  }
+
 }
