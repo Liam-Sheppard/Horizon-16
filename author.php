@@ -11,10 +11,10 @@ partial('header', [
 ?>
 
 <div id="graduate-profile" class="panel panel--single-graduate">
+  <div class="detailed-works"></div>
 
   <div class='left-panel grad-1' id='leftPanelJS'>
     <div class='grad-image' style="background-image: url(<?= get_stylesheet_directory_uri() ?>/assets/images/graduate-images-1800x1200/graduate-<?= $current_graduate['ID'] ?>.jpg);"></div>
-    <div class="detailed-works"></div>
   </div>
 
   <div class='right-panel'>

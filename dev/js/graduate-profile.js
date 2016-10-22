@@ -11,7 +11,9 @@
       this.carousel = workContentContainer.find('.work-carousel').slick({
         infinite: false,
         autoplay: true,
-        arrows: false
+        arrows: false,
+        // variableWidth: true,
+
       });
 
       this.carousel.find('.work-carousel-item').click(function(e){

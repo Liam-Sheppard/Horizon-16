@@ -2,13 +2,7 @@
   #primary-navigation {
     color: $black;
   }
-  padding: 12rem 10rem 10rem;
-  @media screen and (max-width: 1300px){
-    padding: 10rem 3rem;
-  }
-  @media screen and (max-width: 1000px){
-    padding: 10rem 3rem;
-  }
+
   background: white;
   color: $black;
 }
@@ -17,6 +11,21 @@
     color: $black;
   }
 }
+.single-work,
+.detailed-works {
+  padding: 12rem 10rem 10rem;
+  @media screen and (max-width: 1300px){
+    padding: 10rem 3rem;
+  }
+  @media screen and (max-width: 1000px){
+    padding: 10rem 3rem;
+  }
+}
+.detailed-works {
+  z-index: 10;
+  position: relative;
+}
+
 .work-content {
   max-width: 50rem;
   margin: 0 auto;
@@ -53,13 +62,12 @@
       margin: 3rem 0;
     }
     img {
-      display: block;
-      max-width: 100%;
-      max-height: 100%;
+      display: inline-block;
+      max-width: 50rem;
+      max-height: 500px;
       max-height: 60vh;
       height: auto;
       width: auto;
-      margin: 0 auto;
       box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
     }
     &-item {
