@@ -11,6 +11,10 @@
     color: $black;
   }
 }
+
+
+
+
 .single-work,
 .show-work .detailed-works {
   padding: 12rem 10rem 10rem;
@@ -24,7 +28,23 @@
 .detailed-works {
   z-index: 10;
   position: relative;
+  opacity: 1;
+  transition: opacity 0.6s;
+  .hide-detailed-works & {
+    opacity: 0;
+  }
 }
+
+#graduate-profile .detailed-works .work-container{
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  &.view {
+    opacity: 1;
+  }
+}
+
+
 
 .work-content {
   max-width: 50rem;
@@ -58,17 +78,46 @@
 
   .work-carousel {
     margin: 3rem -2rem;
+    padding-top: 3rem;
     @media screen and (max-width: 600px){
       margin: 3rem 0;
     }
+    .slick-dots {
+      position: absolute;
+      bottom: 100%;
+      left: 0; right: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid $black;
+        margin: 0 0.5rem;
+        height: 8px;
+        width: 8px;
+        background: rgba(0,0,0,0);
+        transition: background 0.6s;
+        &.slick-active {
+          background: $black;
+        }
+      }
+      button {
+        opacity: 0;
+        height: 8px;
+        width: 8px;
+        border: 0;
+        padding: 0;
+        appearance: none;
+      }
+    }
     img {
-      display: inline-block;
+      display: block;
       max-width: 50rem;
       max-height: 500px;
       max-height: 60vh;
       height: auto;
       width: auto;
-      box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
+      margin: 0 auto;
+      // box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
     }
     &-item {
       height: 100%;

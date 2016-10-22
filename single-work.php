@@ -17,6 +17,8 @@ $gallery = get_field('work_gallery');
 </div>
 
 <div class="work-content">
+  <a href="javascript:void(0)" class="close-works"><span class="close-works__label">Back to </span><span class="close-works__name"><?= $current_graduate['full_name'] ?></span></a>
+
   <div>
       <h1><?= get_the_title() ?></h1>
       <p class="graduate-label">by <?= $current_graduate['full_name'] ?></p>

@@ -12,12 +12,17 @@
         infinite: false,
         autoplay: true,
         arrows: false,
+        dots: true
         // variableWidth: true,
-
       });
 
       this.carousel.find('.work-carousel-item').click(function(e){
         _this.carousel.slick('slickGoTo', $(this).index() );
+      });
+
+      $(workContentContainer).find('.close-works').click(function(e){
+        e.preventDefault();
+        graduateProfile.closeWorks();
       });
 
       this.workContent.addClass('loaded');
@@ -48,6 +53,7 @@
 
 
       this.hideProfile = function(){
+        this.profile.addClass('show-work');
         this.profile.addClass('hide-profile-content');
         setTimeout(function(){
           _this.profileContent.hide();
@@ -55,38 +61,78 @@
       }
       this.unhideProfile = function(){
         this.profileContent.show();
+        this.profile.removeClass('show-work');
         setTimeout(function(){
-          this.profile.removeClass('hide-profile-content');
+          _this.profile.removeClass('hide-profile-content');
         }, 50);
       }
 
+
       this.openWorks = function(workID){
-        _this.profile.toggleClass('show-work');
         _this.hideProfile();
         _this.lockGraduateImage();
+        // Show works container
+        this.worksContainer.show();
+        setTimeout(function(){
+          _this.profile.removeClass('hide-detailed-works');
+        }, 50);
+      }
+      this.closeWorks = function(){
+        // Hide works container
+        this.profile.addClass('hide-detailed-works');
+        this.hideWorks();
 
+        setTimeout(function(){
+          _this.worksContainer.hide();
+        }, 600);
+        // Unhide profile
+        setTimeout(function(){
+          _this.unlockGraduateImage();
+          _this.unhideProfile();
+        }, 300);
       }
 
-      this.closeWorks = function(){
-        _this.profile.toggleClass('show-work');
-        _this.unhideProfile();
-        _this.unlockGraduateImage();
+      this.showWork = function(workID){
+        var thisWork = this.worksContainer.find('.work-' + workID);
+        thisWork.show();
+        setTimeout(function(){
+          thisWork.addClass('view');
+        }, 50);
+      }
+      this.hideWorks = function(){
+        var works = this.worksContainer.find('.work-container');
+        works.removeClass('view');
+        setTimeout(function(){
+          works.hide();
+        }, 400);
       }
 
       this.loadWork = function(workID){
-        var workURL = $('a[data-work-id="' + workID + '"]').attr('href');
-        var workContent;
-        var thisWork = $('.detailed-works .work-' + workID);
+        var thisWork = this.worksContainer.find('.work-' + workID);
         // Append container and load the detailed work
         if( thisWork.length == 0 ){
-          this.worksContainer.append('<div class="work-' + workID +'"></div>');
+          var workURL = $('a[data-work-id="' + workID + '"]').attr('href');
+          var workContent;
+
+          this.worksContainer.append('<div class="work-container work-' + workID +'"></div>');
           thisWork = $('.detailed-works .work-' + workID);
           // Load content into container
           thisWork.load(workURL + ' .work-content', function(){
+            _this.showWork(workID);
             initialiseWorkPage(thisWork);
           });
+        } else {
+          _this.showWork(workID);
         }
       }
+
+
+
+      this.goToWork = function(workID){
+        this.openWorks();
+        this.loadWork(workID);
+      }
+
 
       // Checks scroll positions and blurs graduate profile if user has scrolled beyond threshold
       this.updateGraduateProfileBlur = function (){
@@ -108,16 +154,15 @@
 
       $('.author .work-strip').click(function(e){
         e.preventDefault();
-        _this.openWorks();
-        _this.loadWork($(this).data('work-id'));
+        _this.goToWork($(this).data('work-id'));
       });
+
     }
+
 
     // Initialises profile js
     if($('#graduate-profile').length){
-      $('#graduate-profile').each(function(){
-        new graduateProfile(this);
-      });
+      var graduateProfile = new graduateProfile(('#graduate-profile'));
     }
 
     if($('.single-work').length){
