@@ -96,6 +96,7 @@
           margin-bottom: 1.5rem;
           padding-left: 5rem;
           position: relative;
+          margin-right: 0;
           img {
             position: absolute;
             top: 0; bottom: 0; left: 0; margin: auto;
@@ -168,6 +169,26 @@
 
   img {
     height: 3rem;
+    margin-left: .5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .landing-croomo {
+    position: relative;
+    text-align: center;
+    right: 0;
+
+    a {
+      display: block;
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media (max-height: 780px) {
+  .landing-croomo {
+    display: none;
   }
 }
 
