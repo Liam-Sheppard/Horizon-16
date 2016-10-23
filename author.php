@@ -20,7 +20,13 @@ partial('header', [
   <div class='right-panel'>
     <div class='name-and-discipline'>
       <h1><?= $current_graduate['full_name'] ?></h1>
-      <?= $current_graduate['disciplines_labels'] ? '<h2>' . implode(array_slice($current_graduate['disciplines_labels'], 0, 3), ' / ') . '</h2>' : false ?>
+      <?=
+      $current_graduate['disciplines_labels'] ? '<h2>' . implode(array_slice($current_graduate['disciplines_labels'], 0, 3), ' + ') . '</h2>' : false;
+
+      // for ( $d = 0; $d < 3; $d++ ) {
+      //   echo $d;
+      // }
+      ?>
     </div>
 
     <div class='left-panel' id='workJS'>

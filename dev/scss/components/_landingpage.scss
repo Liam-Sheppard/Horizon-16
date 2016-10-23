@@ -148,6 +148,29 @@
   }
 }
 
+.landing-croomo {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 10;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 500;
+  a {
+    opacity: .75;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  img {
+    height: 3rem;
+  }
+}
+
 @keyframes scrollPrompt {
   0% {
     transform: translateY(0);
