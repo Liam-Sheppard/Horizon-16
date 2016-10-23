@@ -23,5 +23,9 @@
     <?php partial('landing-details'); ?>
   </div>
 
+  <div class='landing-croomo'>
+    Proudly brought to you by <a href='http://www.croomo.com/' target='_blank'><img src='<?= get_stylesheet_directory_uri() ?>/assets/images/logos/croomo-white.png'></img></a>
+  </div>
+
   <div class='scroll-prompt'></div>
 </div>
