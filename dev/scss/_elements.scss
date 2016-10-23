@@ -170,6 +170,15 @@
     color: $black;
     opacity: 1;
   }
+  &--black {
+    color: $black;
+    border-color: $black;
+    &:hover {
+      background: $black;
+      color: $actualWhite;
+
+    }
+  }
   &--small {
     font-size: 0.85em;
   }

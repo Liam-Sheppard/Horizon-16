@@ -4,54 +4,65 @@
     // Initialises js for individual works pages, takes jquery object that is the container for the work content
     function initialiseWorkPage(workContentContainer){
       var _this = this;
+
+      // Set work content container to be body if we are not on the profile page
       if(!workContentContainer){
         var workContentContainer = $('body');
       }
+
+      // Define the body of work
       this.workContent = $(workContentContainer).find('.work-content');
+
+      // Initialise coursel
       this.carousel = workContentContainer.find('.work-carousel').slick({
         infinite: false,
-        autoplay: true,
+        autoplay: false,
         arrows: false,
         dots: true
-        // variableWidth: true,
       });
 
+      // Allows clicks on next and previous carousel items to navigate the slider
       this.carousel.find('.work-carousel-item').click(function(e){
         _this.carousel.slick('slickGoTo', $(this).index() );
       });
 
+      // Allows back to profile button to close works
       $(workContentContainer).find('.close-works').click(function(e){
         e.preventDefault();
         graduateProfile.closeWorks();
       });
 
+      // State the work is initialised
       this.workContent.addClass('loaded');
     }
 
 
+    // Controls interactions with graduate profile
     function graduateProfile(profileIdentifier){
-
       var _this = this;
       this.profile = $(profileIdentifier);
       this.inTransition = false;
-      this.profileContent = $(this.profile).find('.right-panel');
-      this.gradImage = $(this.profile).find('.grad-image');
+      this.profileContent = this.profile.find('.right-panel');
+      this.gradImage = this.profile.find('.grad-image');
       this.profileScrollPosition = null;
+      this.workStrips = this.profile.find('.work-strip');
       this.worksContainer = $('.detailed-works');
 
-
+      // Fixes the graduate image size so that it does not stretch when opening works
       this.lockGraduateImage = function(){
         this.gradImage
           .css('height', $('.grad-image').outerHeight())
           .css('width', $('.grad-image').outerWidth());
       }
+
+      // Releases the fix lock on graduate image size
       this.unlockGraduateImage = function(){
         this.gradImage
           .css('height', 'auto')
           .css('width', '50vw');
       }
 
-
+      // Hides profile content so works can be shown
       this.hideProfile = function(){
         this.profile.addClass('show-work');
         this.profile.addClass('hide-profile-content');
@@ -59,15 +70,18 @@
           _this.profileContent.hide();
         }, 400);
       }
+
+      // Unhides profile content so works can be shown
       this.unhideProfile = function(){
+        $("html, body").animate({ scrollTop: 0 });
         this.profileContent.show();
         this.profile.removeClass('show-work');
         setTimeout(function(){
           _this.profile.removeClass('hide-profile-content');
-        }, 50);
+        }, 400);
       }
 
-
+      // Animates works container to show
       this.openWorks = function(workID){
         _this.hideProfile();
         _this.lockGraduateImage();
@@ -77,14 +91,17 @@
           _this.profile.removeClass('hide-detailed-works');
         }, 50);
       }
+
+      // Animates works container to be hidden
       this.closeWorks = function(){
         // Hide works container
         this.profile.addClass('hide-detailed-works');
+        // Also hide individual works so they are not open when next work is viewed
         this.hideWorks();
-
         setTimeout(function(){
           _this.worksContainer.hide();
         }, 600);
+
         // Unhide profile
         setTimeout(function(){
           _this.unlockGraduateImage();
@@ -94,7 +111,10 @@
 
       this.showWork = function(workID){
         var thisWork = this.worksContainer.find('.work-' + workID);
+        var thisWorkCarousel = thisWork.find('.work-carousel');
+
         thisWork.show();
+
         setTimeout(function(){
           thisWork.addClass('view');
         }, 50);
@@ -106,6 +126,7 @@
           works.hide();
         }, 400);
       }
+
 
       this.loadWork = function(workID){
         var thisWork = this.worksContainer.find('.work-' + workID);
@@ -129,6 +150,7 @@
 
 
       this.goToWork = function(workID){
+        $("html, body").animate({ scrollTop: 0 });
         this.openWorks();
         this.loadWork(workID);
       }
@@ -151,8 +173,8 @@
       this.updateGraduateProfileBlur();
 
 
-
-      $('.author .work-strip').click(function(e){
+      // Open respective work when strip is clicked on
+      this.workStrips.click(function(e){
         e.preventDefault();
         _this.goToWork($(this).data('work-id'));
       });

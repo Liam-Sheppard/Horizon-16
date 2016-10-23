@@ -17,7 +17,7 @@ $gallery = get_field('work_gallery');
 </div>
 
 <div class="work-content">
-  <a href="javascript:void(0)" class="close-works"><span class="close-works__label">Back to </span><span class="close-works__name"><?= $current_graduate['full_name'] ?></span></a>
+  <a href="javascript:void(0)" class="close-works"><span class="close-works__label">Back to </span><span class="close-works__name">Profile</span></a>
 
   <div>
       <h1><?= get_the_title() ?></h1>
@@ -29,13 +29,13 @@ $gallery = get_field('work_gallery');
         }
         ?>
       </div>
-      <article class="work-description">
+      <article class="work-description text-center">
         <?= apply_filters('the_content', get_the_excerpt()) ?>
       </article>
 
       <?php if($project_url = get_field('project_url')) : ?>
         <div class="project-url-link">
-          <a href="<?= $project_url ?>" class="button">Visit the project</a>
+          <a href="<?= $project_url ?>" target="_blank" class="button button--black">Visit the project</a>
         </div>
       <?php endif; ?>
 
