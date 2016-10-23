@@ -31,6 +31,7 @@
   opacity: 1;
   transition: opacity 0.6s;
   display: none;
+  overflow-x: hidden; 
   .hide-detailed-works & {
     opacity: 0;
   }
