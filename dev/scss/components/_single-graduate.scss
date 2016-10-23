@@ -1,8 +1,8 @@
 /*==============================================================================
 # STYLES FOR SINGLE GRADUATE PAGE
 ==============================================================================*/
- .page-template-single-graduate #site-header {
-   position: fixed;
+ .author #site-header {
+  //  position: fixed;
 
    .socialmedia {
      display: none;
@@ -27,20 +27,24 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    transition: width 1s, opacity 1s, right 1s;
 
     .grad-image {
-      width: 100%;
+      width: 50%;
       height: 100%;
       display: block;
+      margin: auto;
+      position: fixed;
+      top: 0;
+      left: 0; bottom: 0; right: 50%;
       // background-size: contain;
-      transition: filter .3s, opacity .3s;
+      transition: filter .3s, opacity .5s, right 0.5s;
       // will-change: filter;
       animation-name: gradFadeIn;
       animation-duration: 1s;
       animation-fill-mode: backwards;
       animation-iteration-count: 1;
       animation-delay: .3s;
-      position: relative;
       background-position: center bottom;
       background-repeat: no-repeat;
       background-size: cover;
@@ -152,10 +156,13 @@
       transition: opacity .3s, transform .3s;
     }
   }
-
+  .left-panel {
+    padding: 10rem;
+  }
   .right-panel {
     margin-left: 50%;
     padding: 10rem;
+    transition: opacity 0.4s, transform 0.4s;
 
     h1, h2, h3 {
       text-align: left;
@@ -257,7 +264,8 @@
 ==============================================================================*/
 
 @media (max-width: 1750px) {
-  .panel--single-graduate .right-panel {
+  .panel--single-graduate .right-panel,
+  .panel--single-graduate .left-panel, {
     padding: 10rem 5rem;
   }
 
@@ -305,7 +313,7 @@
   }
 
   &.work-show .grad-image {
-    filter: blur(20px);
+    filter: blur(5px);
     opacity: .8;
   }
 
@@ -337,7 +345,15 @@
       }
       .grad-image {
         background-size: contain;
-        background-position: 35vw bottom;
+        background-position: center bottom;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        left: auto;
+        top: 0;
+        height: 50vh;
+        position: absolute;
+        margin: 0;
       }
     }
     #workJS {
@@ -387,9 +403,6 @@
     .right-panel {
       padding: 10rem 5rem;
     }
-    .left-panel .grad-image {
-      background-position: 35vw bottom;
-    }
   }
 }
 
@@ -399,7 +412,10 @@
       height: 90vh;
     }
     .grad-image {
-      background-position: center bottom;
+      height: 90vh;
+      bottom: 0;
+      left: 0; right: 0;
+      width: 100% !important;
     }
   }
   .panel--single-graduate .right-panel {
@@ -419,7 +435,6 @@
 @media (max-width: 699px) {
   .panel--single-graduate .left-panel {
     .grad-image {
-      background-size: 130vw auto;
       background-position: center bottom;
     }
     .work-image {
@@ -549,4 +564,46 @@
       font-size: 1.9rem;
     }
   }
+}
+
+
+
+// WORKS
+
+
+
+#graduate-profile{
+  &.show-work {
+    background: $actualWhite;
+    .left-panel {
+      width: 100%;
+      transition: width 0.6s;
+      // overflow-x: hidden;
+      // overflow-y: scroll;
+      min-height: 100vh;
+    }
+    .grad-image {
+      opacity: 0.15;
+      filter: blur(20px);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      top: auto;
+      height: 100%;
+      position: fixed;
+      margin: auto;
+    }
+    .grad-work-container {
+      opacity: 0;
+      display: none;
+    }
+  }
+  &.hide-profile-content {
+    .right-panel {
+      opacity: 0;
+      transform: translateX(5rem);
+    }
+  }
+
 }

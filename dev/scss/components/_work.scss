@@ -1,0 +1,184 @@
+.single-work {
+  #primary-navigation {
+    color: $black;
+  }
+
+  background: white;
+  color: $black;
+}
+.author {
+  #primary-navigation {
+    color: $black;
+  }
+}
+
+
+
+
+.single-work,
+.show-work .detailed-works {
+  padding: 12rem 10rem 10rem;
+  @media screen and (max-width: 1300px){
+    padding: 10rem 3rem;
+  }
+  @media screen and (max-width: 1000px){
+    padding: 10rem 3rem;
+  }
+}
+.detailed-works {
+  z-index: 10;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.6s;
+  display: none;
+  overflow-x: hidden; 
+  .hide-detailed-works & {
+    opacity: 0;
+  }
+  @media screen and (max-width: 1100px){
+    .close-works {
+      display: none;
+    }
+  }
+}
+
+#graduate-profile .detailed-works .work-container{
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  &.view {
+    opacity: 1;
+  }
+}
+
+
+
+.work-content {
+  max-width: 50rem;
+  margin: 0 auto;
+  color: $black;
+  transition: opacity 0.6s 0.2s;
+  .author {
+    color: white;
+  }
+  .js & {
+    opacity: 0;
+  }
+  .js &.loaded,
+  .js .loaded.single-work & {
+    opacity: 1;
+  }
+  @media screen and (min-width: 601px){
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 0.25em;
+    line-height: 1.25;
+    color: inherit;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: 1300px){
+      font-size: 1.75rem;
+    }
+  }
+  .graduate-label {
+    @include primaryMenuItem;
+  }
+
+
+
+  .work-carousel {
+    margin: 3rem -2rem;
+    padding-top: 3rem;
+    @media screen and (max-width: 600px){
+      margin: 3rem 0;
+    }
+    .slick-dots {
+      position: absolute;
+      bottom: 100%;
+      left: 0; right: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid $black;
+        margin: 0 0.5rem;
+        height: 8px;
+        width: 8px;
+        background: rgba(0,0,0,0);
+        transition: background 0.6s;
+        &.slick-active {
+          background: $black;
+        }
+      }
+      button {
+        opacity: 0;
+        height: 8px;
+        width: 8px;
+        border: 0;
+        padding: 0;
+        appearance: none;
+      }
+    }
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 500px;
+      max-height: 60vh;
+      margin: 0 auto;
+      box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
+    }
+    &-item {
+      height: 100%;
+      background-size: contain;
+      background-repeat: none;
+      transition: transform 0.6s;
+      outline: none;
+      width: 100%;
+      cursor: pointer;
+      padding: 0 1rem;
+      @media screen and (min-width: 601px){
+        padding: 0 2rem;
+        transform: scale(0.9);
+        &:hover {
+          transform: scale(0.95);
+        }
+        &.slick-current {
+          transform: scale(1);
+          cursor: ew-resize;
+
+        }
+      }
+
+    }
+  }
+
+
+
+
+
+  .work-description {
+    max-width: 40rem;
+    margin: 5rem auto;
+    // text-align: left;
+    @media screen and (max-width: 800px){
+      margin: 3rem auto;
+    }
+    @media screen and (max-width: 600px){
+      margin: 2rem auto;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
+  }
+
+
+
+
+
+}

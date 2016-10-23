@@ -36,24 +36,20 @@ gulp.task('sass', function () {
 
 gulp.task('scripts', function() {
   gulp.src(bundlejs.sources)
-    .pipe(sourcemaps.init())
-      .pipe(concat('bundle.js'))
-      .pipe(rename({
-        suffix: '.min'
-      }))
-    .pipe(sourcemaps.write('../maps'))
+    .pipe(concat('bundle.js'))
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('./' + distDirectory + '/js'));
 });
 
 gulp.task('deploy', function() {
   gulp.src(bundlejs.sources)
-    .pipe(sourcemaps.init())
-      .pipe(concat('bundle.js'))
-      .pipe(jsmin())
-      .pipe(rename({
-        suffix: '.min'
-      }))
-    .pipe(sourcemaps.write('../maps'))
+    .pipe(concat('bundle.js'))
+    .pipe(jsmin())
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('./' + distDirectory + '/js'));
 });
 

@@ -57,8 +57,9 @@ function get_graduates($ids = []){
       'disciplines_labels' => isset($disciplines_labels) ? $disciplines_labels : null,
       'social_links'  => get_field('social_links', 'user_' . $id) ? get_field('social_links', 'user_' . $id) : null,
       'portfolio'     => get_userdata($id)->user_url,
+      'email'     => get_userdata($id)->user_email,
       'bio'           => get_userdata($id)->description,
-      'permalink'   => get_author_posts_url($id)
+      'permalink'   => get_author_posts_url($id),
     ]);
   }
   return $graduates;
