@@ -123,11 +123,11 @@
     }
     img {
       display: block;
-      max-width: 50rem;
+      width: auto;
+      height: auto;
+      max-width: 100%;
       max-height: 500px;
       max-height: 60vh;
-      height: auto;
-      width: auto;
       margin: 0 auto;
       box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
     }
@@ -139,6 +139,7 @@
       outline: none;
       width: 100%;
       cursor: pointer;
+      padding: 0 1rem;
       @media screen and (min-width: 601px){
         padding: 0 2rem;
         transform: scale(0.9);

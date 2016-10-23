@@ -48,19 +48,7 @@
       this.workStrips = this.profile.find('.work-strip');
       this.worksContainer = $('.detailed-works');
 
-      // Fixes the graduate image size so that it does not stretch when opening works
-      this.lockGraduateImage = function(){
-        this.gradImage
-          .css('height', $('.grad-image').outerHeight())
-          .css('width', $('.grad-image').outerWidth());
-      }
 
-      // Releases the fix lock on graduate image size
-      this.unlockGraduateImage = function(){
-        this.gradImage
-          .css('height', 'auto')
-          .css('width', '50vw');
-      }
 
       // Hides profile content so works can be shown
       this.hideProfile = function(){
@@ -84,7 +72,6 @@
       // Animates works container to show
       this.openWorks = function(workID){
         _this.hideProfile();
-        _this.lockGraduateImage();
         // Show works container
         this.worksContainer.show();
         setTimeout(function(){
@@ -104,7 +91,6 @@
 
         // Unhide profile
         setTimeout(function(){
-          _this.unlockGraduateImage();
           _this.unhideProfile();
         }, 300);
       }
