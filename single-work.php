@@ -17,7 +17,6 @@ $gallery = get_field('work_gallery');
 </div>
 
 <div class="work-content">
-  <a href="javascript:void(0)" class="close-works"><span class="close-works__label">Back to </span><span class="close-works__name">Profile</span></a>
 
   <div>
       <h1><?= get_the_title() ?></h1>

@@ -29,6 +29,8 @@
       // Allows back to profile button to close works
       $(workContentContainer).find('.close-works').click(function(e){
         e.preventDefault();
+        console.log(graduateProfile.currentWork);
+        history.pushState({work:graduateProfile.currentWork}, graduateProfile.currentWork);
         graduateProfile.closeWorks();
       });
 
@@ -47,7 +49,7 @@
       this.profileScrollPosition = null;
       this.workStrips = this.profile.find('.work-strip');
       this.worksContainer = $('.detailed-works');
-
+      this.currentWork = null;
 
 
       // Hides profile content so works can be shown
@@ -58,7 +60,6 @@
           _this.profileContent.hide();
         }, 400);
       }
-
       // Unhides profile content so works can be shown
       this.unhideProfile = function(){
         $("html, body").animate({ scrollTop: 0 });
@@ -68,19 +69,9 @@
           _this.profile.removeClass('hide-profile-content');
         }, 400);
       }
-
-      // Animates works container to show
-      this.openWorks = function(workID){
-        _this.hideProfile();
-        // Show works container
-        this.worksContainer.show();
-        setTimeout(function(){
-          _this.profile.removeClass('hide-detailed-works');
-        }, 50);
-      }
-
       // Animates works container to be hidden
       this.closeWorks = function(){
+        this.currentWork = null;
         // Hide works container
         this.profile.addClass('hide-detailed-works');
         // Also hide individual works so they are not open when next work is viewed
@@ -98,7 +89,7 @@
       this.showWork = function(workID){
         var thisWork = this.worksContainer.find('.work-' + workID);
         var thisWorkCarousel = thisWork.find('.work-carousel');
-
+        this.currentWork = workID;
         thisWork.show();
 
         setTimeout(function(){
@@ -114,13 +105,30 @@
       }
 
 
+
+
+
+
+
+      // Animates works container to show
+      this.openWorks = function(){
+        _this.hideProfile();
+        // Show works container
+        this.worksContainer.show();
+        setTimeout(function(){
+          _this.profile.removeClass('hide-detailed-works');
+        }, 50);
+      }
+
+
+
+
       this.loadWork = function(workID){
         var thisWork = this.worksContainer.find('.work-' + workID);
         // Append container and load the detailed work
         if( thisWork.length == 0 ){
           var workURL = $('a[data-work-id="' + workID + '"]').attr('href');
           var workContent;
-
           this.worksContainer.append('<div class="work-container work-' + workID +'"></div>');
           thisWork = $('.detailed-works .work-' + workID);
           // Load content into container
@@ -137,9 +145,24 @@
 
       this.goToWork = function(workID){
         $("html, body").animate({ scrollTop: 0 });
-        this.openWorks();
-        this.loadWork(workID);
+        if(workID == null || workID == undefined){
+          this.closeWorks();
+        } else {
+          this.openWorks();
+          this.loadWork(workID);
+        }
       }
+
+
+
+      window.onpopstate = function(event){
+        if(event.state){
+          _this.goToWork(event.state.work);
+        } else {
+          _this.closeWorks();
+        }
+      }
+
 
 
       // Checks scroll positions and blurs graduate profile if user has scrolled beyond threshold
@@ -162,10 +185,14 @@
       // Open respective work when strip is clicked on
       this.workStrips.click(function(e){
         e.preventDefault();
+        history.pushState({work:null}, 'Profile');
         _this.goToWork($(this).data('work-id'));
       });
 
     }
+
+
+
 
 
     // Initialises profile js
