@@ -191,7 +191,7 @@
       // Open respective work when strip is clicked on
       this.workStrips.click(function(e){
         e.preventDefault();
-        _this.goToWork($(this).data('work-id'));
+        _this.goToWork($(this).data('work-id'), true);
       });
 
     }
