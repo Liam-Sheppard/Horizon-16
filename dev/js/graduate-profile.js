@@ -29,8 +29,8 @@
       // Allows back to profile button to close works
       $(workContentContainer).find('.close-works').click(function(e){
         e.preventDefault();
-        console.log(graduateProfile.currentWork);
-        history.pushState({work:graduateProfile.currentWork}, graduateProfile.currentWork);
+        // console.log(graduateProfile.currentWork);
+        // history.pushState({work:graduateProfile.currentWork}, graduateProfile.currentWork);
         graduateProfile.closeWorks();
       });
 
@@ -143,11 +143,17 @@
 
 
 
-      this.goToWork = function(workID){
+      this.goToWork = function(workID, shouldPushState){
         $("html, body").animate({ scrollTop: 0 });
         if(workID == null || workID == undefined){
+          if(shouldPushState === true){
+            history.pushState({work:null}, 'Profile');
+          }
           this.closeWorks();
         } else {
+          if(shouldPushState === true){
+            history.pushState({work:workID}, 'Work ' + workID);
+          }
           this.openWorks();
           this.loadWork(workID);
         }
@@ -157,9 +163,9 @@
 
       window.onpopstate = function(event){
         if(event.state){
-          _this.goToWork(event.state.work);
+          _this.goToWork(event.state.work, false);
         } else {
-          _this.closeWorks();
+          _this.goToWork(null, false);
         }
       }
 
@@ -185,7 +191,6 @@
       // Open respective work when strip is clicked on
       this.workStrips.click(function(e){
         e.preventDefault();
-        history.pushState({work:null}, 'Profile');
         _this.goToWork($(this).data('work-id'));
       });
 
