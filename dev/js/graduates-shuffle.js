@@ -23,7 +23,8 @@
           }
           currentGrads[i] = newGrad;
           var grad = gradsJSON[currentGrads[i]];
-          $famID.append('<li class="single-grad active"><a href="javascript:void(0)" class="grad-container"><img src="' + siteData.themeUri + '/assets/images/graduate-images-600x400/graduate-' + grad.ID + '.png"><span class="grad-name"><span class="board"></span><span class="name">' + grad.full_name + '</span></span></a></li>');
+          console.log(grad);
+          $famID.append('<li class="single-grad active"><a href="/graduate/' + grad.first_name + grad.last_name + '" class="grad-container"><img src="' + siteData.themeUri + '/assets/images/graduate-images-600x400/graduate-' + grad.ID + '.png"><span class="grad-name"><span class="board"></span><span class="name">' + grad.full_name + '</span></span></a></li>');
           prevGrads = currentGrads;
         }
 
