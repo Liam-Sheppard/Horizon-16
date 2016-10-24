@@ -161,6 +161,8 @@
   a {
     opacity: .75;
     transition: opacity .3s;
+    font-size: 0;
+    letter-spacing: 0;
 
     &:hover {
       opacity: 1;
@@ -186,7 +188,7 @@
   }
 }
 
-@media (max-height: 780px) {
+@media (max-width: 400px) {
   .landing-croomo {
     display: none;
   }
