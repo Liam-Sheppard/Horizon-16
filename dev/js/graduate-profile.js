@@ -173,7 +173,7 @@
 
       // Checks scroll positions and blurs graduate profile if user has scrolled beyond threshold
       this.updateGraduateProfileBlur = function (){
-        this.profileScrollPosition = $('body').scrollTop();
+        this.profileScrollPosition = $(window).scrollTop();
         if ( _this.profileScrollPosition <= 50 ) {
           $( '#workJS' ).removeClass( 'work-show' );
           $( '#leftPanelJS' ).removeClass( 'work-show' );
