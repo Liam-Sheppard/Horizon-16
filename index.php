@@ -10,7 +10,7 @@ partial('instagram-feed');
 
 partial('graduates-landing');
 
-partial('croomo-landing');
+// partial('croomo-landing');
 
 partial('more-coming-soon');
 
