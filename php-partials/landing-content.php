@@ -24,7 +24,7 @@
   </div>
 
   <div class='landing-croomo'>
-    <a href='https://www.qut.edu.au/' target='_blank'>QUT<img src='<?= get_stylesheet_directory_uri() ?>/assets/images/logos/qut-white.png'></img></a>
+    <a href='https://www.qut.edu.au/' target='_blank'>QUT<img src='<?= get_stylesheet_directory_uri() ?>/assets/images/logos/QUT-white.png'></img></a>
   </div>
 
   <div class='scroll-prompt'></div>
