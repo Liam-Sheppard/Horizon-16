@@ -1,16 +1,12 @@
-#sponsor-images-big {
-    margin: -4px 90px 0 100px;
-    text-align: center;
-}
+
 #sponsor-images-big img {
-    padding:30px;
+    padding:20px;
 }
-#sponsor-images-small {
-    margin: -4px 90px 0 100px;
-    text-align: center;
-}
+
 #sponsor-images-small img {
-    padding:15px;
+    padding: 0px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 .panel {
     position: relative;
