@@ -1,138 +1,150 @@
-
-
-.croomo-strip {
-  width: 100%;
-  background: $actualWhite;
-  height: 15rem;
-  padding: 1rem 0;
-  margin-bottom: 5rem;
-  display: flex;
-
-  img {
-    display: block;
-    height: 100%;
+#sponsor-images-big img {
+    margin: 2rem 5rem;
+    height: 100px;
     width: auto;
-    padding: 0 3rem;
-  }
-
-  .croomo-text {
-    display: block;
-    flex-grow: 1;
-    color: $black;
-    // text-align: left;
-    position: relative;
-
-    span {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.2rem;
-      font-weight: 500;
-      letter-spacing: .3rem;
-      text-transform: uppercase;
-    }
-  }
-
-  .croomo-btn {
-    display: block;
-    width: 500px;
-    padding-left: 3rem;
-    position: relative;
-
-    a {
-      display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
-      text-transform: uppercase;
-      font-weight: 500;
-      min-width: 60%;
-      font-size: 1.2rem;
-      background: $croomoGreen;
-      color: $croomoBlue;
-      padding: 1rem 2rem;
-      letter-spacing: .3rem;
-      transition: color .3s, background .3s;
-
-      &:hover {
-        background: $croomoPurple;
-        color: $actualWhite;
-      }
-    }
-  }
-
-  @media (max-width: 1760px) {
-    .croomo-btn {
-      width: 450px;
-
-      a {
-        font-size: 1rem;
-      }
-    }
-    .croomo-text span {
-      font-size: 1rem;
-    }
-  }
-  @media (max-width: 1450px) {
-    img {
-      padding: 0 0 0 1rem;
-    }
-    .croomo-btn {
-      width: 290px;
-      margin: 0 4rem 0 2rem;
-
-      a {
-        width: 100%;
-      }
-    }
-    .croomo-text span {
-      font-size: .9rem;
-      letter-spacing: .2rem;
-    }
-  }
-  @media (max-width: 1300px) {
-    height: auto;
-    display: block;
-    img {
-      height: 15rem;
-      margin: 0 auto;
-    }
-    .croomo-text {
-      width: 70%;
-    }
-    .croomo-btn,
-    .croomo-text {
-      margin: 0 auto 3rem;
-      padding: 0;
-    }
-    .croomo-btn a,
-    .croomo-text span {
-      position: relative;
-      left: 0;
-      top: 0;
-      transform: translate(0,0);
-    }
-  }
-  @media (max-width: 950px) {
-    .croomo-text {
-      width: 85%;
-    }
-  }
-  @media (max-width: 550px) {
-    img {
-      width: 90%;
-      height: auto;
-    }
-    .croomo-btn {
-      width: 85%;
-      margin: 0 auto 2rem;
-      a {
-        padding: 2rem 0;
-        font-size: 1rem;
-      }
-    }
-  }
 }
+
+#sponsor-images-small img {
+    padding: 0;
+    margin: 2rem 3rem;
+    height: 36px;
+    width: auto;
+}
+
+//
+// .croomo-strip {
+//   width: 100%;
+//   background: $actualWhite;
+//   height: 15rem;
+//   padding: 1rem 0;
+//   margin-bottom: 5rem;
+//   display: flex;
+//
+//   img {
+//     display: block;
+//     height: 100%;
+//     width: auto;
+//     padding: 0 3rem;
+//   }
+//
+//   .croomo-text {
+//     display: block;
+//     flex-grow: 1;
+//     color: $black;
+//     // text-align: left;
+//     position: relative;
+//
+//     span {
+//       position: absolute;
+//       width: 100%;
+//       left: 0;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       font-size: 1.2rem;
+//       font-weight: 500;
+//       letter-spacing: .3rem;
+//       text-transform: uppercase;
+//     }
+//   }
+//
+//   .croomo-btn {
+//     display: block;
+//     width: 500px;
+//     padding-left: 3rem;
+//     position: relative;
+//
+//     a {
+//       display: block;
+//       position: absolute;
+//       left: 50%;
+//       top: 50%;
+//       transform: translate(-50%,-50%);
+//       text-transform: uppercase;
+//       font-weight: 500;
+//       min-width: 60%;
+//       font-size: 1.2rem;
+//       background: $croomoGreen;
+//       color: $croomoBlue;
+//       padding: 1rem 2rem;
+//       letter-spacing: .3rem;
+//       transition: color .3s, background .3s;
+//
+//       &:hover {
+//         background: $croomoPurple;
+//         color: $actualWhite;
+//       }
+//     }
+//   }
+//
+//   @media (max-width: 1760px) {
+//     .croomo-btn {
+//       width: 450px;
+//
+//       a {
+//         font-size: 1rem;
+//       }
+//     }
+//     .croomo-text span {
+//       font-size: 1rem;
+//     }
+//   }
+//   @media (max-width: 1450px) {
+//     img {
+//       padding: 0 0 0 1rem;
+//     }
+//     .croomo-btn {
+//       width: 290px;
+//       margin: 0 4rem 0 2rem;
+//
+//       a {
+//         width: 100%;
+//       }
+//     }
+//     .croomo-text span {
+//       font-size: .9rem;
+//       letter-spacing: .2rem;
+//     }
+//   }
+//   @media (max-width: 1300px) {
+//     height: auto;
+//     display: block;
+//     img {
+//       height: 15rem;
+//       margin: 0 auto;
+//     }
+//     .croomo-text {
+//       width: 70%;
+//     }
+//     .croomo-btn,
+//     .croomo-text {
+//       margin: 0 auto 3rem;
+//       padding: 0;
+//     }
+//     .croomo-btn a,
+//     .croomo-text span {
+//       position: relative;
+//       left: 0;
+//       top: 0;
+//       transform: translate(0,0);
+//     }
+//   }
+//   @media (max-width: 950px) {
+//     .croomo-text {
+//       width: 85%;
+//     }
+//   }
+//   @media (max-width: 550px) {
+//     img {
+//       width: 90%;
+//       height: auto;
+//     }
+//     .croomo-btn {
+//       width: 85%;
+//       margin: 0 auto 2rem;
+//       a {
+//         padding: 2rem 0;
+//         font-size: 1rem;
+//       }
+//     }
+//   }
+// }

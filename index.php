@@ -12,7 +12,9 @@ partial('graduates-landing');
 
 // partial('croomo-landing');
 
-partial('more-coming-soon');
+partial('sponsors-landing');
+
+// partial('more-coming-soon');
 
 partial('footer');
 
