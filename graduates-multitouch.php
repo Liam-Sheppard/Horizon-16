@@ -9,7 +9,7 @@
 
 get_header();
 
-partial('header');
+partial('header-multitouch');
 
 ?>
 
