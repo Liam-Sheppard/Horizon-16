@@ -116,7 +116,12 @@ body.home {
 
 
 }
-
+.strip-multitouch {
+    white-space: nowrap;
+    margin: 0 0 1.5rem;
+    font-size: 0;
+    background: $actualWhite;
+}
 
 .strip-container, .strip {
 
