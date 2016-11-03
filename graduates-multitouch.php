@@ -46,7 +46,7 @@ partial('header-multitouch');
 
       for($strips = 0; $strips < $num_stips; $strips++){ ?>
 
-        <div class="strip">
+        <div class="strip-multitouch">
             <?php
             for ($x = 0; $x <= $max_grads_per_row - 1; $x++) {
               $current_graduate = $graduates[$x + $strips * $max_grads_per_row];
