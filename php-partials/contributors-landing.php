@@ -115,8 +115,8 @@ $contributors = [
     'last_name' => 'Peters',
   ],
   [
-    'first_name' => 'Anita',
-    'last_name' => 'Edmondson',
+    'first_name' => 'Michael',
+    'last_name' => 'Schmidt',
   ],
 ];
 
