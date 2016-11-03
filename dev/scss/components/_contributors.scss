@@ -1,0 +1,23 @@
+.pozible-contributor {
+  @include primaryMenuItem;
+  margin: 1em 1.25em;
+  letter-spacing: 0.15em;
+  .emoji {
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  @media screen and (max-width: 768px){
+    .last {
+      display: none;
+    }
+    .first::after{
+      content: attr(data-first-of-last);
+    }
+  }
+}
+
+.pozible-anons {
+  margin-top: 3em;
+  display: block;
+}

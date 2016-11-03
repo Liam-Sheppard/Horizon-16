@@ -1,5 +1,12 @@
 <?php
 
+add_action('init', 'graduate_base');
+function graduate_base() {
+    global $wp_rewrite;
+    $author_slug = 'graduate'; // change slug name
+    $wp_rewrite->author_base = $author_slug;
+}
+
 function get_graduate_ids($randomise = false){
 
   $graduates = new WP_User_Query([
@@ -65,6 +72,17 @@ function get_graduates($ids = []){
   return $graduates;
 }
 
+// Takes an array of graudate ids and returns array of full graduate names with their ID's as their key
+function get_graduate_names($graduate_ids = []){
+  $graduate_names = [];
+  $graduates = get_graduates($graduate_ids);
+  foreach($graduates as $graduate){
+    $graduate_names[$graduate['ID']] = $graduate['full_name'];
+  }
+  return $graduate_names;
+}
+
+
 function get_next_graduate($current_graduate_id){
     $all_graduate_ids = get_graduate_ids(false);
     $graduate_count = count($all_graduate_ids);
@@ -73,12 +91,4 @@ function get_next_graduate($current_graduate_id){
       ? get_graduates([$all_graduate_ids[$current_graduate_place + 1]])[0]
       : get_graduates([$all_graduate_ids[0]])[0];
     return $next_graduate;
-}
-
-
-add_action('init', 'graduate_base');
-function graduate_base() {
-    global $wp_rewrite;
-    $author_slug = 'graduate'; // change slug name
-    $wp_rewrite->author_base = $author_slug;
 }

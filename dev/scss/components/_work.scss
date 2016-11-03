@@ -2,7 +2,6 @@
   #primary-navigation {
     color: $black;
   }
-
   background: white;
   color: $black;
 }
@@ -31,7 +30,7 @@
   opacity: 1;
   transition: opacity 0.6s;
   display: none;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   .hide-detailed-works & {
     opacity: 0;
   }
@@ -58,6 +57,22 @@
   margin: 0 auto;
   color: $black;
   transition: opacity 0.6s 0.2s;
+  position: relative;
+
+  .project-contributors {
+    list-style: none;
+    .contributor {
+      display: inline-block;
+    }
+    .contributor-photo {
+      height: 3rem;
+      width: 3rem;
+    }
+    .contributor-name {
+
+    }
+  }
+
   .author {
     color: white;
   }
@@ -94,6 +109,19 @@
     padding-top: 3rem;
     @media screen and (max-width: 600px){
       margin: 3rem 0;
+    }
+    .slick-next, .slick-prev {
+      position: absolute;
+      bottom: 100%;
+      cursor: pointer;
+      padding: 1em;
+      margin: 1em;
+    }
+    .slick-next {
+      left: 55%;
+    }
+    .slick-prev {
+      right: 55%;
     }
     .slick-dots {
       position: absolute;
@@ -150,7 +178,6 @@
         &.slick-current {
           transform: scale(1);
           cursor: ew-resize;
-
         }
       }
 

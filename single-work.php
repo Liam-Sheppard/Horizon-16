@@ -20,9 +20,28 @@ $gallery = get_field('work_gallery');
 
   <div>
       <h1><?= get_the_title() ?></h1>
-      <p class="graduate-label">by <?= $current_graduate['full_name'] ?></p>
+      <p class="graduate-label"><a href="<?= $current_graduate['permalink'] ?>">by <?= $current_graduate['full_name'] ?></a></p>
       <div class="work-carousel">
         <?php
+        // if($videos = get_field('videos')){
+        //   foreach($videos as $video){
+        //     switch($video['host']){
+        //
+        //       case 'youtube':
+        //         partial('video/responsive-video', [
+        //           'src' => 'https://www.youtube.com/embed/' . $video['video_id']
+        //         ]);
+        //         break;
+        //
+        //       case 'vimeo':
+        //         partial('video/responsive-video', [
+        //           'src' => 'https://player.vimeo.com/video/' . $video['video_id']
+        //         ]);
+        //         break;
+        //
+        //     }
+        //   }
+        // }
         foreach($gallery as $item){
           echo '<div class="work-carousel-item"><img src="'. $item['sizes']['large'] .'"></div>';
         }
@@ -45,4 +64,3 @@ $gallery = get_field('work_gallery');
 
 <?php
 get_footer();
-?>

@@ -119,7 +119,7 @@
                 <div><span>S</span></div>
                 <div><span>!</span></div>
                 <h1>Thanks for your Support!</h1>
-                <p>The Horizon16 Graduate Exhbition would not have been possible without your contribution, so from all of the 2016 QUT IVD Graduates... THANKS!</p>
+                <p>The Horizon 16 Graduate Exhibition would not have been possible without your contribution, so from all of the 2016 QUT IVD Graduates... THANKS!</p>
               </div>
             </div>`);
             $('.balloon-egg').click(function(e){
