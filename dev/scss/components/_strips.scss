@@ -116,7 +116,13 @@ body.home {
 
 
 }
-
+.strip-multitouch {
+    white-space: nowrap;
+    margin: 0 0 1.5rem;
+    font-size: 0;
+    background: $actualWhite;
+    text-align: left;
+}
 
 .strip-container, .strip {
 
@@ -255,8 +261,7 @@ body.home {
           transition: transform 0.3s 0.2s, width 0.2s, height 0.2s, opacity 0.2s;
         }
       }
-      & {
-        .grad-name-multitouch  {
+      .grad-name-multitouch  {
           transform: translate(-50%, -3rem);
         }
         .name-multitouch {
@@ -270,7 +275,7 @@ body.home {
           transform: translate(-50%,-50%) rotate(540deg);
           transition: transform 0.3s, width 0.4s 0.3s, height 0.4s 0.3s, opacity 0.1s;
         }
-      }
+      
       img {
         width: 100%;
         height: auto;
