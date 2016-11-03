@@ -18,7 +18,10 @@
         infinite: false,
         autoplay: false,
         arrows: false,
-        dots: true
+        swipeToSlide: true,
+        dots: true,
+        nextArrow: '<span class="slick-next">Next</span>',
+        prevArrow: '<span class="slick-prev">Prev</span>',
       });
 
       // Allows clicks on next and previous carousel items to navigate the slider
@@ -29,7 +32,6 @@
       // Allows back to profile button to close works
       $(workContentContainer).find('.close-works').click(function(e){
         e.preventDefault();
-        // console.log(graduateProfile.currentWork);
         // history.pushState({work:graduateProfile.currentWork}, graduateProfile.currentWork);
         graduateProfile.closeWorks();
       });
