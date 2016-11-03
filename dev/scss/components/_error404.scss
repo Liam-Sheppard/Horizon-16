@@ -1,0 +1,25 @@
+.error404 {
+  iframe {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #main-content {
+    width: 90%;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 100;
+    h1 {
+      margin-bottom: 0.25em;
+    }
+    p {
+      font-size: 1.75rem;
+      margin-bottom: 1em;
+    }
+  }
+  .panel--landing::after {
+    display: none;
+  }
+}

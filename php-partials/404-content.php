@@ -11,21 +11,15 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 594.3 409.59" class="polygon layer" data-desktop-depth="0.03" data-mobile-depth="1" data-depth="0.3"><polyline class="a" points="290.47 226.32 153.24 1.15 0.47 424.32"/><polyline class="b" points="0.47 424.32 238.47 311.82 290.47 226.32"/></svg>
   </div>
 
-  <div class="hero-video-container">
-    <video id="heroVideo" autoplay loop controls>
-      <source src="<?= get_stylesheet_directory_uri() ?>/assets/video/video_v2.webm" type="video/webm">
-      <source src="<?= get_stylesheet_directory_uri() ?>/assets/video/video_v2.mp4" type="video/mp4">
-    </video>
-  </div>
 
   <div id="main-content">
-    <h1 class="site-title"><span class="primary-heading-text">Horizon</span> <span class="sub-heading">Graduate Exhibition 2016</span> <span class="sub-heading">QUT Interactive + Visual Design</span></h1>
-    <?php partial('landing-details'); ?>
+    <h1 class="site-title">404</h1>
+    <p>This isn't the page you're looking for.</p>
+    <a href="<?= get_home_url() ?>" class="button button--small">Move Along</a>
   </div>
 
   <div class='landing-croomo'>
     <a href='https://www.qut.edu.au/' target='_blank'>QUT<img src='<?= get_stylesheet_directory_uri() ?>/assets/images/logos/QUT-white.png'></img></a>
   </div>
 
-  <div class='scroll-prompt'></div>
 </div>

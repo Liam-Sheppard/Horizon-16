@@ -1,0 +1,14 @@
+.pozible-contributor {
+  @include primaryMenuItem;
+  margin: 1em 1.25em;
+  .emoji {
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.pozible-anons {
+  margin-top: 3em;
+  display: block;
+}

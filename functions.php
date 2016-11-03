@@ -4,6 +4,8 @@ require_once get_stylesheet_directory() . '/includes/functions-graduates.php';
 
 require_once get_stylesheet_directory() . '/includes/functions-login.php';
 
+require_once get_stylesheet_directory() . '/includes/functions-fields.php';
+
 
 if(!function_exists('partial')){
   /**
