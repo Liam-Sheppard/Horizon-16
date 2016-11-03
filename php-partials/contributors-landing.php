@@ -95,10 +95,6 @@ $contributors = [
     'last_name' => 'Sheppard',
   ],
   [
-    'first_name' => 'Jordie',
-    'last_name' => 'Peters',
-  ],
-  [
     'first_name' => 'Anita',
     'last_name' => 'Edmondson',
   ],

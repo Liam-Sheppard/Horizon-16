@@ -6,21 +6,27 @@
     <meta property="og:url"                content="https://www.horizon16.com" />
     <?php
 
-    if(is_home()){
+    if (is_home()) {
 
-      echo '<meta property="og:title" content="QUT Interactive + Visual Design Graduate Exhibition 2016" />';
+      echo '<meta property="og:title" content="Horizon 16 | QUT Interactive + Visual Design Graduate Exhibition 2016" />';
       echo '<meta property="og:description" content="QUT Interactive + Visual Design Graduate Exhibition 2016" />';
+      echo '<meta name="description"        content="QUT Interactive + Visual Design Graduate Exhibition 2016">';
       echo '<meta property="og:image" content="<?= get_stylesheet_directory_uri() ?>/assets/images/og-horizon.png" />';
 
-    }  else if (is_page_template('graduates.php')) {
+    } else if (is_page_template('graduates.php')) {
 
-      echo '<meta property="og:title" content="QUT Interactive + Visual Design Graduates of 2016" />';
-      echo '<meta property="og:description" content="Meet the graduating class of QUT IVD for 2016" />';
+      echo '<meta property="og:title" content="Horizon 16 | QUT Interactive + Visual Design Graduate Exhibition 2016" />';
+      echo '<meta property="og:description" content="Meet the graduating class of QUT Interactive + Visual Design for 2016." />';
+      echo '<meta name="description"        content="Meet the graduating class of QUT Interactive + Visual Design for 2016." />';
       echo '<meta property="og:image" content="<?= get_stylesheet_directory_uri() ?>/assets/images/og-horizon.png" />';
 
-    } else if (is_single()){
+    } else if (is_single()) {
 
-      echo '<meta property="og:title" content="' . get_the_title() . ' />';
+      echo '<meta property="og:title" content="' . get_the_title() . ' | QUT Interactive + Visual Design Graduates of 2016" />';
+
+    } else if (is_author()) {
+
+      echo '<meta property="og:title" content="' . get_the_title() .  ' | QUT Interactive + Visual Design Graduates of 2016" />';
 
     }
 
