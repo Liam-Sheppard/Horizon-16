@@ -1,0 +1,189 @@
+$balloon-colour: transparentize($actualWhite, 0.1);
+
+.balloon-egg {
+  position: fixed;
+  background: rgba(0,0,0,0.95);
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10000;
+  animation: fadeIn 2s;
+  white-space: nowrap;
+    .balloon {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      animation: baloonsFlyIn 2s;
+      h1 {
+        margin: 5rem auto 3rem;
+        max-width: 60rem;
+        line-height: 1.2;
+        white-space: normal;
+        opacity: 0;
+        animation: fadeIn 1s 2s forwards;
+        @media screen and (max-width:1500px){
+          font-size: 2.5em;
+        }
+      }
+      p {
+        font-size: 1.5rem;
+        max-width: 60rem;
+        opacity: 0;
+        white-space: normal;
+        animation: fadeIn 1s 2.5s forwards;
+        letter-spacing: 0.15em;
+        @media screen and (max-width:1500px){
+          font-size: 1.2em;
+        }
+      }
+    }
+    .balloon > div {
+       width:104px;
+      height:140px;
+      background: $balloon-colour;
+      border-radius:0;
+      border-radius:80% 80% 80% 80%;
+      margin: 0 auto;
+      // position: absolute;
+      display: inline-block;
+      padding:10px;
+      transform-origin: bottom center;
+      @media screen and (max-width:1500px){
+        width: 80px;
+        height: 100px;
+      }
+    }
+    .balloon > div:nth-child(1){
+      background: $balloon-colour;
+      left: 0;
+      animation:balloon1 6s ease-in-out infinite;
+      &:before {
+       color: $balloon-colour;
+      }
+
+    }
+    .balloon > div:nth-child(2){
+      background: $balloon-colour;
+      left: 120px;
+      animation:balloon2 6s ease-in-out infinite;
+      &:before {
+       color: $balloon-colour;
+      }
+
+    }
+    .balloon > div:nth-child(3){
+      background: $balloon-colour;
+      left: 240px;
+      animation:balloon4 6s ease-in-out infinite;
+      &:before {
+       color: $balloon-colour;
+      }
+
+    }
+    .balloon > div:nth-child(4){
+      left: 360px;
+      animation:balloon1 5s ease-in-out infinite;
+      &:before {
+       color: $balloon-colour;
+      }
+
+    }
+    .balloon > div:nth-child(5){
+      left: 480px;
+      animation:balloon3 5s ease-in-out infinite;
+      &:before {
+       color: $balloon-colour ;
+      }
+
+    }
+    .balloon > div:nth-child(6){
+      background: $balloon-colour;
+      left: 600px;
+      animation:balloon2 3s ease-in-out infinite;
+      &:before {
+       color: $balloon-colour;
+      }
+
+    }
+    .balloon > div:nth-child(7){
+      background: $balloon-colour;
+      left: 720px;
+      animation:balloon1 3s ease-in-out infinite;
+      &:before {
+       color: $balloon-colour;
+      }
+
+    }
+    .balloon > div:before {
+      position:absolute;
+      bottom:-11px;
+      left: 40%;
+      content:"▲";
+      font-size:1em;
+      color: trasparentize($actualWhite, 0.1);
+    }
+
+    span {
+      font-size: 4.8em;
+      color: $black;
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      @include Aileron;
+      font-weight: 600;
+      @media screen and (max-width:1500px){
+        font-size: 3em;
+      }
+    }
+
+
+}
+
+
+
+/*BALLOON 1 4*/
+
+@keyframes balloon1 {
+  0%,100%{ transform:translateY(0) rotate(-6deg);}
+  50%{ transform:translateY(-20px) rotate(8deg); }
+}
+
+/* BAllOON 2 5*/
+
+@keyframes balloon2 {
+  0%,100%{ transform:translateY(0) rotate(6deg);}
+  50%{ transform:translateY(-30px) rotate(-8deg); }
+}
+
+
+/* BAllOON 0*/
+
+@keyframes balloon3 {
+ 0%,100%{ transform:translate(0, -10px) rotate(6eg);}
+  50%{ transform:translate(-20px, 30px) rotate(-8deg); }
+}
+
+/* BAllOON 3*/
+
+@keyframes balloon4 {
+  0%,100%{ transform:translate(10px, -10px) rotate(-8eg);}
+  50%{ transform:translate(-15px, 10px) rotate(10deg); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes baloonsFlyIn {
+  from {
+    transform: translate(-50%, 200%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}

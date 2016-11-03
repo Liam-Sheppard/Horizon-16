@@ -105,6 +105,34 @@
       console.log('Easter Egg Code: r o l l');
 
 
+    egg
+      .addCode("t,h,a,n,k,s", function(){
+        if($('body').find('.balloon-egg').length == 0){
+          $('body').prepend(`
+            <div class="balloon-egg container">
+              <div class="balloon">
+                <div><span>T</span></div>
+                <div><span>H</span></div>
+                <div><span>A</span></div>
+                <div><span>N</span></div>
+                <div><span>K</span></div>
+                <div><span>S</span></div>
+                <div><span>!</span></div>
+                <h1>Thanks for your Support!</h1>
+                <p>The Horizon16 Graduate Exhbition would not have been possible without your contribution, so from all of the 2016 QUT IVD Graduates... THANKS!</p>
+              </div>
+            </div>`);
+            $('.balloon-egg').click(function(e){
+              $(this).remove();
+            })
+        }
+
+      })
+      .addHook(function(){
+      }).listen();
+
+
+
   });
 
 })(jQuery);

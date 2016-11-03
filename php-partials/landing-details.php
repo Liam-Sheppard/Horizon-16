@@ -3,7 +3,7 @@
         <img src='<?= get_stylesheet_directory_uri() ?>/assets/images/icon-event.svg'></img>
         <div class='detail-text'>
             <span class='event-details-lg'>9th Nov 2016</span>
-            <span class='event-details-sm'>6:00pm</span>
+            <span class='event-details-sm'>7:00pm</span>
         </div>
     </div>
     <div class='place detailbox'>
