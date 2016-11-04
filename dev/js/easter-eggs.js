@@ -38,6 +38,20 @@
       }).listen();
       console.log('Easter Egg Code: m e o w');
 
+    var jRexTrack = new Audio(siteData.themeUri + '/assets/sounds/eggs/muramasa.mp3');
+    egg
+      .addCode("j,r,e,x", function() {
+        $('body').prepend('<div class="j-rex"></div>');
+        jRexTrack.play();
+        setTimeout(function(){
+          $('.j-rex').remove();
+          jRexTrack.pause();
+          jRexTrack.currentTime = 0;
+        }, 15000);
+      })
+      .addHook(function(){
+      }).listen();
+      console.log('Easter Egg Code: j r e x');
 
     var notLikeThis = new Audio(siteData.themeUri + '/assets/sounds/eggs/not-like-this.mp3');
     var alreadyRip = false;
@@ -54,23 +68,6 @@
       .addHook(function(){
       }).listen();
       console.log('Easter Egg Code: r i p');
-
-    egg
-      .addCode("h,e,l,l", function() {
-        $('body').addClass('break-everything');
-        $('body').append('<div class="internetexplorer"></div>');
-        // setTimeout(function(){
-        //   $('.internetexplorer').fadeOut();
-        // }, 5500);
-        // setTimeout(function(){
-        //   $('body').removeClass('break-everything');
-        //   $('.internetexplorer').remove();
-        // }, 7500);
-      })
-      .addHook(function(){
-      }).listen();
-      console.log('Easter Egg Code: h e l l');
-
 
 
     egg

@@ -119,28 +119,6 @@
 
 
 
-body {
-  transition: margin .5s;
-}
-
-body.break-everything {
-  margin-top: 29.8vw;
-  * {
-    display: -webkit-box;
-  }
-}
-
-.internetexplorer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 29.8vw;
-  background-image: url(../images/eggs/ie.png);
-  background-size: cover;
-}
-
-
 .datboi {
   width: 312px;
   height: 390px;
@@ -160,5 +138,88 @@ body.break-everything {
   to {
     left: 0;
     transform: translateX(-100%);
+  }
+}
+
+
+
+
+
+
+
+.j-rex {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../images/eggs/tbc.png);
+  width: 200px;
+  height: 200px;
+  max-width: 30vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10000;
+  &::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: none;
+    animation-name: jrexLights;
+    animation-duration: .55s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    width: 400px;
+    max-width: 50vw;
+    height: 300px;
+    background-image: url(../images/eggs/j-rex.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: jrexDanceDance;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes jrexDanceDance {
+  0%,
+  25%,
+  49.99% {
+    transform: translate(-150%,0);
+  }
+  12.5%,
+  37.5% {
+    transform: translate(-150%,-10%);
+  }
+  50%,
+  75%,
+  100% {
+    transform: translate(50%,0) scaleX(-1);
+  }
+  62.5%,
+  87.5% {
+    transform: translate(50%,-10%) scaleX(-1);
+  }
+}
+
+@keyframes jrexLights {
+  0% {
+    box-shadow: 0 0 80px rgba(red,.7);
+  }
+  50% {
+    box-shadow: 0 0 80px rgba(blue,.7);
+  }
+  100% {
+    box-shadow: 0 0 80px rgba(green,.7);
   }
 }
