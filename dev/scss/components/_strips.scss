@@ -137,6 +137,9 @@ body.home {
     display: inline-block;
     vertical-align: middle;
     text-align: left;
+    opacity: 0;
+    -webkit-transition: opacity .6s .4s;
+    transition: opacity .6s .4s;
 }
 .panel-grad-strip-multi {
     height: 100vh;
