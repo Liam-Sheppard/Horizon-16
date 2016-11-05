@@ -16,7 +16,7 @@
             <div class="menu-primary-container">
               <ul id="menu-primary" class="menu">
                 <li id="menu-item-679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-679">
-                  <a href="https://horizon16.com/graduates-multitouch/">Graduates</a>
+                  <a href="https://horizon16.site/graduates-multitouch/">Graduates</a>
                 </li>
               </ul>
           </div>   
