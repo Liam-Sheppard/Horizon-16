@@ -28,10 +28,10 @@ partial('header', [
     <div class='left-panel' id='workJS'>
       <div class='grad-work-container'>
         <?php
-
+        $post_per_page = is_multitouch() ? 4 : 5;
         $works = new WP_Query([
           'post_type' => 'work',
-          'posts_per_page' => 5,
+          'posts_per_page' => $post_per_page,
           'author' => $current_graduate['ID'],
         ]);
 

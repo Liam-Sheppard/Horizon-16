@@ -22,6 +22,24 @@
   .strips-container {
     margin: 2rem 0;
   }
+  .strip .single-grad .grad-container .grad-name,
+  .strip-container .single-grad .grad-container .grad-name {
+    transform: translate(-50%,-3rem);
+    padding: .6rem 1.4rem;
+  }
+  .strip .single-grad .grad-container .board,
+  .strip-container .single-grad .grad-container .board {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transform: translate(-50%,-50%) rotate(540deg);
+  }
+  .strip .single-grad .grad-container .name,
+  .strip-container .single-grad .grad-container .name {
+    opacity: 1;
+    transition: opacity .2s .4s;
+    font-size: 0.7rem;
+  }
 
   @keyframes fadeIn{
     from {
@@ -38,12 +56,18 @@
       pointer-events: auto;
       overflow: hidden;
     }
+    .horizon-rule {
+      width: 100%;
+      &--bottom-end {
+        margin: 3rem auto;
+      }
+    }
     .grad-work-container {
       opacity: 1;
     }
     &.hide-detailed-works {
       .grad-work-container {
-        transition: opacity 0.5s 1s;
+        transition: opacity 0.5s 0.8s;
         opacity: 1;
       }
     }
