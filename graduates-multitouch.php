@@ -24,13 +24,13 @@ partial('header-multitouch');
 
 </div>
 
-<div class="panel panel--graduate-strips">
+<div class="panel panel--graduate-strips panel-grad-strip-multi">
 
 
 
 
 
-  <div class="graduates-container">
+  <div class="graduates-container graduates-container-multi">
 
     <h1 class="h2">QUT IVD Graduates</h1>
 
