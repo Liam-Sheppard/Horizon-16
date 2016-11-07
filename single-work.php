@@ -51,7 +51,7 @@ $gallery = get_field('work_gallery');
         <?= apply_filters('the_content', get_the_excerpt()) ?>
       </article>
 
-      <?php if($project_url = get_field('project_url')) : ?>
+      <?php if($project_url = get_field('project_url') && !is_multitouch()) : ?>
         <div class="project-url-link">
           <a href="<?= $project_url ?>" target="_blank" class="button button--black">Visit the project</a>
         </div>

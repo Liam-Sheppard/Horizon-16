@@ -34,7 +34,11 @@ partial('header');
 
     <h1 class="h2">QUT IVD Graduates</h1>
 
-    <?php partial('graduate-filters') ?>
+    <?php
+    if(!is_multitouch()) {
+      partial('graduate-filters');
+    }
+    ?>
 
     <div class="strips-container">
     <?php
@@ -64,6 +68,14 @@ partial('header');
 
       <?php } ?>
     </div>
+
+    <?php
+    if(is_multitouch()) {
+      partial('graduate-filters');
+    }
+    ?>
+
+
   </div>
 </div>
 

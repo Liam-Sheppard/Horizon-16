@@ -41,7 +41,9 @@
     <?php
 
     wp_head();
-    partial('google-analytics');
+    if(!is_multitouch()){
+      partial('google-analytics');
+    }
     ?>
   </head>
     <body <?php body_class() ?>>

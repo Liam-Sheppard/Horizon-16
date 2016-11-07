@@ -1,0 +1,115 @@
+.multitouch {
+  height: calc(100vh - 5rem);
+  min-height: 0;
+
+  // GRADUATES
+  &.page-template-graduates .panel--graduate-strips {
+    padding: 6rem 3rem 3rem;
+    height: 100%;
+  }
+  .inline-v-align {
+   width: 100%;
+   text-align: center;
+  }
+  .graduate-filters {
+    .menu-item a {
+      font-size: .8rem;
+    }
+  }
+  .strips-container .single-grad {
+    width: 15.2vw;
+  }
+  .strips-container {
+    margin: 2rem 0;
+  }
+
+  @keyframes fadeIn{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  //SINGLE GRAD
+  .panel--single-graduate {
+    #workJS {
+      pointer-events: auto;
+      overflow: hidden;
+    }
+    .grad-work-container {
+      opacity: 1;
+    }
+    &.hide-detailed-works {
+      .grad-work-container {
+        transition: opacity 0.5s 1s;
+        opacity: 1;
+      }
+    }
+    &.hide-profile-content {
+      .grad-work-container {
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+    }
+    .left-panel {
+      // height: calc(100vh - 5rem);
+      .grad-work-container {
+        position: fixed;
+        left: 0;
+        width: 50%;
+        top: 50%;
+        padding: 3rem;
+        transform: translate(0,-50%) !important;
+      }
+      .work-strip {
+        background-color: white;
+        &:hover {
+          .work-image {
+            opacity: 1;
+          }
+        }
+        .work-title {
+          opacity: 1 !important;
+          bottom: 0 !important;
+          top: auto !important;
+          transform: translate(-50%, 50%) !important;
+          padding: 1rem 2rem;
+          font-size: 1rem;
+        }
+      }
+      .grad-image {
+        // height: calc(100vh - 5rem);
+        bottom: auto;
+        filter: blur(5px);
+        overflow: hidden;
+      }
+    }
+    .right-panel {
+      z-index: 10;
+      p {
+        font-size: 1.1rem;
+      }
+      h2 {
+        margin: 2rem 0;
+        letter-spacing: 0.2em;
+      }
+    }
+
+  }
+
+
+
+  // WORKS
+  .detailed-works {
+    padding: 6rem;
+  }
+  .work-content {
+    max-width: 40rem;
+  }
+
+
+
+
+}

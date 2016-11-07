@@ -22,10 +22,6 @@ partial('header', [
       <h1><?= $current_graduate['full_name'] ?></h1>
       <?=
       $current_graduate['disciplines_labels'] ? '<h2>' . implode(array_slice($current_graduate['disciplines_labels'], 0, 3), ' + ') . '</h2>' : false;
-
-      // for ( $d = 0; $d < 3; $d++ ) {
-      //   echo $d;
-      // }
       ?>
     </div>
 
@@ -60,7 +56,9 @@ partial('header', [
     <?php
 
     if ($bio = $current_graduate['bio']) {
+      if(!is_multitouch()){
         echo '<div class="panel-bridge"></div>';
+      }
         echo apply_filters('the_content', $bio);
         // echo '<div class="panel-bridge"></div>';
     }
@@ -78,24 +76,31 @@ partial('header', [
       </ul>
     <?php } ?>
 
-    <span class="horizon-rule horizon-rule--top-end"></span>
-    <div class="panel-bridge"></div>
 
     <?php
+    if(!is_multitouch()){
 
-    echo ($portfolio = $current_graduate['portfolio']) ? '<a target="_blank" href="' . $portfolio . '" class="fancy-link">View my Portfolio</a>' : '<a href="mailto:' . $current_graduate['email'] . '" class="fancy-link">' . $current_graduate['email'] . '</a>';
+      echo '<span class="horizon-rule horizon-rule--top-end"></span>';
+      echo '<div class="panel-bridge"></div>';
 
-    if($social_links = $current_graduate['social_links']){
-      echo "<ul class='profile-socialmedia'>";
-        foreach($social_links as $social_link) {
-          echo '<li><a href="'. $social_link['profile_url'] .'" target="_blank"><i class="icon-'. $social_link['social_network'] .'"></i></a></li>';
-        }
-      echo  "</ul>";
-    } ?>
 
-    <?php $next_grad = get_next_graduate($current_graduate['ID']) ?>
-    <a href="<?= $next_grad['permalink'] ?>" class="next-graduate"><span class="next-graduate__label">Next Graduate</span><span class="next-graduate__name"><?= $next_grad['full_name'] ?></span></a>
+      echo ($portfolio = $current_graduate['portfolio']) ? '<a target="_blank" href="' . $portfolio . '" class="fancy-link">View my Portfolio</a>' : '<a href="mailto:' . $current_graduate['email'] . '" class="fancy-link">' . $current_graduate['email'] . '</a>';
 
+      if($social_links = $current_graduate['social_links']){
+        echo "<ul class='profile-socialmedia'>";
+          foreach($social_links as $social_link) {
+            echo '<li><a href="'. $social_link['profile_url'] .'" target="_blank"><i class="icon-'. $social_link['social_network'] .'"></i></a></li>';
+          }
+        echo  "</ul>";
+      }
+    }
+
+
+    if(!is_multitouch()){
+      $next_grad = get_next_graduate($current_graduate['ID']);
+      echo '<a href="' . $next_grad['permalink'] . '" class="next-graduate"><span class="next-graduate__label">Next Graduate</span><span class="next-graduate__name">' . $next_grad['full_name'] . '</span></a>';
+    }
+    ?>
 
   </div>
 
