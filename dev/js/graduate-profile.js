@@ -30,10 +30,11 @@
       });
 
       // Allows back to profile button to close works
-      $(workContentContainer).find('.close-works').click(function(e){
+      $(workContentContainer).find('.mt-close-work').click(function(e){
         e.preventDefault();
+        window.history.back();
         // history.pushState({work:graduateProfile.currentWork}, graduateProfile.currentWork);
-        graduateProfile.closeWorks();
+        // graduateProfile.closeWorks();
       });
 
       // State the work is initialised
