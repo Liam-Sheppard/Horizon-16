@@ -111,7 +111,7 @@ $(document).ready( function() {
   }
 
   // The elements we are going to check to see when they are seen
-  var $scrollBasedAnimates = $('.panel-bridge, .horizon-rule, h2, .next-graduate');
+  var $scrollBasedAnimates = $('.panel-bridge, .horizon-rule, h2, .next-graduate, .animate-when-seen');
   watchSeen($scrollBasedAnimates);
   $(window).scroll(function(){
     watchSeen($scrollBasedAnimates);

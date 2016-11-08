@@ -118,7 +118,9 @@
       @include simpleAnimateIn(0.5);
     }
   }
-
+  .button {
+    @include simpleAnimateIn(0.6);
+  }
 }
 
 .scroll-prompt {

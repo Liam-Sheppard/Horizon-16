@@ -21,6 +21,8 @@
   <div id="main-content">
     <h1 class="site-title"><span class="primary-heading-text">Horizon</span> <span class="sub-heading">Graduate Exhibition 2016</span> <span class="sub-heading">QUT Interactive + Visual Design</span></h1>
     <?php partial('landing-details'); ?>
+    <a href="http://maps.apple.com/maps?daddr=5%20Musk%20Avenue,%20Kelvin%20Grove%20QLD%204059,%20Australia&dirflg=d" target="_blank" class="animate-when-seen button button--small">Get Directions</a>
+
   </div>
 
   <div class='landing-croomo'>
