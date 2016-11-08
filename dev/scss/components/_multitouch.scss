@@ -161,6 +161,7 @@
     letter-spacing: .3rem;
     font-weight: 500;
     z-index: 10000;
+    border-top: 1px solid rgba(0,0,0,.5);
 
     .grad-nav {
       display: flex;
@@ -169,13 +170,13 @@
       height: 5rem;
       width: 30rem;
       &.grad-prev {
-        right: 60%;
+        left: 0;
         .mt-graduate {
           margin-left: 2rem;
         }
       }
       &.grad-next {
-        left: 60%;
+        right: 0;
         text-align: right;
         .mt-graduate {
           margin-right: 2rem;
@@ -211,4 +212,51 @@
       transform: translate(-50%,-50%);
     }
   }
+}
+
+.mt-close-work {
+  display: flex;
+  position: fixed;
+  bottom: 9rem;
+  .mt-close-btn {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid $black;
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 1.5rem;
+      height: 1px;
+      background: $black;
+      top: 50%;
+      left: 50%;
+    }
+    &::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  }
+  .mt-close-text {
+    line-height: 3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    margin: 0 1rem;
+    font-size: 80%;
+  }
+}
+.mt-close-btn-left {
+  left: 4rem;
+}
+.mt-close-btn-right {
+  right: 4rem;
+}
+
+.multitouch .detailed-works {
+  min-height: calc(100vh - 5rem);
 }
