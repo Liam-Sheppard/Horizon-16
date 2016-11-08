@@ -107,15 +107,22 @@ partial('header', [
 </div>
 
 <?php if (is_multitouch()) : ?>
+  <?php
+  $next_grad = get_next_graduate($current_graduate['ID']);
+  $next_grad_img = get_stylesheet_directory_uri() . '/assets/images/graduate-images-600x400/graduate-' . $next_grad['ID'] . '.png';
+  $prev_grad = get_prev_graduate($current_graduate['ID']);
+  $prev_grad_img = get_stylesheet_directory_uri() . '/assets/images/graduate-images-600x400/graduate-' . $prev_grad['ID'] . '.png';
+  ?>
   <div class='multitouch-navbar'>
-    <div class='grad-nav grad-prev left-align'>
-      <div class='grad-bg'></div>
-      <div class='grad-text'>
-        Prev Graduate
-        <?php $next_grad = get_next_graduate($current_graduate['ID']);
-        echo '<a href="' . $next_grad['permalink'] . '" class="next-graduate"><span class="next-graduate__label">Next Graduate</span><span class="next-graduate__name">' . $next_grad['full_name'] . '</span></a>'; ?>
-      </div>
-    </div>
+    <a href='/graduates' class='mt-grads-btn'>All Graduates</a>
+    <?php echo '<a href="' . $prev_grad['permalink'] . '" class="grad-nav grad-prev">' ?>
+      <div class='grad-img' style='background-image: url("<?php echo $prev_grad_img ?>")'></div>
+      <?php echo '<div class="mt-graduate"><span class="mt-graduate__label">Prev Graduate</span><span class="mt-graduate__name">' . $prev_grad['full_name'] . '</span></div>'; ?>
+    </a>
+    <?php echo '<a href="' . $next_grad['permalink'] . '" class="grad-nav grad-next">' ?>
+      <?php echo '<div class="mt-graduate"><span class="mt-graduate__label">Next Graduate</span><span class="mt-graduate__name">' . $next_grad['full_name'] . '</span></div>'; ?>
+      <div class='grad-img' style='background-image: url("<?php echo $next_grad_img ?>")'></div>
+    </a>
   </div>
 <?php endif ?>
 
