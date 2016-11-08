@@ -92,3 +92,13 @@ function get_next_graduate($current_graduate_id){
       : get_graduates([$all_graduate_ids[0]])[0];
     return $next_graduate;
 }
+
+function get_prev_graduate($current_graduate_id){
+    $all_graduate_ids = get_graduate_ids(false);
+    $graduate_count = count($all_graduate_ids);
+    $current_graduate_place = array_search($current_graduate_id, $all_graduate_ids);
+    $prev_graduate = ($current_graduate_place != 0)
+      ? get_graduates([$all_graduate_ids[$current_graduate_place - 1]])[0]
+      : get_graduates([$all_graduate_ids[$graduate_count - 1]])[0];
+    return $prev_graduate;
+}

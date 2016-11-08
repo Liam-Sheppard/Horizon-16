@@ -106,6 +106,19 @@ partial('header', [
 
 </div>
 
+<?php if (is_multitouch()) : ?>
+  <div class='multitouch-navbar'>
+    <div class='grad-nav grad-prev left-align'>
+      <div class='grad-bg'></div>
+      <div class='grad-text'>
+        Prev Graduate
+        <?php $next_grad = get_next_graduate($current_graduate['ID']);
+        echo '<a href="' . $next_grad['permalink'] . '" class="next-graduate"><span class="next-graduate__label">Next Graduate</span><span class="next-graduate__name">' . $next_grad['full_name'] . '</span></a>'; ?>
+      </div>
+    </div>
+  </div>
+<?php endif ?>
+
 
 
 
