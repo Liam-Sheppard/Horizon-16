@@ -1,7 +1,23 @@
 .multitouch {
   height: calc(100vh - 5rem);
   min-height: 0;
-
+  .mCustomScrollBox {
+    padding-bottom: 20px;
+  }
+  .mCustomScrollBox,
+  .mCSB_container {
+    overflow: scroll;
+  }
+  .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    height: 28px;
+  }
+  .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {
+    margin: 13px 0;
+  }
+  .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {
+    height: 16px;
+    border-radius: 6px;
+  }
   // GRADUATES
   &.page-template-graduates .panel--graduate-strips {
     padding: 6rem 3rem 3rem;
@@ -83,9 +99,10 @@
         position: fixed;
         left: 0;
         width: 50%;
-        top: 50%;
+        top: calc(50% - 5rem);
         padding: 3rem;
         transform: translate(0,-50%) !important;
+        max-height: 86vh;
       }
       .work-strip {
         background-color: white;
