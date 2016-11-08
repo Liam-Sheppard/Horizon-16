@@ -36,13 +36,13 @@ remove_wp_bloat();
 function enqueue_scripts_and_styles(){
   wp_deregister_script('wp-embed');
   wp_deregister_script('jquery');
-  wp_register_script('bundled-js', get_stylesheet_directory_uri() . '/assets/js/bundle.min.js', [], 1.5, true);
+  wp_register_script('bundled-js', get_stylesheet_directory_uri() . '/assets/js/bundle.min.js', [], 1.6, true);
   wp_localize_script('bundled-js', 'siteData', [
     'homeUrl' => get_home_url(),
     'themeUri' => get_stylesheet_directory_uri(),
     'graduates' => get_graduates(get_graduate_ids(true)),
   ]);
-  wp_enqueue_style('styles', get_stylesheet_directory_uri(). '/assets/css/styles.min.css', [], 1.5, 'screen');
+  wp_enqueue_style('styles', get_stylesheet_directory_uri(). '/assets/css/styles.min.css', [], 1.6, 'screen');
   wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/assets/js/modernizr.min.js', [], 1.0, false  );
   wp_enqueue_script('bundled-js');
 }

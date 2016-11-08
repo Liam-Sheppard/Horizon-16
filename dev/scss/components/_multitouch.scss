@@ -20,7 +20,6 @@
   // GRADUATES
   &.page-template-graduates .panel--graduate-strips {
     padding: 6rem 3rem 3rem;
-    height: 100%;
   }
   .inline-v-align {
    width: 100%;
@@ -81,13 +80,13 @@
       opacity: 1;
     }
     &.hide-detailed-works {
-      .grad-work-container {
-        transition: opacity 0.5s 0.8s;
+      .grad-work-container, .mt-workface-switch {
+        transition: opacity 0.5s 1s;
         opacity: 1;
       }
     }
     &.hide-profile-content {
-      .grad-work-container {
+      .grad-work-container, .mt-workface-switch {
         opacity: 0;
         transition: opacity 0.5s;
       }
