@@ -121,6 +121,7 @@
   .button {
     @include simpleAnimateIn(0.6);
     margin-right: 2em;
+    margin-bottom: 2em;
   }
 }
 
