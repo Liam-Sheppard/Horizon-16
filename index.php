@@ -17,5 +17,3 @@ partial('contributors-landing');
 partial('footer');
 
 get_footer();
-
-?>
