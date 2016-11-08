@@ -82,7 +82,7 @@
       <div class="team-segment-description">
         <h2>Sponsorship</h2>
         <p>
-          Core to the success of the Horizon 16 Graduate Exhibition and its execution, <a href="<?= get_home_url() ?>/graduate/shonarobinson/" class="fancy-link">Shona Robinson</a> and <a href="<?= get_home_url() ?>/graduate/mattkeliher/" class="fancy-link">Matt Keliher </a> were responsible for managing a sponsorship and fundraising campaign targeting both the general public.
+          Core to the success of the Horizon 16 Graduate Exhibition and its execution, <a href="<?= get_home_url() ?>/graduate/shonarobinson/" class="fancy-link">Shona Robinson</a> and <a href="<?= get_home_url() ?>/graduate/mattkeliher/" class="fancy-link">Matt Keliher </a> were responsible for managing a sponsorship and fundraising campaign targeting both the general public and industry.
         </p>
       </div>
     </div>
