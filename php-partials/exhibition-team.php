@@ -58,7 +58,7 @@
       <div class="team-segment-description">
         <h2>Exhibition Design</h2>
         <p>
-          No exhibition design team could have presented our Horizon 16 IVD Graduates in a better light than our talented <a href="" class="fancy-link">Hannah Saltissi</a> and <a href="" class="fancy-link">Holly Hutson</a>. After countless hours of ideation, planning and management, they transformed the space at QUT's The Block into a true embodiment of the Horizon theme.
+          No exhibition design team could have presented our Horizon 16 IVD Graduates in a better light than our talented <a href="<?= get_home_url() ?>/graduate/hannahsaltissi/" class="fancy-link">Hannah Saltissi</a> and <a href="<?= get_home_url() ?>/graduate/hollyhutson/" class="fancy-link">Holly Hutson</a>. After countless hours of ideation, planning and management, they transformed the space at QUT's The Block into a true embodiment of the Horizon theme.
         </p>
       </div>
     </div>
