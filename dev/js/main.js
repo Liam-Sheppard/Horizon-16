@@ -40,6 +40,11 @@ $(document).ready( function() {
     }
   });
 
+  $('.mt-workface-switch').click(function(e){
+    $(this).toggleClass('show-face');
+    $('.left-panel').toggleClass('hide-work');
+  });
+
 
 
 

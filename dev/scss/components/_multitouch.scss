@@ -212,6 +212,76 @@
       transform: translate(-50%,-50%);
     }
   }
+
+  .mt-workface-switch {
+    position: fixed;
+    display: flex;
+    left: 25%;
+    bottom: 4.5rem;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    height: 3.5rem;
+    background: rgba($black,.7);
+    width: 7rem;
+    border: 1px solid $actualWhite;
+    .mt-switch {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: transform .5s;
+      height: 3.5rem;
+      width: 3.5rem;
+      background: $actualWhite;
+    }
+    .mt-work,
+    .mt-face {
+      height: 3.5rem;
+      width: 50%;
+      position: relative;
+      svg {
+        width: 1.8rem;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: opacity .5s, fill .5s;
+      }
+    }
+    .mt-face svg {
+      fill: $white;
+      opacity: .8;
+    }
+    .mt-work svg {
+      fill: $black;
+      opacity: 1;
+    }
+    &.show-face {
+      .mt-face svg {
+        fill: $black;
+        opacity: 1;
+      }
+      .mt-work {
+        svg {
+          fill: $white;
+          opacity: .8;
+        }
+      }
+      .mt-switch {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  .panel--single-graduate .left-panel.hide-work {
+    .grad-image {
+      filter: blur(0);
+    }
+    .grad-work-container {
+      opacity: 0;
+      transform: translate(0,-48%)!important
+    }
+  }
 }
 
 .mt-close-work {
