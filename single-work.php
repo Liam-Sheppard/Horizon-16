@@ -51,11 +51,15 @@ $gallery = get_field('work_gallery');
         <?= apply_filters('the_content', get_the_excerpt()) ?>
       </article>
 
-      <?php if($project_url = get_field('project_url') && !is_multitouch()) : ?>
-        <div class="project-url-link">
-          <a href="<?= $project_url ?>" target="_blank" class="button button--black">Visit the project</a>
-        </div>
-      <?php endif; ?>
+      <?php
+      if(!is_multitouch()){
+        if($project_url = get_field('project_url')) : ?>
+          <div class="project-url-link">
+            <a href="<?= $project_url ?>" target="_blank" class="button button--black">Visit the project</a>
+          </div>
+        <?php endif;
+      } ?>
+
   </div>
   <?php if (is_multitouch()) : ?>
     <div class='mt-close-btn-left mt-close-work'>

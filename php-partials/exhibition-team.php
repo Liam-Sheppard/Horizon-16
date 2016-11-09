@@ -77,12 +77,12 @@
 
     <div class="team-segment">
       <div class="team-segment-strip">
-        <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/exhibition-team/horizon-team-sponsorship.png" alt="Horizon 16 Sponsorship Team" />
+        <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/exhibition-team/exhibiton-team-sponsorship.jpg" alt="Horizon 16 Sponsorship Team" />
       </div>
       <div class="team-segment-description">
         <h2>Sponsorship</h2>
         <p>
-          Core to the success of the Horizon 16 Graduate Exhibition and its execution, <a href="<?= get_home_url() ?>/graduate/shonarobinson/" class="fancy-link">Shona Robinson</a> and <a href="<?= get_home_url() ?>/graduate/mattkeliher/" class="fancy-link">Matt Keliher </a> were responsible for managing a sponsorship and fundraising campaign targeting both the general public and industry.
+          Core to the success of the Horizon 16 Graduate Exhibition and its execution, <a href="<?= get_home_url() ?>/graduate/shonarobinson/" class="fancy-link">Shona Robinson</a> was responsible for managing sponsorship, fundraising and social media campaigns targeting both the general public and industry.
         </p>
       </div>
     </div>
